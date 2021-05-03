@@ -1,0 +1,70 @@
+
+Version 1:
+
+#Funktunaliter
+
+#Sidor
+
+HTML:
+    index.html:
+        Innehåll:
+        Skapar gruden för framsidan. Det finns en header, nav, main samt footer. Samtliga får en provosorisk höjd och bredd. Titlen på sidan skapas.
+        Kopplar till:
+            index.css 
+            global.css
+            
+            index.js
+            global.js
+
+    countries.html:
+        Innehåll:
+        Skapar grunden med header, title, main och footer. Samtliga får en provosorisk höjd och bredd. Titlen på sidan skapas.
+
+        Kopplar till:
+            countries.css 
+            global.css
+            
+            countries.js
+            global.js
+    
+    universities.html:
+        Innehåll:
+        Skapar grunden med header, title, main och footer. Samtliga får en provosorisk höjd och bredd. Titlen på sidan skapas.
+
+        Kopplar till: 
+            universities.css 
+            global.css
+            
+            universities.js
+            global.js
+    
+    programmes.html:
+        Innehåll:
+        Skapar grunden med header, title, main och footer. Samtliga får en provosorisk höjd och bredd. Titlen på sidan skapas.
+
+        Kopplar till:
+            programmes.css 
+            global.css
+            
+            programmes.js
+            global.js
+JavaScript:
+    index.js
+    countries.js
+    universities.js
+    programmes.js
+    commonElements.js
+    globalVariables.js
+
+CSS:
+    index.css
+    countries.css
+    universities.css
+    programmes.css
+    commonElements.css
+
+#Funktioner
+
+#Globala Variabler
+
+#CSS-filer
