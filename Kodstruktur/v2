@@ -1,11 +1,133 @@
+Version 2:
 
-Home page: 
-    Nav div: Grid 2x3
-    Main div: Bildgalleri i js
-    Footer: 
+#Funktunaliter
+Användaren ska kunna navigera sig runt på alla appens sidor och även kunna ta del utav alla inforamtion som appen erbjuer. Majoriteten av alla funktioner vara skapade. Alla grund element finns men detaljerna tex. ikoner, färger och fonter finns ej. 
 
-Countries:
+#Sidor
+HTML:
+    index.html:
+        Innehåll:
+        Alla elemnent förutom bildspelet ska finnas på plats. Samt all text och annonser ska finnas på plats.
+        Kopplar till:
+            index.css 
+            global.css
+            
+            index.js
+            global.js
 
-Universities:
+    countries.html:
+        Innehåll:
+        Inga uppdateringar
+        Kopplar till:
+            countries.css 
+            global.css
+            
+            countries.js
+            global.js
+    
+    universities.html:
+        Innehåll:
+        Inga uppdateringar
 
-Programmes:
+        Kopplar till: 
+            universities.css 
+            global.css
+            
+            universities.js
+            global.js
+    
+    programmes.html:
+        Innehåll:
+        Inga uppdateringar
+
+        Kopplar till:
+            programmes.css 
+            global.css
+            
+            programmes.js
+            global.js
+
+#Funktioner
+
+countries.js: 
+    -getSmallCountryImage(image) :: image, hämtar en liten bild av landet
+    -getSmallCityImage(image) :: image, hämtar en liten bild av staden
+    -getBigCityImage(image) :: image, hämtar en stor bild av staden
+    -getEntertainmentsPlacesByCity(places) :: EntertainmentsPlaces[], hämtar Entertainments Places av staden
+    -getCityInformationByCity(information) :: string, hämtar information av staden
+
+unviversities.js: 
+    
+programmes.js: 
+   
+global.js:
+    Sök:
+    -searchArray(array) :: Programmes[], Universities[], hämtar objekt från array genom en sökfunktion. Filtrerar arrayen efter strängen användaren skriver i input.
+
+    Pilfunktion:
+    -shotup ::, tar användaren högst upp på sidan. 
+
+    Land inforamtion:
+    -getlanguageByCountry(language) :: string, hämtar språket av landet
+    -getVisaByCountry(visa) :: string, hämtar yes/no av visa
+
+    Stads information:
+    -getCityNamesByCountry(city) :: City[], hämtar en array över städer i ett land
+    -getSunnyDaysByCity(sun) :: string, hämtar sunny days över en stad
+
+    Universitet inforamtion:
+    -getUniversityNamesByCity(university) :: univerites[], hämtar en array över universitet i en stad
+
+    Program information:
+    -getProgrammeNamesByUniversity(programme) :: programme[], hämtar en array över program i ett universitet
+    -getLvlByProgramme(lvl) :: string, hämtar level av program
+    -getLanguageByProgramme(language) :: string, hämtar språket av programmet
+    -getLocalStudentsByProgramme(local) :: localStudents[], hämtar antalet lokala studenter
+    -getExchangeStudentsByProgramme(exchange) :: exchangeStudents[], hämtar antalet utbytesstudenter
+    -getEntryGradesByProgramme(entryGrades) :: entryGrades[], hämtar en array över entry grades av programmet
+    -getGraduatesByProgramme(graduates) :: graduates[], hämtar en array över graduates av programmet
+
+#Globala Variabler
+const outerWrapper = skapar wrapper 
+const innerWrapper = skapar wrapper 
+
+#CSS-filer
+    index.css
+        Innehåll:
+        Bygger ett skelett av sidan, lägger till paddings, margins, borders etc. 
+
+    countries.css
+        Innehåll:
+        Bygger ett skelett av sidan, lägger till paddings, margins, borders etc. 
+        
+    universities.css
+        Innehåll:
+        Bygger ett skelett av sidan, lägger till paddings, margins, borders etc.
+        
+    programmes.css
+        Innehåll:
+        Bygger ett skelett av sidan, lägger till paddings, margins, borders etc. 
+
+    global.css
+        Innehåll:
+        Stylar footern som på wireframe. Lägger till fler css variabler i root:
+        --margins-small:
+        --margins-medium:
+        --margins-big:
+
+        --paddings-small:
+        --paddings-medium:
+        --paddings-big:
+
+        --font-small:
+        --font-medium:
+        --font-big:
+
+        --size-small:
+        --size-medium:
+        --size-big:
+
+        --border-small:
+        --border-medium:
+        --border-big:   
+        
