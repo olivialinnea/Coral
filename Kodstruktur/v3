@@ -1,0 +1,99 @@
+Version 3:
+
+#Funktionaliter
+Designen och alla detaljer färdigställs. Ge hemsidan rätt färger och fonter. Alla funktioner på varje sida ska fungera. Få dit alla illustrationer som logga, knapp och ikoner. Användaren kan se landing page.
+
+
+#Sidor
+HTML:
+    index.html:
+        Innehåll: 
+        Logotyp och headernamn läggs till på toppen av sidan och i footer.
+        
+        Kopplar till:
+            index.css 
+            global.css
+            
+            index.js
+            global.js
+
+    countries.html:
+        Innehåll:
+        Logotyp och headernamn läggs till på toppen av sidan och i footer.
+
+        Kopplar till:
+            countries.css 
+            global.css
+            
+            countries.js
+            global.js
+    
+    universities.html:
+        Innehåll:
+        Logotyp och headernamn läggs till på toppen av sidan och i footer. 
+
+        Kopplar till: 
+            universities.css 
+            global.css
+            
+            universities.js
+            global.js
+    
+    programmes.html:
+        Innehåll:
+        Logotyp och headernamn läggs till på toppen av sidan och i footer.
+
+        Kopplar till:
+            programmes.css 
+            global.css
+            
+            programmes.js
+            global.js
+
+
+#Funktioner
+    index.js:
+        getRandomImages(image) :: Hämtar random bilder.
+        landingPage() :: Helteckande landingPage med bild och ikon som tar dig till förstasidan.
+
+    countries.js:
+        getReviwesByCity(reviwes) :: reviwes[], hämtar reviwes av staden
+
+    global.js:
+        getReviwesByProgramem(reviwes) :: reviwes[], hämtar reviwes av programmet
+
+
+#Globala Variabler
+    const reviewCard, skapar divar för reviews
+
+
+#CSS-filer
+    index.css
+        Innehåll:
+        Fixa transitions vid behov. Css variabler för att slutföra styling på sidan såsom färger och google fonter, allt grafisk färdigställs.
+
+    countries.css
+        Innehåll: 
+        Fixa transitions vid behov. Css variabler för att slutföra styling på sidan såsom färger och google fonter, allt grafisk färdigställs.
+
+    universities.css
+        Innehåll:
+        Fixa transitions vid behov. Css variabler för att slutföra styling på sidan såsom färger och google fonter, allt grafisk färdigställs. 
+
+    programmes.css
+        Innehåll: 
+        Fixa transitions vid behov. Css variabler för att slutföra styling på sidan såsom färger och google fonter, allt grafisk färdigställs.
+
+    global.css
+        Innehåll:
+        Färger:
+        --accent-color:
+        --div-color:
+
+        --color-title:
+        --color-paragraph:
+
+        Fonts:
+        --font-weight:
+        --font-title:
+        --font-paragraph:
