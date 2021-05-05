@@ -2,13 +2,13 @@
 Version 1:
 
 #Funktunaliter
+Användare kan navigera sig från sida till sida. Det går att se namnen på länder, unviersiteten samt programmen men de har inget innehåll. 
 
 #Sidor
-
 HTML:
     index.html:
         Innehåll:
-        Skapar gruden för framsidan. Det finns en header, nav, main samt footer. Samtliga får en provosorisk höjd och bredd. Titlen på sidan skapas.
+        Skapar gruden för framsidan. Det finns en header, nav, main samt footer. Samtliga får en provosorisk höjd och bredd. En grundversion av naven skapas, exempelvis tre divar som bara är klickbara. Den skriftliga hemsideinformationen läggs till i main.
         Kopplar till:
             index.css 
             global.css
@@ -29,7 +29,7 @@ HTML:
     
     universities.html:
         Innehåll:
-        Skapar grunden med header, title, main och footer. Samtliga får en provosorisk höjd och bredd. Titlen på sidan skapas.
+        Skapar grunden med header, title, main och footer. Samtliga får en provosorisk höjd och bredd. Titlen på sidan skapas. Sökinput läggs till i main.
 
         Kopplar till: 
             universities.css 
@@ -40,7 +40,7 @@ HTML:
     
     programmes.html:
         Innehåll:
-        Skapar grunden med header, title, main och footer. Samtliga får en provosorisk höjd och bredd. Titlen på sidan skapas.
+        Skapar grunden med header, title, main och footer. Samtliga får en provosorisk höjd och bredd. Titlen på sidan skapas. Sökinput läggs till i main.
 
         Kopplar till:
             programmes.css 
@@ -48,23 +48,45 @@ HTML:
             
             programmes.js
             global.js
-JavaScript:
-    index.js
-    countries.js
-    universities.js
-    programmes.js
-    commonElements.js
-    globalVariables.js
-
-CSS:
-    index.css
-    countries.css
-    universities.css
-    programmes.css
-    commonElements.css
 
 #Funktioner
 
+countries.js: 
+    -getCountries(country) :: Countries[], hämtar en array över antal länder. Skapar divar utifrån hur många länder som finns.
+    -getCountryName(countryName) :: country.title, hämtar namnet på landet.
+
+unviversities.js: 
+    -getUniversities(university) :: Universities[], hämtar en array över antal universitet. Skapar divar utifrån hur många universitet som finns.
+    -getUniversityName(uniName) :: unversity.title, hämtar namnet på universitet.
+
+programmes.js: 
+    -getProgrammes(programme) :: Programmes[], hämtar en array över antal program. Skapar divar utifrån hur många program som finns.
+    -getProgrammeName(programmeName) :: programme.title, hämtar namnet på programmet.
+
+global.js: 
+    -alfabeticalOrder(array) :: Countries[], Programmes[], Universities[],  sorterar array i bokstavsordning
+
 #Globala Variabler
 
+    const listDiv = skapar divar för listorna.
+    
 #CSS-filer
+    index.css
+        Innehåll:
+        Anger höjd och bredd på samtliga grundelement. Stylar även en provosorisk nav. Fontstorlekar på text och länkar läggs till. 
+
+    countries.css
+        Innehåll: 
+        Anger höjd och bredd på samtliga grundelement. Fontstorlekar på text och länkar läggs till. Storlek på sidtitlen anges. Höjd och bredd anges på divarna för alla länder, samt margins och paddings. 
+
+    universities.css
+        Innehåll:
+        Anger höjd och bredd på samtliga grundelement. Fontstorlekar på text och länkar läggs till. Storlek på sidtitlen anges. Wrappern för universitetsdivarna får en scrollfunktion. Höjd och bredd anges på divarna för alla universitet, samt margins och paddings. Storlek på sökinput anges.
+
+    programmes.css
+        Innehåll: 
+        Anger höjd och bredd på samtliga grundelement. Fontstorlekar på text och länkar läggs till. Storlek på sidtitlen anges. Wrappern för prgoramdivarna får en scrollfunktion. Höjd och bredd anges på divarna för alla universitet, samt margins och paddings. Storlek på sökinput anges.
+
+    global.css
+        Innehåll:
+        Höjd och bredd anges på footern samt enklare text läggs in. Root skapas för storlekar. 
