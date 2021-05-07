@@ -4,7 +4,7 @@
 function CountryName(name){
     let div = document.createElement("div");
     div.textContent = name;
-    document.querySelector("main").append(div);    
+    document.querySelector("wrapper").append(div);    
 };
 
 for(let i = 0; i < COUNTRIES.length; i++) {
