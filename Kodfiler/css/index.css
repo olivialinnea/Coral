@@ -1,0 +1,14 @@
+header {
+  height: 15vh;
+  background-color: bisque;
+}
+
+nav {
+  height: 30vh;
+  background-color: blanchedalmond;
+}
+
+footer {
+  height: 25vh;
+  background-color: burlywood;
+}
