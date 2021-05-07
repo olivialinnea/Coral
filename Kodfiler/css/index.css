@@ -12,3 +12,12 @@ footer {
   height: 25vh;
   background-color: burlywood;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: coral;
+}
