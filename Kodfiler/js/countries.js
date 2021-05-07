@@ -3,7 +3,9 @@
 
 function CountryName(name){
     let countryDiv = document.createElement("div");
-    countryDiv.textContent = name;
+    countryDiv.innerHTML = `
+    <div>${name}</div>
+    `;
     countryDiv.classList.add("countryDiv");
     document.querySelector("main").append(countryDiv);    
 };
