@@ -5,6 +5,12 @@ body {
 
 header {
   height: 15vh;
+  padding: 5vh;
+  box-sizing: border-box;
+}
+
+header > h1 {
+  font-size: 35px;
 }
 
 footer {
