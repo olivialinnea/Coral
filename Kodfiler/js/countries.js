@@ -23,19 +23,23 @@ function CountryDiv(data){
     }); */
 
     country.innerHTML = `
-    <img src="images/${data.spain_normal_1}.jpg">
-    <div>${data.name}</div>
+    <img class="normalImage" src="Images/${data.imagesNormal[0]}">
+    <div class="countryNameTitle">${data.name}</div>
     <div id="langVisa">
     
     <div>Visa requierd: ${data.visa}</div>
     </div>
     `;
     
-    // ny div
+    // info om land
     let infoAbout = document.createElement("div");
-    infoAbout.innerHTML= `Information om land`
+    infoAbout.innerHTML= `
+    <div class="cityHeading"> Städer </div>
+    <div class="citiesAccordion"></div>
+    `
     infoAbout.classList.add("panel");
-    document.querySelector("wrapper").append(infoAbout);  
+    document.querySelector("wrapper").append(infoAbout); 
+    
 
     return country;
 }
@@ -56,3 +60,20 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 // Accordion
+
+const citiesAccordion = document.querySelector("citiesAccordion");
+
+for (let ii = 0; ii < citiesAccordion.length; ii++) {
+    for(let i = 0; i < CITIES.length; i++) {
+        citiesAccordion[ii].append(getCityName(CITIES[i]));
+      }
+    }
+    
+    function getCityName(data) {
+      let city = document.createElement("div");
+      city.classList.add("city");
+      city.innerHTML = `
+      <div> Hej hej${data.name}</div>
+      `
+      return city;
+    }
