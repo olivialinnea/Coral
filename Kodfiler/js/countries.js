@@ -23,6 +23,28 @@ function CountryDiv(data){
     </div>
     `;
     
+    // ny div
+    let infoAbout = document.createElement("div");
+    infoAbout.innerHTML= `Information om land`
+    infoAbout.classList.add("panel");
+    document.querySelector("wrapper").append(infoAbout);  
+
     return country;
 }
 
+// Accordion
+let acc = document.getElementsByClassName("country");
+let i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    let panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+// Accordion
