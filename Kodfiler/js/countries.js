@@ -40,6 +40,22 @@ function CountryDiv(data){
     infoAbout.classList.add("panel");
     document.querySelector("wrapper").append(infoAbout); 
     
+    const citiesAccordion = document.querySelector("citiesAccordion");
+
+   
+    //  for(let ii = 0; ii < CITIES.length; ii++) {
+    //     citiesAccordion.append(getCityName(CITIES[ii]));
+    //     }
+     
+    
+    function getCityName(data) {
+      let city = document.createElement("div");
+      city.classList.add("city");
+      city.innerHTML = `
+      <div> Hej hej${data.name}</div>
+      `
+      return city;
+    }
 
     return country;
 }
@@ -61,19 +77,3 @@ for (i = 0; i < acc.length; i++) {
 }
 // Accordion
 
-const citiesAccordion = document.querySelector("citiesAccordion");
-
-for (let ii = 0; ii < citiesAccordion.length; ii++) {
-    for(let i = 0; i < CITIES.length; i++) {
-        citiesAccordion[ii].append(getCityName(CITIES[i]));
-      }
-    }
-    
-    function getCityName(data) {
-      let city = document.createElement("div");
-      city.classList.add("city");
-      city.innerHTML = `
-      <div> Hej hej${data.name}</div>
-      `
-      return city;
-    }
