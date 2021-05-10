@@ -36,7 +36,41 @@ main {
 
 input {
   border: 1px solid black;
+  margin-bottom: 1vh;
 }
+
+/* Accordion */
+.accordion {
+  border: 1px black solid;
+  height: 12vh;
+  width: 78.5vw;
+  margin-bottom: 1vh;
+  padding-left: 2vh;
+  font-size: 4vh;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* transition: 0.5s; */
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.active {
+  margin-bottom: 0px;
+  border-bottom: 0px;
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+  border:1px solid black;
+  margin-bottom: 1vh;
+}
+/* Accordion */
 
 /* footer */
 footer {
@@ -112,3 +146,4 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   flex-direction: column;
 }
 /* footer */
+

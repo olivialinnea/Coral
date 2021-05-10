@@ -8,3 +8,15 @@
     display: flex;
     align-items: center;
 }
+
+.hej {
+    border: 1px black solid;
+    height: 12vh;
+    margin-bottom: 1vh;
+    padding-left: 2vh;
+    font-size: 4vh;
+
+    display: flex;
+    align-items: center;
+}
+
