@@ -1,6 +1,25 @@
 "use strict";
 const wrapper = document.querySelector("wrapper");
 
+// Alpabetiskordning funkar ej på jonnas kod
+      // let alphabeticalOrderArray = [];
+      
+      // function alphabeticalOrder() {
+      //   for(let i = 0; i < COUNTRIES.length; i++) {
+      //     alphabeticalOrderArray.push((COUNTRIES[i].name));
+      //   }
+
+      //   alphabeticalOrderArray.sort((a,b) => a > b);
+      
+      //   return alphabeticalOrderArray;
+      // }
+      // alphabeticalOrder();
+
+      // for(let i = 0; i < alphabeticalOrderArray.length; i++) {
+      //   wrapper.append(CountryDiv(alphabeticalOrderArray[i]));
+      // }
+// Alpabetiskordning funkar ej på jonnas kod
+
 for(let i = 0; i < COUNTRIES.length; i++) {
     wrapper.append(CountryDiv(COUNTRIES[i]));
 }

@@ -1,5 +1,18 @@
 "use strict";
 
+ let alphabeticalOrderArray = [];
+ 
+function alphabeticalOrder() {
+  for(let i = 0; i < PROGRAMMES.length; i++) {
+    alphabeticalOrderArray.push((PROGRAMMES[i].name));
+  }
+
+  alphabeticalOrderArray.sort((a,b) => a > b);
+ 
+  return alphabeticalOrderArray;
+}
+alphabeticalOrder();
+
 function programmeName(name){
     let programmeDiv = document.createElement("div");
     programmeDiv.innerHTML = `
@@ -15,9 +28,13 @@ function programmeName(name){
     document.querySelector("wrapper").append(programmeDiv);    
 };
 
-for(let i = 0; i < PROGRAMMES.length; i++) {
-    programmeName(PROGRAMMES[i].name) 
+for(let i = 0; i < alphabeticalOrderArray.length; i++) {
+    programmeName(alphabeticalOrderArray[i]);
 }
+
+// for(let i = 0; i < PROGRAMMES.length; i++) {
+//     programmeName(PROGRAMMES[i].name);
+// }
 
 
 // Accordion
