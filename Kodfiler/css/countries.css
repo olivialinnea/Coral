@@ -1,10 +1,13 @@
-.countryDiv {
+.country {
     border: 1px black solid;
     height: 12vh;
     margin-bottom: 1vh;
     padding-left: 2vh;
     font-size: 4vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
 
     display: flex;
     align-items: center;
 }
+
