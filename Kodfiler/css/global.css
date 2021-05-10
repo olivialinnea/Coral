@@ -112,3 +112,22 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   flex-direction: column;
 }
 /* footer */
+
+/* scroll knapp */
+.topButton {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 40px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: lightcoral; /* Set a background color */
+  height: 60px;
+  width: 60px;
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 8px; /* Some padding */
+  border-radius: 100px; /* Rounded corners */
+  font-size: 50px; /* Increase font size */
+}
