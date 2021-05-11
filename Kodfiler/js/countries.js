@@ -54,33 +54,30 @@ function CountryDiv(data){
     </div>
     `;
     
-    // info om land
+    // Inne i varje land
     let infoAbout = document.createElement("div");
-    infoAbout.innerHTML= `
-    <div class="cityHeading"> Städer </div>
-    <div class="citiesAccordion"></div>
-    `
     infoAbout.classList.add("panel");
+<<<<<<< HEAD
     document.querySelector("wrapper").append(infoAbout); 
     
     
 
     const citiesAccordion = document.querySelector("citiesAccordion");
+=======
+>>>>>>> fix-accordion
 
-   
-    //  for(let ii = 0; ii < CITIES.length; ii++) {
-    //     citiesAccordion.append(getCityName(CITIES[ii]));
-    //     }
-     
+    let cityHeading = document.createElement("div");
+    cityHeading.innerHTML = 
+    `<div class="cityHeading"> Städer </div>`;
+
+    let allCitiesList = document.createElement("div");
+    allCitiesList.innerHTML = `<div class="allCities"> (Koppla rätt landID med city name, LISTA ALLA STÄDER I LANDET) </div>`;
+
+    infoAbout.append(cityHeading);
+    infoAbout.append(allCitiesList);
+
     
-    function getCityName(data) {
-      let city = document.createElement("div");
-      city.classList.add("city");
-      city.innerHTML = `
-      <div> Hej hej${data.name}</div>
-      `
-      return city;
-    }
+    document.querySelector("wrapper").append(infoAbout);
 
     return country;
 }
@@ -100,5 +97,6 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
 // Accordion
 
