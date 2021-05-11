@@ -56,15 +56,8 @@ function CountryDiv(data){
     
     // Inne i varje land
     let infoAbout = document.createElement("div");
-    infoAbout.classList.add("panel");
-<<<<<<< HEAD
-    document.querySelector("wrapper").append(infoAbout); 
-    
-    
-
-    const citiesAccordion = document.querySelector("citiesAccordion");
-=======
->>>>>>> fix-accordion
+    infoAbout.classList.add("panel");    
+  
 
     let cityHeading = document.createElement("div");
     cityHeading.innerHTML = 
