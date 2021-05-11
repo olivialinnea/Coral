@@ -22,29 +22,33 @@ const wrapper = document.querySelector("wrapper");
 
 for(let i = 0; i < COUNTRIES.length; i++) {
     wrapper.append(CountryDiv(COUNTRIES[i]));
+
+    COUNTRIES.forEach(element => {
+      if (element == COUNTRIES[i]){
+        let lang = LANGUAGES.find(Language => element.languageID === Language.id);
+      let languageInfo = document.createElement("div");
+      languageInfo.innerHTML =`
+      <div>Language: ${lang.name}</div>
+      `
+      document.getElementById(`${COUNTRIES[i].id}langVisa`).append(languageInfo);
+
+      }
+      
+      
+    });
 }
 
 function CountryDiv(data){
     let country = document.createElement("div");
     country.classList.add("country");
+    
 
     
-    /*COUNTRIES.forEach(element => {
-      LANGUAGES.find(Language => COUNTRIES.languageID === Language.id);
-      let languageInfo = document.createElement("div");
-      languageInfo.innerHTML =`
-      <div>Language: ${element.name}</div>
-      `
-      document.getElementById("langVisa").append(languageInfo);
-      
-      return languageInfo;
-      
-    }); */
 
     country.innerHTML = `
     <img class="normalImage" src="Images/${data.imagesNormal[0]}">
     <div class="countryNameTitle">${data.name}</div>
-    <div id="langVisa">
+    <div id="${data.id}langVisa">
     
     <div>Visa requierd: ${data.visa}</div>
     </div>
@@ -59,6 +63,8 @@ function CountryDiv(data){
     infoAbout.classList.add("panel");
     document.querySelector("wrapper").append(infoAbout); 
     
+    
+
     const citiesAccordion = document.querySelector("citiesAccordion");
 
    
