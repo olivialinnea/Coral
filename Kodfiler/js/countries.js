@@ -47,7 +47,7 @@ function CountryDiv(data){
     <div class="countryNameTitle">${data.name}</div>
 
     <div class="countrySideInfo"> 
-      <img class="countryFlag" src="Images/${data.imagesNormal[0]}">
+      <img class="countryFlag" src="Images/${data.flag}">
       <div class="langVisa" id="${data.id}langVisa">
         <div> Visa requierd: ${data.visa}</div>
       </div>
