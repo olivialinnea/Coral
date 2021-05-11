@@ -25,5 +25,4 @@ function goToTopButton() {
             behavior: "smooth"
         })
     });
-
 }

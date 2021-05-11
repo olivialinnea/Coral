@@ -142,7 +142,7 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
 .topButton {
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
+  bottom: 90px; /* Place the button at the bottom of the page */
   right: 40px; /* Place the button 30px from the right */
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
@@ -156,9 +156,11 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   border-radius: 100px; /* Rounded corners */
   font-size: 50px; /* Increase font size */
 }
+/* scroll knapp */
 
 .normalImage {
   height: 70px;
   width: 100px;
   padding-right: 2vh;
+  margin-top: 10px;
 }

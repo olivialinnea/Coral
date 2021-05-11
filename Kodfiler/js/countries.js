@@ -28,7 +28,7 @@ for(let i = 0; i < COUNTRIES.length; i++) {
         let lang = LANGUAGES.find(Language => element.languageID === Language.id);
       let languageInfo = document.createElement("div");
       languageInfo.innerHTML =`
-      <div>Language: ${lang.name}</div>
+      Language: ${lang.name}
       `
       document.getElementById(`${COUNTRIES[i].id}langVisa`).append(languageInfo);
 
@@ -41,19 +41,22 @@ for(let i = 0; i < COUNTRIES.length; i++) {
 function CountryDiv(data){
     let country = document.createElement("div");
     country.classList.add("country");
-    
-
-    
 
     country.innerHTML = `
     <img class="normalImage" src="Images/${data.imagesNormal[0]}">
     <div class="countryNameTitle">${data.name}</div>
-    <div id="${data.id}langVisa">
-    
-    <div>Visa requierd: ${data.visa}</div>
+
+    <div class="countrySideInfo"> 
+      <img class="countryFlag" src="Images/${data.imagesNormal[0]}">
+      <div class="langVisa" id="${data.id}langVisa">
+        <div> Visa requierd: ${data.visa}</div>
+      </div>
     </div>
+    
     `;
     
+
+
     // Inne i varje land
     let infoAbout = document.createElement("div");
     infoAbout.classList.add("panel");    
