@@ -28,8 +28,12 @@ function programmeName(name){
     document.querySelector("wrapper").append(programmeDiv);    
 };
 
-for(let i = 0; i < alphabeticalOrderArray.length; i++) {
-    programmeName(alphabeticalOrderArray[i]);
+let uniquePrograms = alphabeticalOrderArray.filter((value, index) => {
+  return alphabeticalOrderArray.indexOf(value) === index;
+});
+
+for(let i = 0; i < uniquePrograms.length; i++) {
+    programmeName(uniquePrograms[i]);
 }
 
 // for(let i = 0; i < PROGRAMMES.length; i++) {
