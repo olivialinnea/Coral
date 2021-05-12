@@ -1,5 +1,19 @@
 "use strict";
 
+const searchBar = document.getElementById("uniSearch");
+let uniNames = UNIVERSITIES;
+
+searchBar.addEventListener('keyup', (e) => {
+  document.querySelector("wrapper").innerHTML = "";
+  const searchString = e.target.value.toLowerCase();
+  const filteredUnis = uniNames.filter(university => {
+    return university.name.toLowerCase().includes(searchString)
+  });
+  filteredUnis.forEach( uni => universityName(uni.name));
+  console.log(filteredUnis);
+});
+
+
 let alphabeticalOrderArray = [];
 
 function alphabeticalOrder() {
@@ -14,6 +28,7 @@ function alphabeticalOrder() {
 alphabeticalOrder();
 
 function universityName(name){
+    console.log(name);
     let universityDiv = document.createElement("div");
     universityDiv.innerHTML = `
     <div>${name}</div>
@@ -51,3 +66,4 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 // Accordion
+
