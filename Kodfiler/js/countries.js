@@ -20,9 +20,11 @@ const wrapper = document.querySelector("wrapper");
       // }
 // Alpabetiskordning funkar ej på jonnas kod
 
+    // Skapar länder
 for(let i = 0; i < COUNTRIES.length; i++) {
     wrapper.append(CountryDiv(COUNTRIES[i]));
 
+    // Språken
     COUNTRIES.forEach(element => {
       if (element == COUNTRIES[i]){
         let lang = LANGUAGES.find(Language => element.languageID === Language.id);
@@ -31,17 +33,28 @@ for(let i = 0; i < COUNTRIES.length; i++) {
       Language: ${lang.name}
       `
       document.getElementById(`${COUNTRIES[i].id}langVisa`).append(languageInfo);
-
       }
-      
-      
     });
-}
+  }
+    
+      /*COUNTRIES.filter(data == false)
+      if(element.visa == false) {
+        document.getElementById("visa").innerHTML = `
+        Visa requierd: no
+        ` 
+      }else {
+        document.getElementById("visa").innerHTML = `
+        Visa requierd: yes
+        ` 
+      }
+    
+*/
+
 
 function CountryDiv(data){
     let country = document.createElement("div");
     country.classList.add("country");
-
+    
     country.innerHTML = `
     <img class="normalImage" src="Images/${data.imagesNormal[0]}">
     <div class="countryNameTitle">${data.name}</div>
@@ -49,14 +62,12 @@ function CountryDiv(data){
     <div class="countrySideInfo"> 
       <img class="countryFlag" src="Images/${data.flag}">
       <div class="langVisa" id="${data.id}langVisa">
-        <div> Visa requierd: ${data.visa}</div>
+        <div id="visa"> Visa requierd: ${data.visa}</div>
       </div>
     </div>
-    
     `;
+    // Visa
     
-
-
     // Inne i varje land
     let infoAbout = document.createElement("div");
     infoAbout.classList.add("panel");    
@@ -94,5 +105,4 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-// Accordion
 
