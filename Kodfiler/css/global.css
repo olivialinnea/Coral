@@ -48,17 +48,16 @@ input {
   margin-bottom: 1vh;
 }
 
-
 /* Accordion */
-.active, .accordion:hover {
-  background-color: #ccc; 
+.active,
+.accordion:hover {
+  background-color: #ccc;
 }
 
 .active {
   margin-bottom: 0px;
   border-bottom: 0px;
 }
-
 
 /* Accordion */
 

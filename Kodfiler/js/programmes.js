@@ -31,14 +31,27 @@ function programmeName(name){
     programmeDiv.innerHTML = `
     <div>${name}</div>
     `;
+    console.log(name);
     programmeDiv.classList.add("programmeDiv");
 
     let infoAbout = document.createElement("div");
     infoAbout.innerHTML= `Information om land`
     infoAbout.classList.add("panel");
 
+    let innerProgrammeDiv = document.createElement("div");
+    innerProgrammeDiv.classList.add("programmeInfo");
+    innerProgrammeDiv.innerHTML = `
+      <div>
+        <div class="localS">Local Students:${name.localStudents}</div>
+        <div class="exchangeS">Exchange Students:</div>
+      </div>
+      <div></div>
+      <div></div>
+      `
+
     document.querySelector("wrapper").append(infoAbout);  
-    document.querySelector("wrapper").append(programmeDiv);    
+    document.querySelector("wrapper").append(programmeDiv); 
+    infoAbout.append(innerProgrammeDiv);
 };
 
 let uniquePrograms = alphabeticalOrderArray.filter((value, index) => {
