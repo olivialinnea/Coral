@@ -1,25 +1,6 @@
 "use strict";
 const wrapper = document.querySelector("wrapper");
-
-// Alpabetiskordning funkar ej på jonnas kod
-      // let alphabeticalOrderArray = [];
-      
-      // function alphabeticalOrder() {
-      //   for(let i = 0; i < COUNTRIES.length; i++) {
-      //     alphabeticalOrderArray.push((COUNTRIES[i].name));
-      //   }
-
-      //   alphabeticalOrderArray.sort((a,b) => a > b);
-      
-      //   return alphabeticalOrderArray;
-      // }
-      // alphabeticalOrder();
-
-      // for(let i = 0; i < alphabeticalOrderArray.length; i++) {
-      //   wrapper.append(CountryDiv(alphabeticalOrderArray[i]));
-      // }
-// Alpabetiskordning funkar ej på jonnas kod
-
+ 
     // Skapar länder
 for(let i = 0; i < COUNTRIES.length; i++) {
     wrapper.append(CountryDiv(COUNTRIES[i]));
@@ -39,19 +20,20 @@ for(let i = 0; i < COUNTRIES.length; i++) {
     COUNTRIES.forEach(element => {
       if(element == COUNTRIES[i]){
         let city = CITIES.filter(city => element.id === city.countryID);
+
         let cityDiv = document.createElement("div");
-        cityDiv.append(city);
-        console.log(city);
-        document.getElementById(`${COUNTRIES[i].id}allCitites`).append(cityDiv);
+        cityDiv.classList.add("cityDiv");
+
+        for (let i = 0; i < city.length; i++) {
+          cityDiv.append(city[i].name);
+        }
+        
+//data.id börjar på 1 medans ${COUNTRIES[i].id}allCities börjar på 0
+        document.getElementById(`${COUNTRIES[i].id}allCities`).append(cityDiv);
       }
     });
   }
     
-      
-    
-
-
-
 function CountryDiv(data){
     let country = document.createElement("div");
     country.classList.add("country");
@@ -78,7 +60,8 @@ function CountryDiv(data){
     `<div class="cityHeading"> Städer </div>`;
 
     let allCitiesList = document.createElement("div");
-    allCitiesList.innerHTML = `<div id="${data.id}allCitites"></div>`;
+//data.id börjar på 1 medans ${COUNTRIES[i].id}allCities börjar på 0
+    allCitiesList.innerHTML = `<div id="${data.id}allCities"> </div>`;
 
     infoAbout.append(cityHeading);
     infoAbout.append(allCitiesList);
@@ -122,5 +105,5 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
-
+// Accordion
 
