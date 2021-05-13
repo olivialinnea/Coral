@@ -6,29 +6,29 @@ const searchBar = document.getElementById("uniSearch");
 const wrapper = document.querySelector("wrapper");
 let uniNames = UNIVERSITIES;
 
-/*searchBar.addEventListener('keyup', (e) => {
-  document.querySelector("wrapper").innerHTML = "";
+searchBar.addEventListener('keyup', (e) => {
+  wrapper.innerHTML = "";
   const searchString = e.target.value.toLowerCase();
   const filteredUnis = uniNames.filter(university => {
     return university.name.toLowerCase().includes(searchString)
   });
-  filteredUnis.forEach( uni => universityName(uni.name));
+  filteredUnis.forEach( uni => wrapper.append(universityDiv(uni)));
   console.log(filteredUnis);
 });
 
 
-let alphabeticalOrderArray = [];
+// let alphabeticalOrderArray = [];
 
-function alphabeticalOrder() {
-  for(let i = 0; i < UNIVERSITIES.length; i++) {
-    alphabeticalOrderArray.push((UNIVERSITIES[i].name));
-  }
+// function alphabeticalOrder() {
+//   for(let i = 0; i < UNIVERSITIES.length; i++) {
+//     alphabeticalOrderArray.push((UNIVERSITIES[i].name));
+//   }
 
-  alphabeticalOrderArray.sort((a,b) => a > b);
+//   alphabeticalOrderArray.sort((a,b) => a > b);
  
-  return alphabeticalOrderArray;
-}
-alphabeticalOrder(); */
+//   return alphabeticalOrderArray;
+// }
+// alphabeticalOrder(); */
 
 /*function universityName(name){
     console.log(name);
@@ -61,9 +61,9 @@ function universityDiv(data){
   return universityDiven;
 }
 
-/*for(let i = 0; i < alphabeticalOrderArray.length; i++) {
-  universityName(alphabeticalOrderArray[i]);
-}
+// for(let i = 0; i < alphabeticalOrderArray.length; i++) {
+//   universityName(alphabeticalOrderArray[i]);
+// }
 
 // for(let i = 0; i < UNIVERSITIES.length; i++) {
 //     universityName(UNIVERSITIES[i].name) 
@@ -86,4 +86,3 @@ for (i = 0; i < acc.length; i++) {
 }
 // Accordion
 
-*/

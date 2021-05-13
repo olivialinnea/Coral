@@ -7,12 +7,12 @@ let programmeNames = PROGRAMMES;
 const wrapper = document.querySelector("wrapper");
 
 searchBar.addEventListener('keyup', (e) => {
-  document.querySelector("wrapper").innerHTML = "";
+  wrapper.innerHTML = "";
   const searchString = e.target.value.toLowerCase();
-  const filteredProgram = programmeNames.filter(university => {
-    return university.name.toLowerCase().includes(searchString)
+  const filteredProgram = programmeNames.filter(programme => {
+    return programme.name.toLowerCase().includes(searchString)
   });
-  //filteredProgram.forEach( programme => programdiv(programme.name));
+  filteredProgram.forEach( programme => wrapper.append(programdiv(programme)));
   console.log(filteredProgram);
 });
 
@@ -57,35 +57,18 @@ alphabeticalOrder(); */
     infoAbout.append(innerProgrammeDiv);
 }; */
 
-/*let uniquePrograms = alphabeticalOrderArray.filter((value, index) => {
-  return alphabeticalOrderArray.indexOf(value) === index;
-});
+// let uniquePrograms = programmeNames.filter((value, index) => {
+//   return programmeNames.indexOf(value) === index;
+// });
 
-for(let i = 0; i < uniquePrograms.length; i++) {
-    programmeName(uniquePrograms[i]);
-}
+// for(let i = 0; i < uniquePrograms.length; i++) {
+//     programdiv(uniquePrograms[i]);
+// }
 
 // for(let i = 0; i < PROGRAMMES.length; i++) {
 //     programmeName(PROGRAMMES[i].name);
 // }
 
-
-// Accordion
-let acc = document.getElementsByClassName("programmeDiv");
-let i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    let panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-} */
-// Accordion
 
 for(let i = 0; i < PROGRAMMES.length; i++) {
   wrapper.append(programdiv(PROGRAMMES[i]));
@@ -101,6 +84,21 @@ function programdiv(data){
   `;
 
   return programDiven;
-  
 }
 
+// Accordion
+let acc = document.getElementsByClassName("programmeDiv");
+let i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    let panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+} 
+// Accordion
