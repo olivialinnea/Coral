@@ -2,6 +2,9 @@
 
 //Efter man har sökt kan man ej trycka in på divarna
 
+const wrapper = document.querySelector("wrapper");
+let alphabeticalOrderArray = [];
+
 const searchBar = document.getElementById("uniSearch");
 const wrapper = document.querySelector("wrapper");
 let uniNames = UNIVERSITIES;
@@ -17,33 +20,36 @@ searchBar.addEventListener('keyup', (e) => {
 });
 
 
-// let alphabeticalOrderArray = [];
+function alphabeticalOrder() {
+  for(let i = 0; i < UNIVERSITIES.length; i++) {
+    alphabeticalOrderArray.push((UNIVERSITIES[i].name));
+  }
 
-// function alphabeticalOrder() {
-//   for(let i = 0; i < UNIVERSITIES.length; i++) {
-//     alphabeticalOrderArray.push((UNIVERSITIES[i].name));
-//   }
-
-//   alphabeticalOrderArray.sort((a,b) => a > b);
+  alphabeticalOrderArray.sort((a,b) => a > b);
  
-//   return alphabeticalOrderArray;
-// }
-// alphabeticalOrder(); */
+  return alphabeticalOrderArray;
+}
+alphabeticalOrder(); 
 
-/*function universityName(name){
+function universityName(name){
     console.log(name);
     let universityDiv = document.createElement("div");
+    universityDiv.classList.add("universityDiv");
+
     universityDiv.innerHTML = `
     <div>${name}</div>
     `;
-    universityDiv.classList.add("universityDiv");
+    
     let infoAbout = document.createElement("div");
     infoAbout.innerHTML= `Information om land`
     infoAbout.classList.add("panel");
 
+    infoAbout.innerHTML= `Information om Universitet`
+
     document.querySelector("wrapper").append(infoAbout);  
+
     document.querySelector("wrapper").append(universityDiv);    
-}; */
+}; 
 
 for(let i = 0; i < UNIVERSITIES.length; i++) {
   wrapper.append(universityDiv(UNIVERSITIES[i]));
@@ -65,9 +71,17 @@ function universityDiv(data){
 //   universityName(alphabeticalOrderArray[i]);
 // }
 
-// for(let i = 0; i < UNIVERSITIES.length; i++) {
-//     universityName(UNIVERSITIES[i].name) 
-// }
+
+function lastdiv() {
+  let infoAbout = document.createElement("div");
+  infoAbout.classList.add("panel");
+
+  infoAbout.innerHTML= `Information om Universitet`
+
+  wrapper.append(infoAbout);  
+}
+lastdiv();
+
 
 // Accordion
 let acc = document.getElementsByClassName("universityDiv");

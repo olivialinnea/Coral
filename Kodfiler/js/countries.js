@@ -55,7 +55,6 @@ for(let i = 0; i < COUNTRIES.length; i++) {
 function CountryDiv(data){
     let country = document.createElement("div");
     country.classList.add("country");
-    console.log(data)
     
     country.innerHTML = `
     <img class="normalImage" src="Images/${data.imagesNormal[0]}">
@@ -70,10 +69,9 @@ function CountryDiv(data){
     `;
     // Visa
     
-    // Inne i varje land utom argentina
+    // Inne i varje land utom sista landet
     let infoAbout = document.createElement("div");
     infoAbout.classList.add("panel");    
-  
 
     let cityHeading = document.createElement("div");
     cityHeading.innerHTML = 
@@ -85,13 +83,12 @@ function CountryDiv(data){
     infoAbout.append(cityHeading);
     infoAbout.append(allCitiesList);
 
-    
     document.querySelector("wrapper").append(infoAbout);
 
     return country;
 }
 
-function argentina() {
+function lastdiv() {
   // Inne i argentina (accordion)
   let infoAbout = document.createElement("div");
   infoAbout.classList.add("panel");    
@@ -106,10 +103,9 @@ function argentina() {
   infoAbout.append(cityHeading);
   infoAbout.append(allCitiesList);
 
-  
   document.querySelector("wrapper").append(infoAbout);
 }
-argentina();
+lastdiv();
 
 // Accordion
 let acc = document.getElementsByClassName("country");

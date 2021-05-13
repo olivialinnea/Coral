@@ -1,6 +1,7 @@
 "use strict";
 
 //Efter man har sökt kan man ej trycka in på divarna
+const wrapper = document.querySelector("wrapper");
 
 const searchBar = document.getElementById("programmeSearch");
 let programmeNames = PROGRAMMES;
@@ -65,9 +66,15 @@ alphabeticalOrder(); */
 //     programdiv(uniquePrograms[i]);
 // }
 
-// for(let i = 0; i < PROGRAMMES.length; i++) {
-//     programmeName(PROGRAMMES[i].name);
-// }
+function lastdiv() {
+  let infoAbout = document.createElement("div");
+  infoAbout.classList.add("panel");
+
+  infoAbout.innerHTML= `Information om program`
+
+  wrapper.append(infoAbout);  
+}
+lastdiv();
 
 
 for(let i = 0; i < PROGRAMMES.length; i++) {
