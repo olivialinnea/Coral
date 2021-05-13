@@ -3,9 +3,10 @@
 //Efter man har sökt kan man ej trycka in på divarna
 
 const searchBar = document.getElementById("uniSearch");
+const wrapper = document.querySelector("wrapper");
 let uniNames = UNIVERSITIES;
 
-searchBar.addEventListener('keyup', (e) => {
+/*searchBar.addEventListener('keyup', (e) => {
   document.querySelector("wrapper").innerHTML = "";
   const searchString = e.target.value.toLowerCase();
   const filteredUnis = uniNames.filter(university => {
@@ -27,9 +28,9 @@ function alphabeticalOrder() {
  
   return alphabeticalOrderArray;
 }
-alphabeticalOrder();
+alphabeticalOrder(); */
 
-function universityName(name){
+/*function universityName(name){
     console.log(name);
     let universityDiv = document.createElement("div");
     universityDiv.innerHTML = `
@@ -42,9 +43,25 @@ function universityName(name){
 
     document.querySelector("wrapper").append(infoAbout);  
     document.querySelector("wrapper").append(universityDiv);    
-};
+}; */
 
-for(let i = 0; i < alphabeticalOrderArray.length; i++) {
+for(let i = 0; i < UNIVERSITIES.length; i++) {
+  wrapper.append(universityDiv(UNIVERSITIES[i]));
+}
+
+function universityDiv(data){
+  let universityDiven = document.createElement("div");
+  universityDiven.classList.add("universityDiv");
+  
+  
+  universityDiven.innerHTML = `
+  <div>${data.name}</div>
+  `;
+
+  return universityDiven;
+}
+
+/*for(let i = 0; i < alphabeticalOrderArray.length; i++) {
   universityName(alphabeticalOrderArray[i]);
 }
 
@@ -69,3 +86,4 @@ for (i = 0; i < acc.length; i++) {
 }
 // Accordion
 
+*/
