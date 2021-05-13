@@ -33,33 +33,6 @@ for(let i = 0; i < PROGRAMMES.length; i++) {
 }
 alphabeticalOrder(); */
 
-/*function programmeName(name){
-    let programmeDiv = document.createElement("div");
-    programmeDiv.innerHTML = `
-    <div>${name}</div>
-    `;
-    console.log(name);
-    programmeDiv.classList.add("programmeDiv");
-
-    let infoAbout = document.createElement("div");
-    infoAbout.innerHTML= `Information om land`
-    infoAbout.classList.add("panel");
-
-    let innerProgrammeDiv = document.createElement("div");
-    innerProgrammeDiv.classList.add("programmeInfo");
-    innerProgrammeDiv.innerHTML = `
-      <div>
-        <div class="localS">Local Students:${name.localStudents}</div>
-        <div class="exchangeS">Exchange Students:</div>
-      </div>
-      <div></div>
-      <div></div>
-      `
-
-    document.querySelector("wrapper").append(infoAbout);  
-    document.querySelector("wrapper").append(programmeDiv); 
-    infoAbout.append(innerProgrammeDiv);
-}; */
 
 // let uniquePrograms = programmeNames.filter((value, index) => {
 //   return programmeNames.indexOf(value) === index;
@@ -69,20 +42,43 @@ alphabeticalOrder(); */
 //     programdiv(uniquePrograms[i]);
 // }
 
-
 function programdiv(data){
   let programDiven = document.createElement("div");
   programDiven.classList.add("programmeDiv");
   
   programDiven.innerHTML = `
   <div>${data.name}</div>
+
+  <div class="programSideInfo"> 
+      <img class="countryFlag" src="Images/">
+      <div class="position" >
+        <div> Land: </div>
+        <div> Stad: </div>
+      </div>
+    </div>
   `;
 
   let infoAbout = document.createElement("div");
   infoAbout.classList.add("panel");
 
-  infoAbout.innerHTML= `Information om program`
-
+  let innerProgrammeDiv = document.createElement("div");
+  innerProgrammeDiv.classList.add("programmeInfo");
+  innerProgrammeDiv.innerHTML = `
+    <div class="students">
+      <div class="localS"> Local Students: ${data.localStudents}</div>
+      <div class="exchangeS"> Exchange Students: ${data.exchangeStudents}</div>
+    </div>
+    <div class="grades">
+      <div> Inträdesbetyg? </div>
+      <div> Graduates </div>
+    </div>
+    <div class="reviewHeader"> Recensioner från tidigare studenter</div>
+    <div class="reviews"> 
+      review cards
+    </div>
+    `
+  
+  infoAbout.append(innerProgrammeDiv);
   wrapper.append(infoAbout);  
 
   return programDiven;

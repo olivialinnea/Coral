@@ -41,6 +41,14 @@ function universityDiv(data){
   
   universityDiven.innerHTML = `
   <div>${data.name}</div>
+
+  <div class="universitySideInfo"> 
+      <img class="countryFlag" src="Images/">
+      <div class="position" >
+        <div> Land: </div>
+        <div> Stad: </div>
+      </div>
+    </div>
   `;
 
   let infoAbout = document.createElement("div");
