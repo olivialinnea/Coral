@@ -27,7 +27,7 @@ for(let i = 0; i < COUNTRIES.length; i++) {
     // Språken
     COUNTRIES.forEach(element => {
       if (element == COUNTRIES[i]){
-        let lang = LANGUAGES.find(Language => element.languageID === Language.id);
+      let lang = LANGUAGES.find(Language => element.languageID === Language.id);
       let languageInfo = document.createElement("div");
       languageInfo.innerHTML =`
       Språk: ${lang.name}
@@ -35,20 +35,21 @@ for(let i = 0; i < COUNTRIES.length; i++) {
       document.getElementById(`${COUNTRIES[i].id}langVisa`).append(languageInfo);
       }
     });
+
+    COUNTRIES.forEach(element => {
+      if(element == COUNTRIES[i]){
+        let city = CITIES.filter(city => element.id === city.countryID);
+        let cityDiv = document.createElement("div");
+        cityDiv.append(city);
+        console.log(city);
+        document.getElementById(`${COUNTRIES[i].id}allCitites`).append(cityDiv);
+      }
+    });
   }
     
-      /*COUNTRIES.filter(data == false)
-      if(element.visa == false) {
-        document.getElementById("visa").innerHTML = `
-        Visa requierd: no
-        ` 
-      }else {
-        document.getElementById("visa").innerHTML = `
-        Visa requierd: yes
-        ` 
-      }
+      
     
-*/
+
 
 
 function CountryDiv(data){
@@ -78,7 +79,7 @@ function CountryDiv(data){
     `<div class="cityHeading"> Städer </div>`;
 
     let allCitiesList = document.createElement("div");
-    allCitiesList.innerHTML = `<div class="allCities"> (Koppla rätt landID med city name, LISTA ALLA STÄDER I LANDET) </div>`;
+    allCitiesList.innerHTML = `<div id="${data.id}allCitites"></div>`;
 
     infoAbout.append(cityHeading);
     infoAbout.append(allCitiesList);
