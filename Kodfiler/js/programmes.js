@@ -4,6 +4,7 @@
 
 const searchBar = document.getElementById("programmeSearch");
 let programmeNames = PROGRAMMES;
+const wrapper = document.querySelector("wrapper");
 
 searchBar.addEventListener('keyup', (e) => {
   document.querySelector("wrapper").innerHTML = "";
@@ -11,12 +12,13 @@ searchBar.addEventListener('keyup', (e) => {
   const filteredProgram = programmeNames.filter(university => {
     return university.name.toLowerCase().includes(searchString)
   });
-  filteredProgram.forEach( programme => programmeName(programme.name));
+  //filteredProgram.forEach( programme => programdiv(programme.name));
+  console.log(filteredProgram);
 });
 
-let alphabeticalOrderArray = [];
- 
-function alphabeticalOrder() {
+//let alphabeticalOrderArray = [];
+
+/*function alphabeticalOrder() {
   for(let i = 0; i < PROGRAMMES.length; i++) {
     alphabeticalOrderArray.push((PROGRAMMES[i].name));
   }
@@ -25,9 +27,9 @@ function alphabeticalOrder() {
  
   return alphabeticalOrderArray;
 }
-alphabeticalOrder();
+alphabeticalOrder(); */
 
-function programmeName(name){
+/*function programmeName(name){
     let programmeDiv = document.createElement("div");
     programmeDiv.innerHTML = `
     <div>${name}</div>
@@ -53,9 +55,9 @@ function programmeName(name){
     document.querySelector("wrapper").append(infoAbout);  
     document.querySelector("wrapper").append(programmeDiv); 
     infoAbout.append(innerProgrammeDiv);
-};
+}; */
 
-let uniquePrograms = alphabeticalOrderArray.filter((value, index) => {
+/*let uniquePrograms = alphabeticalOrderArray.filter((value, index) => {
   return alphabeticalOrderArray.indexOf(value) === index;
 });
 
@@ -82,5 +84,23 @@ for (i = 0; i < acc.length; i++) {
       panel.style.display = "block";
     }
   });
-}
+} */
 // Accordion
+
+for(let i = 0; i < PROGRAMMES.length; i++) {
+  wrapper.append(programdiv(PROGRAMMES[i]));
+}
+
+function programdiv(data){
+  let programDiven = document.createElement("div");
+  programDiven.classList.add("programmeDiv");
+  
+  
+  programDiven.innerHTML = `
+  <div>${data.name}</div>
+  `;
+
+  return programDiven;
+  
+}
+
