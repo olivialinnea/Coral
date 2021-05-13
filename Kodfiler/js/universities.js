@@ -37,12 +37,19 @@ function universityName(name){
     `;
     universityDiv.classList.add("universityDiv");
     let infoAbout = document.createElement("div");
-    infoAbout.innerHTML= `Information om land`
+    infoAbout.innerHTML= `Information om Universitet`
     infoAbout.classList.add("panel");
 
     document.querySelector("wrapper").append(infoAbout);  
     document.querySelector("wrapper").append(universityDiv);    
 };
+
+function lastdiv() {
+    infoAbout.innerHTML= `Information om Universitet`
+    infoAbout.classList.add("panel");
+
+    document.querySelector("wrapper").append(infoAbout);  
+}
 
 for(let i = 0; i < alphabeticalOrderArray.length; i++) {
   universityName(alphabeticalOrderArray[i]);
