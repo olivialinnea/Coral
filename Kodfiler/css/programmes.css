@@ -1,10 +1,29 @@
 .programmeDiv {
-    border: black solid 1px;
-    height: 8vh;
-    margin-bottom: 1vh;
-    padding-left: 1vh;
-    font-size: 2vh;
+  border: black solid 1px;
+  height: 8vh;
+  margin-bottom: 1vh;
+  padding-left: 1vh;
+  font-size: 2vh;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+}
+
+.panel {
+  padding: 0 18px;
+  padding-left: 2vh;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+  border: 1px solid black;
+  margin-bottom: 1vh;
+}
+
+.programmeInfo {
+  padding: 0 18px;
+  padding-left: 2vh;
+  background-color: white;
+  overflow: hidden;
+  border: 1px solid black;
+  margin-bottom: 1vh;
 }

@@ -39,10 +39,10 @@ input {
   margin-bottom: 1vh;
 }
 
-
 /* Accordion */
-.active, .accordion:hover {
-  background-color: #ccc; 
+.active,
+.accordion:hover {
+  background-color: #ccc;
 }
 
 .active {
@@ -50,17 +50,6 @@ input {
   border-bottom: 0px;
 }
 
-.panel {
-  padding: 0 18px;
-  padding-left: 2vh;
-  display: none;
-  background-color: white;
-  overflow: hidden;
-  border:1px solid black;
-  margin-bottom: 1vh;
-  margin-left: 10vw;
-  margin-right: 10vw;
-}
 /* Accordion */
 
 /* footer */

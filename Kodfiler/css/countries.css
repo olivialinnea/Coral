@@ -1,14 +1,14 @@
 .country {
-    border: 1px black solid;
-    height: 12vh;
-    margin-bottom: 1vh;
-    padding-left: 2vh;
-    font-size: 4vh;
-    margin-left: 10vw;
-    margin-right: 10vw;
-    cursor: pointer;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
+  border: 1px black solid;
+  height: 12vh;
+  margin-bottom: 1vh;
+  padding-left: 2vh;
+  font-size: 4vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
 }
 
 .countryNameTitle {
@@ -51,4 +51,16 @@
 .countryFlag {
   height: 30px;
   width: 50px;
+}
+
+.panel {
+  padding: 0 18px;
+  padding-left: 2vh;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+  border: 1px solid black;
+  margin-bottom: 1vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
 }
