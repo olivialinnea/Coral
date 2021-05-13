@@ -1,5 +1,13 @@
 "use strict";
 const wrapper = document.querySelector("wrapper");
+
+COUNTRIES.sort(function(a,b) {
+  if (a.name.toLowerCase() < b.name.toLowerCase()
+    ) return -1;
+  if (a.name.toLowerCase() > b.name.toLowerCase()
+    ) return 1;
+  return 0;
+});
  
     // Skapar länder
 for(let i = 0; i < COUNTRIES.length; i++) {

@@ -7,6 +7,14 @@ const wrapper = document.querySelector("wrapper");
 const searchBar = document.getElementById("uniSearch");
 let uniNames = UNIVERSITIES;
 
+uniNames.sort(function(a,b) {
+  if (a.name.toLowerCase() < b.name.toLowerCase()
+    ) return -1;
+  if (a.name.toLowerCase() > b.name.toLowerCase()
+    ) return 1;
+  return 0;
+});
+
 searchBar.addEventListener('keyup', (e) => {
   wrapper.innerHTML = "";
   const searchString = e.target.value.toLowerCase();
