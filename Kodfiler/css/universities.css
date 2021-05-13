@@ -17,10 +17,17 @@
     overflow: hidden;
     border:1px solid black;
     margin-bottom: 1vh;
-}
+  }
 
 .programHeader {
     font-size: 20px;
     font-weight: bold;
     padding: 5px;
+    padding-left: 0px;
+}
+
+.programName {
+    border: 1px solid black;
+    margin-bottom: 1vh;
+
 }

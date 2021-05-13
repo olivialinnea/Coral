@@ -48,7 +48,6 @@ input {
   margin-bottom: 1vh;
 }
 
-
 /* Accordion */
 .active, .accordion:hover {
   background-color: #ccc; 
@@ -58,8 +57,6 @@ input {
   margin-bottom: 0px;
   border-bottom: 0px;
 }
-
-
 /* Accordion */
 
 /* footer */

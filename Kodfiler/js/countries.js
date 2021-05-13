@@ -66,28 +66,47 @@ function CountryDiv(data){
       </div>
     </div>
     `;
-    // Visa
-    
-    // Inne i varje land
-    let infoAbout = document.createElement("div");
-    infoAbout.classList.add("panel");    
+
+    // Inne i varje land utom argentina
+  let infoAbout = document.createElement("div");
+  infoAbout.classList.add("panel");    
+
+
+  let cityHeading = document.createElement("div");
+  cityHeading.innerHTML = 
+  `<div class="cityHeading"> Städer </div>`;
+
+  let allCitiesList = document.createElement("div");
+  allCitiesList.innerHTML = `<div class="allCities"> (Koppla rätt landID med city name, LISTA ALLA STÄDER I LANDET) </div>`;
+
+  infoAbout.append(cityHeading);
+  infoAbout.append(allCitiesList);
+
   
-
-    let cityHeading = document.createElement("div");
-    cityHeading.innerHTML = 
-    `<div class="cityHeading"> Städer </div>`;
-
-    let allCitiesList = document.createElement("div");
-    allCitiesList.innerHTML = `<div class="allCities"> (Koppla rätt landID med city name, LISTA ALLA STÄDER I LANDET) </div>`;
-
-    infoAbout.append(cityHeading);
-    infoAbout.append(allCitiesList);
-
-    
-    document.querySelector("wrapper").append(infoAbout);
+  document.querySelector("wrapper").append(infoAbout);
 
     return country;
 }
+
+function argentina() {
+  // Inne i argentina
+  let infoAbout = document.createElement("div");
+  infoAbout.classList.add("panel");    
+
+  let cityHeading = document.createElement("div");
+  cityHeading.innerHTML = 
+  `<div class="cityHeading"> Städer </div>`;
+
+  let allCitiesList = document.createElement("div");
+  allCitiesList.innerHTML = `<div class="allCities"> (Koppla rätt landID med city name, LISTA ALLA STÄDER I LANDET) </div>`;
+
+  infoAbout.append(cityHeading);
+  infoAbout.append(allCitiesList);
+
+  
+  document.querySelector("wrapper").append(infoAbout);
+}
+argentina();
 
 // Accordion
 let acc = document.getElementsByClassName("country");
