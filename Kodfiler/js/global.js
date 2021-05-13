@@ -26,3 +26,8 @@ function goToTopButton() {
         })
     });
 }
+
+function init() {
+  searchBar.value = "";
+}
+window.onload = init;

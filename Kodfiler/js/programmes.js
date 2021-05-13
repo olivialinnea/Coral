@@ -4,15 +4,14 @@ const searchBar = document.getElementById("programmeSearch");
 let programmeNames = PROGRAMMES;
 
 searchBar.addEventListener('keyup', (e) => {
+  
   document.querySelector("wrapper").innerHTML = "";
   const searchString = e.target.value.toLowerCase();
-  const filteredUnis = programmeNames.filter(university => {
+  const filteredProgram = programmeNames.filter(university => {
     return university.name.toLowerCase().includes(searchString)
   });
-  filteredUnis.forEach( programme => programmeName(programme.name));
-  console.log(filteredUnis);
+  filteredProgram.forEach( programme => programmeName(programme.name));
 });
-
 
 let alphabeticalOrderArray = [];
  
