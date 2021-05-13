@@ -55,6 +55,7 @@ for(let i = 0; i < COUNTRIES.length; i++) {
 function CountryDiv(data){
     let country = document.createElement("div");
     country.classList.add("country");
+    console.log(data)
     
     country.innerHTML = `
     <img class="normalImage" src="Images/${data.imagesNormal[0]}">

@@ -49,8 +49,9 @@ input {
 }
 
 /* Accordion */
-.active, .accordion:hover {
-  background-color: #ccc; 
+.active,
+.accordion:hover {
+  background-color: #ccc;
 }
 
 .active {

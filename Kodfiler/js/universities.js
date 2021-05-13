@@ -1,5 +1,7 @@
 "use strict";
 
+//Efter man har sökt kan man ej trycka in på divarna
+
 const searchBar = document.getElementById("uniSearch");
 let uniNames = UNIVERSITIES;
 
