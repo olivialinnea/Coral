@@ -3,14 +3,6 @@ footer {
   background-color: burlywood;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-}
-
-a:hover {
-  color: coral;
-}
 nav {
   height: 30vh;
   margin: 8vw 10vw 0vw 10vw;

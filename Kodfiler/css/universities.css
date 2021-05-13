@@ -9,3 +9,18 @@
     align-items: center;
 }
 
+.panel {
+    padding: 0 18px;
+    padding-left: 2vh;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+    border:1px solid black;
+    margin-bottom: 1vh;
+}
+
+.programHeader {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+}

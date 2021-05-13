@@ -30,7 +30,7 @@ for(let i = 0; i < COUNTRIES.length; i++) {
         let lang = LANGUAGES.find(Language => element.languageID === Language.id);
       let languageInfo = document.createElement("div");
       languageInfo.innerHTML =`
-      Language: ${lang.name}
+      Språk: ${lang.name}
       `
       document.getElementById(`${COUNTRIES[i].id}langVisa`).append(languageInfo);
       }
@@ -62,7 +62,7 @@ function CountryDiv(data){
     <div class="countrySideInfo"> 
       <img class="countryFlag" src="Images/${data.flag}">
       <div class="langVisa" id="${data.id}langVisa">
-        <div id="visa"> Visa requierd: ${data.visa}</div>
+        <div id="visa"> Visum krävs: ${data.visa}</div>
       </div>
     </div>
     `;
