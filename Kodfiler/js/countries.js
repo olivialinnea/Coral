@@ -70,7 +70,7 @@ function CountryDiv(data){
     `;
     // Visa
     
-    // Inne i varje land
+    // Inne i varje land utom argentina
     let infoAbout = document.createElement("div");
     infoAbout.classList.add("panel");    
   
@@ -90,6 +90,26 @@ function CountryDiv(data){
 
     return country;
 }
+
+function argentina() {
+  // Inne i argentina (accordion)
+  let infoAbout = document.createElement("div");
+  infoAbout.classList.add("panel");    
+
+  let cityHeading = document.createElement("div");
+  cityHeading.innerHTML = 
+  `<div class="cityHeading"> Städer </div>`;
+
+  let allCitiesList = document.createElement("div");
+  allCitiesList.innerHTML = `<div class="allCities"> (Koppla rätt landID med city name, LISTA ALLA STÄDER I LANDET) </div>`;
+
+  infoAbout.append(cityHeading);
+  infoAbout.append(allCitiesList);
+
+  
+  document.querySelector("wrapper").append(infoAbout);
+}
+argentina();
 
 // Accordion
 let acc = document.getElementsByClassName("country");
