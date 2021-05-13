@@ -18,6 +18,15 @@ footer {
   background-color: burlywood;
 }
 
+.pageLinks > a {
+  text-decoration: none;
+  color: black;
+}
+
+.pageLinks > a:hover {
+  color: coral;
+}
+
 h1 {
   margin: 0;
   font-size: 60px;
@@ -50,17 +59,7 @@ input {
   border-bottom: 0px;
 }
 
-.panel {
-  padding: 0 18px;
-  padding-left: 2vh;
-  display: none;
-  background-color: white;
-  overflow: hidden;
-  border:1px solid black;
-  margin-bottom: 1vh;
-  margin-left: 10vw;
-  margin-right: 10vw;
-}
+
 /* Accordion */
 
 /* footer */
