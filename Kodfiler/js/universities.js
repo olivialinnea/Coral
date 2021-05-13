@@ -3,10 +3,8 @@
 //Efter man har sökt kan man ej trycka in på divarna
 
 const wrapper = document.querySelector("wrapper");
-let alphabeticalOrderArray = [];
 
 const searchBar = document.getElementById("uniSearch");
-const wrapper = document.querySelector("wrapper");
 let uniNames = UNIVERSITIES;
 
 searchBar.addEventListener('keyup', (e) => {
@@ -19,37 +17,19 @@ searchBar.addEventListener('keyup', (e) => {
   console.log(filteredUnis);
 });
 
+// let alphabeticalOrderArray = [];
 
-function alphabeticalOrder() {
-  for(let i = 0; i < UNIVERSITIES.length; i++) {
-    alphabeticalOrderArray.push((UNIVERSITIES[i].name));
-  }
+// function alphabeticalOrder() {
+//   for(let i = 0; i < UNIVERSITIES.length; i++) {
+//     alphabeticalOrderArray.push((UNIVERSITIES[i].name));
+//   }
 
-  alphabeticalOrderArray.sort((a,b) => a > b);
+//   alphabeticalOrderArray.sort((a,b) => a > b);
  
-  return alphabeticalOrderArray;
-}
-alphabeticalOrder(); 
+//   return alphabeticalOrderArray;
+// }
+// alphabeticalOrder(); 
 
-function universityName(name){
-    console.log(name);
-    let universityDiv = document.createElement("div");
-    universityDiv.classList.add("universityDiv");
-
-    universityDiv.innerHTML = `
-    <div>${name}</div>
-    `;
-    
-    let infoAbout = document.createElement("div");
-    infoAbout.innerHTML= `Information om land`
-    infoAbout.classList.add("panel");
-
-    infoAbout.innerHTML= `Information om Universitet`
-
-    document.querySelector("wrapper").append(infoAbout);  
-
-    document.querySelector("wrapper").append(universityDiv);    
-}; 
 
 for(let i = 0; i < UNIVERSITIES.length; i++) {
   wrapper.append(universityDiv(UNIVERSITIES[i]));
@@ -59,10 +39,16 @@ function universityDiv(data){
   let universityDiven = document.createElement("div");
   universityDiven.classList.add("universityDiv");
   
-  
   universityDiven.innerHTML = `
   <div>${data.name}</div>
   `;
+
+  let infoAbout = document.createElement("div");
+  infoAbout.classList.add("panel");
+
+  infoAbout.innerHTML= `Information om Universitet`
+
+  wrapper.append(infoAbout);  
 
   return universityDiven;
 }
