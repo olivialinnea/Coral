@@ -2,6 +2,9 @@
 
 //Efter man har sökt kan man ej trycka in på divarna
 
+const wrapper = document.querySelector("wrapper");
+let alphabeticalOrderArray = [];
+
 const searchBar = document.getElementById("uniSearch");
 let uniNames = UNIVERSITIES;
 
@@ -15,9 +18,6 @@ searchBar.addEventListener('keyup', (e) => {
   console.log(filteredUnis);
 });
 
-
-let alphabeticalOrderArray = [];
-
 function alphabeticalOrder() {
   for(let i = 0; i < UNIVERSITIES.length; i++) {
     alphabeticalOrderArray.push((UNIVERSITIES[i].name));
@@ -29,37 +29,37 @@ function alphabeticalOrder() {
 }
 alphabeticalOrder();
 
+for(let i = 0; i < alphabeticalOrderArray.length; i++) {
+  wrapper.append(universityName(alphabeticalOrderArray[i]));
+}
+
 function universityName(name){
-    console.log(name);
     let universityDiv = document.createElement("div");
+    universityDiv.classList.add("universityDiv");
+
     universityDiv.innerHTML = `
     <div>${name}</div>
     `;
-    universityDiv.classList.add("universityDiv");
+    
     let infoAbout = document.createElement("div");
-    infoAbout.innerHTML= `Information om Universitet`
     infoAbout.classList.add("panel");
 
+    infoAbout.innerHTML= `Information om Universitet`
+
     document.querySelector("wrapper").append(infoAbout);  
-    document.querySelector("wrapper").append(universityDiv);    
+    
+    return universityDiv;
 };
 
 function lastdiv() {
   let infoAbout = document.createElement("div");
-  infoAbout.innerHTML= `Information om Universitet`
   infoAbout.classList.add("panel");
 
-  document.querySelector("wrapper").append(infoAbout);  
+  infoAbout.innerHTML= `Information om Universitet`
+
+  wrapper.append(infoAbout);  
 }
 lastdiv();
-
-for(let i = 0; i < alphabeticalOrderArray.length; i++) {
-  universityName(alphabeticalOrderArray[i]);
-}
-
-// for(let i = 0; i < UNIVERSITIES.length; i++) {
-//     universityName(UNIVERSITIES[i].name) 
-// }
 
 // Accordion
 let acc = document.getElementsByClassName("universityDiv");
