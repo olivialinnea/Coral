@@ -5,7 +5,6 @@ const wrapper = document.querySelector("wrapper");
 
 const searchBar = document.getElementById("programmeSearch");
 let programmeNames = PROGRAMMES;
-const wrapper = document.querySelector("wrapper");
 
 searchBar.addEventListener('keyup', (e) => {
   wrapper.innerHTML = "";
@@ -16,6 +15,10 @@ searchBar.addEventListener('keyup', (e) => {
   filteredProgram.forEach( programme => wrapper.append(programdiv(programme)));
   console.log(filteredProgram);
 });
+
+for(let i = 0; i < PROGRAMMES.length; i++) {
+  wrapper.append(programdiv(PROGRAMMES[i]));
+}
 
 //let alphabeticalOrderArray = [];
 
@@ -66,6 +69,26 @@ alphabeticalOrder(); */
 //     programdiv(uniquePrograms[i]);
 // }
 
+
+function programdiv(data){
+  let programDiven = document.createElement("div");
+  programDiven.classList.add("programmeDiv");
+  
+  programDiven.innerHTML = `
+  <div>${data.name}</div>
+  `;
+
+  let infoAbout = document.createElement("div");
+  infoAbout.classList.add("panel");
+
+  infoAbout.innerHTML= `Information om program`
+
+  wrapper.append(infoAbout);  
+
+  return programDiven;
+}
+
+
 function lastdiv() {
   let infoAbout = document.createElement("div");
   infoAbout.classList.add("panel");
@@ -75,23 +98,6 @@ function lastdiv() {
   wrapper.append(infoAbout);  
 }
 lastdiv();
-
-
-for(let i = 0; i < PROGRAMMES.length; i++) {
-  wrapper.append(programdiv(PROGRAMMES[i]));
-}
-
-function programdiv(data){
-  let programDiven = document.createElement("div");
-  programDiven.classList.add("programmeDiv");
-  
-  
-  programDiven.innerHTML = `
-  <div>${data.name}</div>
-  `;
-
-  return programDiven;
-}
 
 // Accordion
 let acc = document.getElementsByClassName("programmeDiv");
