@@ -12,13 +12,12 @@ COUNTRIES.sort(function(a,b) {
 });
  
     // Skapar länder
-for(let i = 0; i < COUNTRIES.length; i++) {
+for(let i = 0; i <= COUNTRIES.length; i++) {
     let country_div = CountryDiv(COUNTRIES[i]);
     wrapper.append(country_div);
 
-    let element = COUNTRIES[i];
-
     // Språken
+    COUNTRIES.forEach(element => {
       if (element == COUNTRIES[i]){
       let lang = LANGUAGES.find(Language => element.languageID === Language.id);
       let languageInfo = document.createElement("div");
@@ -27,31 +26,34 @@ for(let i = 0; i < COUNTRIES.length; i++) {
       `
       document.getElementById(`${COUNTRIES[i].id}langVisa`).append(languageInfo);
       }
+    });
 
+    COUNTRIES.forEach(element => {
       if(element == COUNTRIES[i]){
         let city = CITIES.filter(city => element.id === city.countryID);
-
+  
         let cityDiv = document.createElement("div");
         cityDiv.classList.add("cityDiv");
-
+  
         for (let i = 0; i < city.length; i++) {
           cityDiv.append(city[i].name);
         }
-        
-//data.id börjar på 1 medans ${COUNTRIES[i].id}allCities börjar på 0
-        country_div.append(cityDiv);
+  //data.id börjar på 1 medans ${COUNTRIES[i].id}allCities börjar på 0
+    //country_div.append(cityDiv);
+    document.getElementById(`${COUNTRIES[i].id}allCities`).append(cityDiv);
       }
-    // });
+    });
   }
-    
+  
 function CountryDiv(data){
     let country = document.createElement("div");
     country.classList.add("country");
     
     country.innerHTML = `
+    <div class="imgTitle">
     <img class="normalImage" src="Images/${data.imagesNormal[0]}">
     <div class="countryNameTitle">${data.name}</div>
-
+    </div>
     <div class="countrySideInfo"> 
       <img class="countryFlag" src="Images/${data.flag}">
       <div class="langVisa" id="${data.id}langVisa">
@@ -71,7 +73,8 @@ function CountryDiv(data){
 
     let allCitiesList = document.createElement("div");
 //data.id börjar på 1 medans ${COUNTRIES[i].id}allCities börjar på 0
-    allCitiesList.innerHTML = `<div id="${data.id}allCities"> </div>`;
+    allCitiesList.innerHTML = `<div id="${data.id}allCities"></div>`;
+    allCitiesList.classList.add("allCities")
 
     infoAbout.append(cityHeading);
     infoAbout.append(allCitiesList);
