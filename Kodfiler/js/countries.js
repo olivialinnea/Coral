@@ -16,8 +16,9 @@ for(let i = 0; i < COUNTRIES.length; i++) {
     let country_div = CountryDiv(COUNTRIES[i]);
     wrapper.append(country_div);
 
+    let element = COUNTRIES[i];
+
     // Språken
-    COUNTRIES.forEach(element => {
       if (element == COUNTRIES[i]){
       let lang = LANGUAGES.find(Language => element.languageID === Language.id);
       let languageInfo = document.createElement("div");
@@ -26,9 +27,7 @@ for(let i = 0; i < COUNTRIES.length; i++) {
       `
       document.getElementById(`${COUNTRIES[i].id}langVisa`).append(languageInfo);
       }
-    });
 
-    COUNTRIES.forEach(element => {
       if(element == COUNTRIES[i]){
         let city = CITIES.filter(city => element.id === city.countryID);
 
@@ -42,7 +41,7 @@ for(let i = 0; i < COUNTRIES.length; i++) {
 //data.id börjar på 1 medans ${COUNTRIES[i].id}allCities börjar på 0
         country_div.append(cityDiv);
       }
-    });
+    // });
   }
     
 function CountryDiv(data){
