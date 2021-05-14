@@ -43,7 +43,7 @@ for(let i = 0; i <= COUNTRIES.length; i++) {
     document.getElementById(`${COUNTRIES[i].id}allCities`).append(cityDiv);
       }
     });
-  }
+}
   
 function CountryDiv(data){
     let country = document.createElement("div");
