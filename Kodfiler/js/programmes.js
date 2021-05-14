@@ -6,6 +6,7 @@ const wrapper = document.querySelector("wrapper");
 const searchBar = document.getElementById("programmeSearch");
 let programmeNames = PROGRAMMES;
 
+//Sorterar alfabetiskt.
 programmeNames.sort(function(a,b) {
   if (a.name.toLowerCase() < b.name.toLowerCase()
     ) return -1;
@@ -14,6 +15,7 @@ programmeNames.sort(function(a,b) {
   return 0;
 });
 
+//Sökfunktionen
 searchBar.addEventListener('keyup', (e) => {
   wrapper.innerHTML = "";
   const searchString = e.target.value.toLowerCase();
@@ -28,29 +30,7 @@ for(let i = 0; i < PROGRAMMES.length; i++) {
   wrapper.append(programdiv(PROGRAMMES[i]));
 }
 
-
-//let alphabeticalOrderArray = [];
-
-/*function alphabeticalOrder() {
-  for(let i = 0; i < PROGRAMMES.length; i++) {
-    alphabeticalOrderArray.push((PROGRAMMES[i].name));
-  }
-
-  alphabeticalOrderArray.sort((a,b) => a > b);
- 
-  return alphabeticalOrderArray;
-}
-alphabeticalOrder(); */
-
-
-// let uniquePrograms = programmeNames.filter((value, index) => {
-//   return programmeNames.indexOf(value) === index;
-// });
-
-// for(let i = 0; i < uniquePrograms.length; i++) {
-//     programdiv(uniquePrograms[i]);
-// }
-
+//Skapar divarna
 function programdiv(data){
   let programDiven = document.createElement("div");
   programDiven.classList.add("programmeDiv");
@@ -94,6 +74,7 @@ function programdiv(data){
 }
 
 
+//Fixar sista diven
 function lastdiv() {
   let infoAbout = document.createElement("div");
   infoAbout.classList.add("panel");

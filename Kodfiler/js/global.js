@@ -2,6 +2,7 @@
 
 goToTopButton();
 
+//Scroll up knappen
 function goToTopButton() {
     let button = document.createElement("BUTTON");
 
@@ -27,6 +28,7 @@ function goToTopButton() {
     });
 }
 
+//Tömmer search bar när sidan laddas om.
 function init() {
   searchBar.value = "";
 }

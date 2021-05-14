@@ -1,6 +1,8 @@
 "use strict";
 const wrapper = document.querySelector("wrapper");
 
+
+//Sorterar alla länder alfabetiskt
 COUNTRIES.sort(function(a,b) {
   if (a.name.toLowerCase() < b.name.toLowerCase()
     ) return -1;
@@ -80,7 +82,7 @@ function CountryDiv(data){
 }
 
 function lastdiv() {
-  // Inne i argentina (accordion)
+  // Inne i USA (accordion)
   let infoAbout = document.createElement("div");
   infoAbout.classList.add("panel");    
 

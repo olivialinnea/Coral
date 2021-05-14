@@ -1,12 +1,11 @@
 "use strict";
 
-//Efter man har sökt kan man ej trycka in på divarna
-
 const wrapper = document.querySelector("wrapper");
 
 const searchBar = document.getElementById("uniSearch");
 let uniNames = UNIVERSITIES;
 
+//Sorterar alfabetiskt
 uniNames.sort(function(a,b) {
   if (a.name.toLowerCase() < b.name.toLowerCase()
     ) return -1;
@@ -15,6 +14,9 @@ uniNames.sort(function(a,b) {
   return 0;
 });
 
+//Efter man har sökt kan man ej trycka in på divarna
+
+//Sökfunktionen
 searchBar.addEventListener('keyup', (e) => {
   wrapper.innerHTML = "";
   const searchString = e.target.value.toLowerCase();
@@ -25,20 +27,8 @@ searchBar.addEventListener('keyup', (e) => {
   console.log(filteredUnis);
 });
 
-// let alphabeticalOrderArray = [];
 
-// function alphabeticalOrder() {
-//   for(let i = 0; i < UNIVERSITIES.length; i++) {
-//     alphabeticalOrderArray.push((UNIVERSITIES[i].name));
-//   }
-
-//   alphabeticalOrderArray.sort((a,b) => a > b);
- 
-//   return alphabeticalOrderArray;
-// }
-// alphabeticalOrder(); 
-
-
+//Appendar och skapar alla universitet osv.
 for(let i = 0; i < UNIVERSITIES.length; i++) {
   wrapper.append(universityDiv(UNIVERSITIES[i]));
 }
@@ -69,11 +59,7 @@ function universityDiv(data){
   return universityDiven;
 }
 
-// for(let i = 0; i < alphabeticalOrderArray.length; i++) {
-//   universityName(alphabeticalOrderArray[i]);
-// }
-
-
+//Fixar sista diven
 function lastdiv() {
   let infoAbout = document.createElement("div");
   infoAbout.classList.add("panel");
