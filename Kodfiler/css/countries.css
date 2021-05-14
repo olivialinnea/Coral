@@ -13,6 +13,12 @@ body {
   cursor: pointer;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
+  transition: background-image, background-color 1s;
+  
+}
+.country:hover {
+  background-image: linear-gradient(rgba(80, 255, 246, 0.678), rgb(255, 255, 255));
+  
 }
 .imgTitle {
   display: flex;
@@ -81,4 +87,5 @@ body {
   margin-left: 20vw;
   margin-right: 20vw;
   box-shadow: 6px 4px 4px  lightgrey;
+  
 }
