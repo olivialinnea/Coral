@@ -15,7 +15,7 @@ header > h1 {
 
 footer {
   height: 25vh;
-  background-color: burlywood;
+  background-color:  rgba(255, 127, 80, 0.226);
 }
 
 .pageLinks > a {
@@ -160,6 +160,5 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   height: 70px;
   width: 100px;
   padding-right: 2vh;
-  margin-top: 10px;
   border-radius: 50%;
 }

@@ -32,14 +32,16 @@ for(let i = 0; i <= COUNTRIES.length; i++) {
       if(element == COUNTRIES[i]){
         let city = CITIES.filter(city => element.id === city.countryID);
   
-        let cityDiv = document.createElement("div");
-        cityDiv.classList.add("cityDiv");
+          let cityDiv = document.createElement("div");
+          cityDiv.classList.add("cityDiv");
   
         for (let i = 0; i < city.length; i++) {
-          cityDiv.append(city[i].name);
+          let oneCity = document.createElement("div");
+          oneCity.append(city[i].name);
+          cityDiv.append(oneCity);
         }
   //data.id börjar på 1 medans ${COUNTRIES[i].id}allCities börjar på 0
-    //country_div.append(cityDiv);
+  //country_div.append(cityDiv);
     document.getElementById(`${COUNTRIES[i].id}allCities`).append(cityDiv);
       }
     });
