@@ -52,7 +52,7 @@ input {
 .active,
 .accordion:hover {
   background-color: rgba(255, 127, 80, 0.226);
-  background-image: linear-gradient(rgba(80, 255, 246, 0.616), rgba(255, 255, 255, 0.884));
+  background-image: linear-gradient(rgba(80, 255, 246, 0.678), rgb(255, 255, 255));
   
 }
 
