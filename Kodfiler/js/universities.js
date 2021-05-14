@@ -56,27 +56,7 @@ function universityDiv(data){
 
   wrapper.append(infoAbout);  
 
-  return universityDiven;
-}
-
-//Fixar sista diven
-function lastdiv() {
-  let infoAbout = document.createElement("div");
-  infoAbout.classList.add("panel");
-
-  infoAbout.innerHTML= `Information om Universitet`
-
-  wrapper.append(infoAbout);  
-}
-lastdiv();
-
-
-// Accordion
-let acc = document.getElementsByClassName("universityDiv");
-let i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
+  universityDiven.addEventListener("click", function() {
     this.classList.toggle("active");
     let panel = this.nextElementSibling;
     if (panel.style.display === "block") {
@@ -84,7 +64,18 @@ for (i = 0; i < acc.length; i++) {
     } else {
       panel.style.display = "block";
     }
-  });
+    });
+    return universityDiven;
 }
-// Accordion
+
+// //Fixar sista diven
+// function lastdiv() {
+//   let infoAbout = document.createElement("div");
+//   infoAbout.classList.add("panel");
+
+//   infoAbout.innerHTML= `Information om Universitet`
+
+//   wrapper.append(infoAbout);  
+// }
+// lastdiv();
 

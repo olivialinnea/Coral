@@ -13,7 +13,8 @@ COUNTRIES.sort(function(a,b) {
  
     // Skapar länder
 for(let i = 0; i < COUNTRIES.length; i++) {
-    wrapper.append(CountryDiv(COUNTRIES[i]));
+    let country_div = CountryDiv(COUNTRIES[i]);
+    wrapper.append(country_div);
 
     // Språken
     COUNTRIES.forEach(element => {
@@ -39,7 +40,7 @@ for(let i = 0; i < COUNTRIES.length; i++) {
         }
         
 //data.id börjar på 1 medans ${COUNTRIES[i].id}allCities börjar på 0
-        document.getElementById(`${COUNTRIES[i].id}allCities`).append(cityDiv);
+        country_div.append(cityDiv);
       }
     });
   }
@@ -78,6 +79,16 @@ function CountryDiv(data){
 
     document.querySelector("wrapper").append(infoAbout);
 
+    country.addEventListener("click", function() {
+      this.classList.toggle("active");
+      let panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+
     return country;
 }
 
@@ -100,20 +111,4 @@ function lastdiv() {
 }
 lastdiv();
 
-// Accordion
-let acc = document.getElementsByClassName("country");
-let i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    let panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-}
-// Accordion
 

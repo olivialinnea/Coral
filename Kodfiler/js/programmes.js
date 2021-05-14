@@ -70,27 +70,7 @@ function programdiv(data){
   infoAbout.append(innerProgrammeDiv);
   wrapper.append(infoAbout);  
 
-  return programDiven;
-}
-
-
-//Fixar sista diven
-function lastdiv() {
-  let infoAbout = document.createElement("div");
-  infoAbout.classList.add("panel");
-
-  infoAbout.innerHTML= `Information om program`
-
-  wrapper.append(infoAbout);  
-}
-lastdiv();
-
-// Accordion
-let acc = document.getElementsByClassName("programmeDiv");
-let i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
+  programDiven.addEventListener("click", function() {
     this.classList.toggle("active");
     let panel = this.nextElementSibling;
     if (panel.style.display === "block") {
@@ -99,5 +79,18 @@ for (i = 0; i < acc.length; i++) {
       panel.style.display = "block";
     }
   });
-} 
-// Accordion
+
+  return programDiven;
+}
+
+
+//Fixar sista diven
+// function lastdiv() {
+//   let infoAbout = document.createElement("div");
+//   infoAbout.classList.add("panel");
+
+//   infoAbout.innerHTML= `Information om program`
+
+//   wrapper.append(infoAbout);  
+// }
+// lastdiv();
