@@ -1,16 +1,20 @@
 .country {
-  border: 1px black solid;
+  /*border: 1px black solid;*/
+  box-shadow: 6px 4px 4px  lightgrey;
   height: 12vh;
-  margin-bottom: 1vh;
+  margin-bottom: 2vh;
   padding-left: 2vh;
-  font-size: 4vh;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-left: 20vw;
+  margin-right: 20vw;
   cursor: pointer;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
 }
-
+.imgTitle {
+  display: flex;
+  align-items: center;
+  font-size: 4vh;
+}
 .countryNameTitle {
   display: flex;
   align-items: center;
@@ -25,9 +29,16 @@
 
 .allCities {
   height: 50px;
-  width: 75vw;
-  background-color: grey;
+  width: 57vw;
+  border: solid 1px black;
   margin-bottom: 1vh;
+  font-size: 2vh;
+}
+
+.cityDiv {
+  display: flex;
+  flex-direction: column;
+  margin: 1vh;
 }
 
 .langVisa {
@@ -60,8 +71,8 @@
   display: none;
   background-color: white;
   overflow: hidden;
-  border: 1px solid black;
   margin-bottom: 1vh;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  box-shadow: 6px 4px 4px  lightgrey;
 }
