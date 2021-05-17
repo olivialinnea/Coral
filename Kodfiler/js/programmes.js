@@ -2,6 +2,18 @@
 
 //Efter man har sökt kan man ej trycka in på divarna
 const wrapper = document.querySelector("wrapper");
+let yearArray = [];
+let D = new Date();
+let thisYear = D.getFullYear();
+console.log(thisYear);
+
+for (let i = 0; i < 5; i++) {
+  thisYear -=1;
+  yearArray.push(thisYear);
+}
+
+yearArray.sort();
+
 
 const searchBar = document.getElementById("programmeSearch");
 let programmeNames = PROGRAMMES;
@@ -34,7 +46,6 @@ for(let i = 0; i < PROGRAMMES.length; i++) {
 function programdiv(data){
   let programDiven = document.createElement("div");
   programDiven.classList.add("programmeDiv");
-  
   programDiven.innerHTML = `
   <div>${data.name}</div>
 
@@ -52,21 +63,48 @@ function programdiv(data){
 
   let innerProgrammeDiv = document.createElement("div");
   innerProgrammeDiv.classList.add("programmeInfo");
+
   innerProgrammeDiv.innerHTML = `
     <div class="students">
       <div class="localS"> Local Students: ${data.localStudents}</div>
       <div class="exchangeS"> Exchange Students: ${data.exchangeStudents}</div>
     </div>
-    <div class="grades">
-      <div> Inträdesbetyg? </div>
-      <div> Graduates </div>
-    </div>
-    <div class="reviewHeader"> Recensioner från tidigare studenter</div>
-    <div class="reviews"> 
-      review cards
-    </div>
     `
+  let gradesDiv = document.createElement("div");  
+  let entryGradeDiv = document.createElement("div");
+  let graduatesDiv = document.createElement("div");
+  let yearDiv = document.createElement("div");
+  let procentageDiv = document.createElement("div");
+  graduatesDiv.classList.add("graduates");
+  entryGradeDiv.classList.add("grades");
+  gradesDiv.classList.add("gradesDiv");
+
+  gradesDiv.append(entryGradeDiv, graduatesDiv);
+  graduatesDiv.append(yearDiv, procentageDiv);
+
+  let successRate = data.successRate;
+
+  yearArray.forEach(function(year) {
+    yearDiv.append(yearlyGrades(year))
+  });
+
+  successRate.forEach(function(rate) {
+    procentageDiv.append(yearlyGrades(rate))
+  });
+
+  let reviewDiv = document.createElement("div");
+  let reviewHead = document.createElement("div");
+  let reviews = document.createElement("div");
+  reviewHead.classList.add("reviewHeader");
+  reviews.classList.add("reviews");
+  reviewDiv.classList.add("reviewContent");
+
+  reviewHead.textContent = "Reviews";
+
+  reviewDiv.append(reviewHead, reviews);
   
+  innerProgrammeDiv.append(gradesDiv, reviewDiv);
+
   infoAbout.append(innerProgrammeDiv);
   wrapper.append(infoAbout);  
 
@@ -84,13 +122,22 @@ function programdiv(data){
 }
 
 
-//Fixar sista diven
-// function lastdiv() {
-//   let infoAbout = document.createElement("div");
-//   infoAbout.classList.add("panel");
+// Fixar sista diven
+function lastdiv() {
+  let infoAbout = document.createElement("div");
+  infoAbout.classList.add("panel");
 
-//   infoAbout.innerHTML= `Information om program`
+  infoAbout.innerHTML= `Information om program`
 
-//   wrapper.append(infoAbout);  
-// }
-// lastdiv();
+  wrapper.append(infoAbout);  
+}
+lastdiv();
+
+
+function yearlyGrades(obj){
+  let div = document.createElement("div");
+
+  div.textContent = `${obj}`;
+  
+  return div;
+}
