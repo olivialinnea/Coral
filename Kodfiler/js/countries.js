@@ -12,48 +12,47 @@ COUNTRIES.sort(function(a,b) {
 });
  
     // Skapar länder
-for(let i = 0; i <= COUNTRIES.length; i++) {
+for(let i = 0; i < COUNTRIES.length; i++) {
     let country_div = CountryDiv(COUNTRIES[i]);
     wrapper.append(country_div);
 
     // Språken
-    COUNTRIES.forEach(element => {
-      if (element == COUNTRIES[i]){
-      let lang = LANGUAGES.find(Language => element.languageID === Language.id);
+    
+      
+      let lang = LANGUAGES.find(Language => COUNTRIES[i].languageID === Language.id);
       let languageInfo = document.createElement("div");
       languageInfo.innerHTML =`
       Språk: ${lang.name}
       `
       document.getElementById(`${COUNTRIES[i].id}langVisa`).append(languageInfo);
-      }
-    });
-
-    COUNTRIES.forEach(element => {
-      if(element == COUNTRIES[i]){
-        let city = CITIES.filter(city => element.id === city.countryID);
+          let city = CITIES.filter(city => COUNTRIES[i].id === city.countryID);
   
           let cityDiv = document.createElement("div");
           cityDiv.classList.add("cityDiv");
   
-        for (let i = 0; i < city.length; i++) {
+        for (let j = 0; j < city.length; j++) {
           let oneCity = document.createElement("div");
-          oneCity.append(city[i].name);
+          oneCity.append(city[j].name);
           cityDiv.append(oneCity);
         }
   //data.id börjar på 1 medans ${COUNTRIES[i].id}allCities börjar på 0
-  //country_div.append(cityDiv);
+    //country_div.append(cityDiv);
+    
     document.getElementById(`${COUNTRIES[i].id}allCities`).append(cityDiv);
-      }
-    });
+      
+      
+    
 }
   
 function CountryDiv(data){
+  console.log(data.id);
     let country = document.createElement("div");
     country.classList.add("country");
+  
     
     country.innerHTML = `
     <div class="imgTitle">
-    <img class="normalImage" src="Images/${data.imagesNormal[0]}">
+    <img class="normalImage" src="Images/${data.imagesNormal[0]}"></img>
     <div class="countryNameTitle">${data.name}</div>
     </div>
     <div class="countrySideInfo"> 
@@ -63,6 +62,7 @@ function CountryDiv(data){
       </div>
     </div>
     `;
+    
     // Visa
     
     // Inne i varje land utom sista landet
@@ -75,17 +75,23 @@ function CountryDiv(data){
 
     let allCitiesList = document.createElement("div");
 //data.id börjar på 1 medans ${COUNTRIES[i].id}allCities börjar på 0
-    allCitiesList.innerHTML = `<div id="${data.id}allCities"></div>`;
-    allCitiesList.classList.add("allCities")
+let idDiv = document.createElement("div");
+
+    allCitiesList.append(idDiv);
+    idDiv.id = data.id + "allCities";
+    console.log(data.id);
+    allCitiesList.classList.add("allCities");
 
     infoAbout.append(cityHeading);
     infoAbout.append(allCitiesList);
 
-    document.querySelector("wrapper").append(infoAbout);
+   country.append(infoAbout);
 
     country.addEventListener("click", function() {
       this.classList.toggle("active");
-      let panel = this.nextElementSibling;
+      
+      let panel = infoAbout;
+      console.log(panel);
       if (panel.style.display === "block") {
         panel.style.display = "none";
       } else {
@@ -96,7 +102,7 @@ function CountryDiv(data){
     return country;
 }
 
-function lastdiv() {
+/*function lastdiv() {
   // Inne i USA (accordion)
   let infoAbout = document.createElement("div");
   infoAbout.classList.add("panel");    
@@ -113,6 +119,6 @@ function lastdiv() {
 
   document.querySelector("wrapper").append(infoAbout);
 }
-lastdiv();
+lastdiv();*/
 
 
