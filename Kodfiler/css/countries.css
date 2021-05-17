@@ -4,21 +4,22 @@ body {
 }
 .country {
   /*border: 1px black solid;*/
-  box-shadow: 6px 4px 4px  lightgrey;
-  height: 12vh;
+  box-shadow: 6px 4px 4px lightgrey;
+  height: auto;
   margin-bottom: 2vh;
-  padding-left: 2vh;
+  padding: 2vh;
   margin-left: 20vw;
   margin-right: 20vw;
   cursor: pointer;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   transition: background-image, background-color 1s;
-  
 }
 .country:hover {
-  background-image: linear-gradient(rgba(80, 255, 246, 0.678), rgb(255, 255, 255));
-  
+  background-image: linear-gradient(
+    rgba(80, 255, 246, 0.678),
+    rgb(255, 255, 255)
+  );
 }
 .imgTitle {
   display: flex;
@@ -78,14 +79,13 @@ body {
 }
 
 .panel {
-  padding: 0 18px;
-  padding-left: 2vh;
+  /* padding: 0 18px;
+  padding-left: 2vh; */
   display: none;
   background-color: white;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin-bottom: 1vh;
-  margin-left: 20vw;
-  margin-right: 20vw;
-  box-shadow: 6px 4px 4px  lightgrey;
-  
+  /* margin-left: 20vw; */
+  /* margin-right: 20vw; */
+  box-shadow: 6px 4px 4px lightgrey;
 }

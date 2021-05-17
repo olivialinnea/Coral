@@ -52,8 +52,8 @@ function CountryDiv(data){
     
     country.innerHTML = `
     <div class="imgTitle">
-    <img class="normalImage" src="Images/${data.imagesNormal[0]}"></img>
-    <div class="countryNameTitle">${data.name}</div>
+      <img class="normalImage" src="Images/${data.imagesNormal[0]}">
+      <div class="countryNameTitle">${data.name}</div>
     </div>
     <div class="countrySideInfo"> 
       <img class="countryFlag" src="Images/${data.flag}">
@@ -75,7 +75,7 @@ function CountryDiv(data){
 
     let allCitiesList = document.createElement("div");
 //data.id börjar på 1 medans ${COUNTRIES[i].id}allCities börjar på 0
-let idDiv = document.createElement("div");
+  let idDiv = document.createElement("div");
 
     allCitiesList.append(idDiv);
     idDiv.id = data.id + "allCities";
@@ -85,7 +85,7 @@ let idDiv = document.createElement("div");
     infoAbout.append(cityHeading);
     infoAbout.append(allCitiesList);
 
-   country.append(infoAbout);
+    country.append(infoAbout);
 
     country.addEventListener("click", function() {
       this.classList.toggle("active");

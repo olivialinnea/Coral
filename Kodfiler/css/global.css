@@ -15,7 +15,7 @@ header > h1 {
 
 footer {
   height: 25vh;
-  background-color:  rgba(255, 127, 80, 0.226);
+  background-color: rgba(255, 127, 80, 0.226);
 }
 
 .pageLinks > a {
@@ -52,13 +52,16 @@ input {
 .active,
 .accordion:hover {
   background-color: rgba(255, 127, 80, 0.226);
-  background-image: linear-gradient(rgba(80, 255, 246, 0.678), rgb(255, 255, 255));
-  
+  background-image: linear-gradient(
+    rgba(80, 255, 246, 0.678),
+    rgb(255, 255, 255)
+  );
 }
 
 .active {
   margin-bottom: 0px;
   border-bottom: 0px;
+  height: auto;
 }
 /* Accordion */
 
