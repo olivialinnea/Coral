@@ -55,20 +55,17 @@ function universityDiv(data){
   infoAbout.classList.add("panel");
 
   let programmeHeading = document.createElement("div");
-  programmeHeading.classList.add("programHeading")
   programmeHeading.innerHTML = `Program `;
 
   let allProgrammeList = document.createElement("div");
 
-  //idDiv skapas ej
   let idDiv = document.createElement("div");
 
   allProgrammeList.append(idDiv);
   idDiv.id = data.id + "allProgrammes";
   console.log(data.id);
   allProgrammeList.classList.add("allProgrammes");
-  allProgrammeList.innerHTML = `
-  program lista`
+  
 
   infoAbout.append(programmeHeading);
   infoAbout.append(allProgrammeList);
