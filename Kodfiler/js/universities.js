@@ -73,8 +73,8 @@ function universityDiv(data){
 
   let idDiv = document.createElement("div");
 
-  allProgrammeList.append(idDiven);
-  idDiven.id = data.id + "allProgrammes";
+  allProgrammeList.append(idDiv);
+  idDiv.id = data.id + "allProgrammes";
   console.log(data.id);
   allProgrammeList.classList.add("allProgrammes");
   
