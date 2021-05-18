@@ -40,8 +40,36 @@ searchBar.addEventListener('keyup', (e) => {
 for(let i = 0; i < PROGRAMMES.length; i++) {
   wrapper.append(programdiv(PROGRAMMES[i]));
 }
-// function universityForProgramme {
 
+// function reviewCard(programid){
+
+//   let programmeCard = COMMENTS_PROGRAMME.forEach(comment => {
+//     if(comment.programmeID == programid) {
+//       let card = document.createElement("div");
+//       wrapper.append(card);
+//       card.innerHTML = `
+//     <div class="commentDate">
+//       <div></div>
+//     </div>
+//     <div class="commentName">
+//       <div>${programid.alias}</div>
+//     </div>
+//     <div class="commentContent">
+//       <div class="stars">
+//         <div>Teachers: </div>
+//         <div>Students: </div>
+//         <div>Course: </div>
+//       </div>
+//       <div>
+//         <div class="textC">
+//           <div>Omdöme:${programid.text}</div>
+//         </div>
+//       </div>
+//     </div>
+//   `
+//   }
+//   })
+//   return programmeCard;
 // }
 
 //Skapar divarna
@@ -49,15 +77,21 @@ function programdiv(data){
   let programDiven = document.createElement("div");
   programDiven.classList.add("programmeDiv");
 
-  let uni = UNIVERSITIES.find(university => data.universityID === university.id);
+  const uni = UNIVERSITIES.find(university => data.universityID === university.id);
+  const city = CITIES.find(cities => uni.cityID === cities.id);
+  const country = COUNTRIES.find(countries => city.countryID === countries.id);
+  // const comments = COMMENTS_PROGRAMME.find(comments => data.id === comments.id);
+  const level = LEVELS.find(lvl => data.level === lvl.indexOf("Master"));
+
+
   programDiven.innerHTML = `
   <div>${data.name} (${uni.name})</div>
-
   <div class="programSideInfo"> 
-      <img class="countryFlag" src="Images/">
+      <img class="countryFlag" src="Images/${country.flag}">
       <div class="position" >
-        <div> Land: </div>
-        <div> Stad: </div>
+        <div> Level: ${level}</div>
+        <div> Stad: ${city.name}</div>
+        <div> Land: ${country.name}</div>
       </div>
     </div>
   `;
@@ -78,35 +112,57 @@ function programdiv(data){
   let graduatesDiv = document.createElement("div");
   let yearDiv = document.createElement("div");
   let procentageDiv = document.createElement("div");
+  let graduatesHead = document.createElement("div");
+  let entryHead = document.createElement("div");
+  let headerContainer = document.createElement("div");
+  let entryDiv = document.createElement("div");
+  let entryYearDiv = document.createElement("div");
+  
+  graduatesHead.classList.add("graduatesHead");
   graduatesDiv.classList.add("graduates");
   entryGradeDiv.classList.add("grades");
   gradesDiv.classList.add("gradesDiv");
+  entryHead.classList.add("entryHead");
+  entryDiv.classList.add("entryDiv");
+  entryYearDiv.classList.add("entryYearDiv");
+  headerContainer.classList.add("headerContainer");
 
+  headerContainer.append(entryHead, graduatesHead);
   gradesDiv.append(entryGradeDiv, graduatesDiv);
   graduatesDiv.append(yearDiv, procentageDiv);
+  entryGradeDiv.append(entryYearDiv, entryDiv);
 
+  entryHead.textContent = "Intagningsbetyg"
+  graduatesHead.textContent = "Antal examinerade"
   let successRate = data.successRate;
+  let entryGrades = data.entryGrades;
 
   yearArray.forEach(function(year) {
-    yearDiv.append(yearlyGrades(year))
+    yearDiv.append(yearlyAmount(year))
+    entryYearDiv.append(yearlyAmount(year))
   });
 
   successRate.forEach(function(rate) {
-    procentageDiv.append(yearlyGrades(rate))
+    procentageDiv.append(procentageKey(rate))
   });
+  
+  entryGrades.forEach(function(grade) {
+    entryDiv.append(gradesKey(grade))
+  });
+
 
   let reviewDiv = document.createElement("div");
   let reviewHead = document.createElement("div");
   let reviews = document.createElement("div");
-  reviewHead.classList.add("reviewHeader");
   reviews.classList.add("reviews");
+  reviewHead.classList.add("reviewHeader");
   reviewDiv.classList.add("reviewContent");
 
-  reviewHead.textContent = "Reviews";
+  reviewHead.textContent = "Omdömen från före detta studenter";
 
   reviewDiv.append(reviewHead, reviews);
-  
-  innerProgrammeDiv.append(gradesDiv, reviewDiv);
+
+  innerProgrammeDiv.append(headerContainer, gradesDiv, reviewDiv);
 
   infoAbout.append(innerProgrammeDiv);
   programDiven.append(infoAbout); 
@@ -136,11 +192,26 @@ function lastdiv() {
 }
 lastdiv();
 
-
-function yearlyGrades(obj){
+function yearlyAmount(year){
   let div = document.createElement("div");
 
-  div.textContent = `${obj}`;
+  div.textContent = `${year}`;
+  
+  return div;
+}
+
+function procentageKey(key){
+  let div = document.createElement("div");
+
+  div.textContent = `${key}%`;
+  
+  return div;
+}
+
+function gradesKey(key){
+  let div = document.createElement("div");
+
+  div.textContent = `${key}`;
   
   return div;
 }

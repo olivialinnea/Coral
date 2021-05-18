@@ -28,7 +28,6 @@
   padding-left: 2vh;
   background-color: white;
   overflow: hidden;
-  border: 1px solid black;
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
@@ -57,35 +56,33 @@
 }
 
 .students {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
   padding: 10px;
   padding-left: 0px;
 }
 
-.students > div:nth-child(1) {
-  margin-right: 10px;
-  font-weight: bold;
+.localS,
+.exchangeS {
+  flex-grow: 1;
 }
 
-.students > div:nth-child(2) {
-  grid-column: 3;
-  font-weight: bold;
+.headerContainer {
+  display: flex;
+  padding-left: none;
+  padding-top: 10px;
+}
+
+.entryHead,
+.graduatesHead {
+  flex-grow: 1;
 }
 
 .grades {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  padding-right: 10px;
+  display: flex;
 }
 
-.grades > div:nth-child(1) {
-  font-weight: bold;
-}
-
-.grades > div:nth-child(2) {
-  font-weight: bold;
-  grid-column: 3;
+.grades > div {
+  margin-right: 10px;
 }
 
 .reviewHeader {
@@ -97,6 +94,19 @@
   display: flex;
 }
 
+.graduates > div {
+  margin-right: 10px;
+}
 .active {
   margin-bottom: 2vh;
+  height: auto;
+}
+
+.gradesDiv {
+  display: flex;
+}
+
+.grades,
+.graduates {
+  flex-grow: 1;
 }
