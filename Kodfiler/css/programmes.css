@@ -2,7 +2,8 @@
   border: black solid 1px;
   height: 8vh;
   margin-bottom: 1vh;
-  padding-left: 1vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
   font-size: 2vh;
 
   display: grid;
@@ -18,6 +19,8 @@
   overflow: hidden;
   border: 1px solid black;
   margin-bottom: 1vh;
+
+  grid-column: 1 / span 3;
 }
 
 .programmeInfo {
@@ -63,7 +66,6 @@
 .students > div:nth-child(1) {
   margin-right: 10px;
   font-weight: bold;
-
 }
 
 .students > div:nth-child(2) {
@@ -89,4 +91,12 @@
 .reviewHeader {
   font-weight: bold;
   margin-top: 1vh;
+}
+
+.graduates {
+  display: flex;
+}
+
+.active {
+  margin-bottom: 2vh;
 }

@@ -5,7 +5,6 @@ const wrapper = document.querySelector("wrapper");
 let yearArray = [];
 let D = new Date();
 let thisYear = D.getFullYear();
-console.log(thisYear);
 
 for (let i = 0; i < 5; i++) {
   thisYear -=1;
@@ -41,13 +40,18 @@ searchBar.addEventListener('keyup', (e) => {
 for(let i = 0; i < PROGRAMMES.length; i++) {
   wrapper.append(programdiv(PROGRAMMES[i]));
 }
+// function universityForProgramme {
+
+// }
 
 //Skapar divarna
 function programdiv(data){
   let programDiven = document.createElement("div");
   programDiven.classList.add("programmeDiv");
+
+  let uni = UNIVERSITIES.find(university => data.universityID === university.id);
   programDiven.innerHTML = `
-  <div>${data.name}</div>
+  <div>${data.name} (${uni.name})</div>
 
   <div class="programSideInfo"> 
       <img class="countryFlag" src="Images/">
@@ -57,7 +61,6 @@ function programdiv(data){
       </div>
     </div>
   `;
-
   let infoAbout = document.createElement("div");
   infoAbout.classList.add("panel");
 
@@ -106,7 +109,7 @@ function programdiv(data){
   innerProgrammeDiv.append(gradesDiv, reviewDiv);
 
   infoAbout.append(innerProgrammeDiv);
-  programDiven.append(infoAbout);  
+  programDiven.append(infoAbout); 
 
   programDiven.addEventListener("click", function() {
     this.classList.toggle("active");
