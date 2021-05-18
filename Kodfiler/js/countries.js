@@ -63,8 +63,6 @@ function CountryDiv(data){
     `;
     
     // Visa
-    
-
     let infoAbout = document.createElement("div");
     infoAbout.classList.add("panel");    
 
@@ -99,23 +97,5 @@ function CountryDiv(data){
     return country;
 }
 
-/*function lastdiv() {
-  // Inne i USA (accordion)
-  let infoAbout = document.createElement("div");
-  infoAbout.classList.add("panel");    
-
-  let cityHeading = document.createElement("div");
-  cityHeading.innerHTML = 
-  `<div class="cityHeading"> Städer </div>`;
-
-  let allCitiesList = document.createElement("div");
-  allCitiesList.innerHTML = `<div class="allCities"> (Koppla rätt landID med city name, LISTA ALLA STÄDER I LANDET) </div>`;
-
-  infoAbout.append(cityHeading);
-  infoAbout.append(allCitiesList);
-
-  document.querySelector("wrapper").append(infoAbout);
-}
-lastdiv();*/
 
 
