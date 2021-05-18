@@ -52,19 +52,33 @@ function universityDiv(data){
   let infoAbout = document.createElement("div");
   infoAbout.classList.add("panel");
 
-  infoAbout.innerHTML= `Information om Universitet`
+  let programmeHeading = document.createElement("div");
+  programmeHeading.innerHTML = `
+  <div class="cityHeading"> Program </div>`;
 
-  wrapper.append(infoAbout);  
+  let allProgrammeList = document.createElement("div");
+  let idDiv = document.createElement("div");
+
+  allProgrammeList.append(idDiv);
+  idDiv.id = data.id + "allProgrammes";
+  console.log(data.id);
+  allProgrammeList.classList.add("allProgrammes");
+
+  infoAbout.append(programmeHeading);
+  infoAbout.append(allProgrammeList);
+
+  universityDiven.append(infoAbout);  
 
   universityDiven.addEventListener("click", function() {
     this.classList.toggle("active");
-    let panel = this.nextElementSibling;
+    
+    let panel = infoAbout;
     if (panel.style.display === "block") {
       panel.style.display = "none";
     } else {
       panel.style.display = "block";
     }
-    });
+  });
     return universityDiven;
 }
 

@@ -45,7 +45,6 @@ for(let i = 0; i < COUNTRIES.length; i++) {
 }
   
 function CountryDiv(data){
-  console.log(data.id);
     let country = document.createElement("div");
     country.classList.add("country");
   
@@ -65,7 +64,7 @@ function CountryDiv(data){
     
     // Visa
     
-    // Inne i varje land utom sista landet
+
     let infoAbout = document.createElement("div");
     infoAbout.classList.add("panel");    
 
@@ -74,8 +73,7 @@ function CountryDiv(data){
     `<div class="cityHeading"> Städer </div>`;
 
     let allCitiesList = document.createElement("div");
-//data.id börjar på 1 medans ${COUNTRIES[i].id}allCities börjar på 0
-  let idDiv = document.createElement("div");
+    let idDiv = document.createElement("div");
 
     allCitiesList.append(idDiv);
     idDiv.id = data.id + "allCities";
@@ -91,7 +89,6 @@ function CountryDiv(data){
       this.classList.toggle("active");
       
       let panel = infoAbout;
-      console.log(panel);
       if (panel.style.display === "block") {
         panel.style.display = "none";
       } else {

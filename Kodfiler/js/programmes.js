@@ -106,11 +106,11 @@ function programdiv(data){
   innerProgrammeDiv.append(gradesDiv, reviewDiv);
 
   infoAbout.append(innerProgrammeDiv);
-  wrapper.append(infoAbout);  
+  programDiven.append(infoAbout);  
 
   programDiven.addEventListener("click", function() {
     this.classList.toggle("active");
-    let panel = this.nextElementSibling;
+    let panel = infoAbout;
     if (panel.style.display === "block") {
       panel.style.display = "none";
     } else {
