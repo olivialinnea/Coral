@@ -38,7 +38,8 @@ function universityDiv(data){
   universityDiven.classList.add("universityDiv");
   
   universityDiven.innerHTML = `
-  <div>${data.name}</div>
+  <div class="top"> 
+    <div>${data.name}</div>
 
   <div class="universitySideInfo"> 
       <img class="countryFlag" src="Images/">
@@ -47,22 +48,27 @@ function universityDiv(data){
         <div> Stad: </div>
       </div>
     </div>
+  </div>
   `;
 
   let infoAbout = document.createElement("div");
   infoAbout.classList.add("panel");
 
   let programmeHeading = document.createElement("div");
-  programmeHeading.innerHTML = `
-  <div class="cityHeading"> Program </div>`;
+  programmeHeading.classList.add("programHeading")
+  programmeHeading.innerHTML = `Program `;
 
   let allProgrammeList = document.createElement("div");
+
+  //idDiv skapas ej
   let idDiv = document.createElement("div");
 
   allProgrammeList.append(idDiv);
   idDiv.id = data.id + "allProgrammes";
   console.log(data.id);
   allProgrammeList.classList.add("allProgrammes");
+  allProgrammeList.innerHTML = `
+  program lista`
 
   infoAbout.append(programmeHeading);
   infoAbout.append(allProgrammeList);
@@ -73,10 +79,10 @@ function universityDiv(data){
     this.classList.toggle("active");
     
     let panel = infoAbout;
-    if (panel.style.display === "block") {
+    if (panel.style.display === "flex") {
       panel.style.display = "none";
     } else {
-      panel.style.display = "block";
+      panel.style.display = "flex";
     }
   });
     return universityDiven;
