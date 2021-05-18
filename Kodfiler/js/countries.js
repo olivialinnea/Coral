@@ -48,7 +48,6 @@ function CountryDiv(data){
     let country = document.createElement("div");
     country.classList.add("country");
   
-    
     country.innerHTML = `
     <div class="imgTitle">
       <img class="normalImage" src="Images/${data.imagesNormal[0]}">
@@ -62,7 +61,6 @@ function CountryDiv(data){
     </div>
     `;
     
-    // Visa
     let infoAbout = document.createElement("div");
     infoAbout.classList.add("panel");    
 
