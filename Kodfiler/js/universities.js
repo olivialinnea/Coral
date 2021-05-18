@@ -31,6 +31,18 @@ searchBar.addEventListener('keyup', (e) => {
 //Appendar och skapar alla universitet osv.
 for(let i = 0; i < UNIVERSITIES.length; i++) {
   wrapper.append(universityDiv(UNIVERSITIES[i]));
+  
+          /*let programdiv = PROGRAMMES.filter(program => UNIVERSITIES[i].id === program.universityID);
+  
+          let programmet = document.createElement("div");
+          programmet.classList.add("program");
+  
+        for (let c = 0; c < programdiv.length; c++) {
+          let oneProgram = document.createElement("div");
+          oneProgram.append(programdiv[c].name);
+          programmet.append(oneProgram);
+        }
+        document.getElementById(`${UNIVERSITIES[i].id}allProgrammes`).append(programmet); */
 }
 
 function universityDiv(data){
@@ -61,14 +73,14 @@ function universityDiv(data){
   let allProgrammeList = document.createElement("div");
 
   //idDiv skapas ej
-  let idDiv = document.createElement("div");
+  let idDiven = document.createElement("div");
 
-  allProgrammeList.append(idDiv);
-  idDiv.id = data.id + "allProgrammes";
+  allProgrammeList.append(idDiven);
+  idDiven.id = data.id + "allProgrammes";
   console.log(data.id);
   allProgrammeList.classList.add("allProgrammes");
   allProgrammeList.innerHTML = `
-  program lista`
+  <div id="programmet">program lista</div>`
 
   infoAbout.append(programmeHeading);
   infoAbout.append(allProgrammeList);
