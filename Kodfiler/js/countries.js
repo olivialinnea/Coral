@@ -15,7 +15,9 @@ COUNTRIES.sort(function(a,b) {
 for(let i = 0; i < COUNTRIES.length; i++) {
     let country_div = CountryDiv(COUNTRIES[i]);
     wrapper.append(country_div);
-
+  if("visa"==true) {
+    visa == "yes";
+  }
     // Språken
     
       
@@ -48,6 +50,7 @@ function CountryDiv(data){
     let country = document.createElement("div");
     country.classList.add("country");
   
+    
     country.innerHTML = `
     <div class="imgTitle">
       <img class="normalImage" src="Images/${data.imagesNormal[0]}">
@@ -61,6 +64,7 @@ function CountryDiv(data){
     </div>
     `;
     
+    // Visa
     let infoAbout = document.createElement("div");
     infoAbout.classList.add("panel");    
 

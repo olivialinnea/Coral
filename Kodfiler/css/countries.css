@@ -85,9 +85,9 @@ body {
   background-color: white;
   /* overflow: hidden; */
   margin-bottom: 1vh;
-
+  margin-top: 1.5vh;
   grid-column: 1/3;
   /* margin-left: 20vw; */
   /* margin-right: 20vw; */
-  box-shadow: 6px 4px 4px lightgrey;
+  
 }
