@@ -5,17 +5,18 @@
   padding-left: 1vh;
   font-size: 3vh;
   padding-right: 1vh;
+  font-weight: bold;
 }
 
 .active {
-  margin-bottom: 10px;
-  border-bottom: 1px solid black;
+  margin-bottom: 0px;
+  border-bottom: 0px ;
   height: auto;
   display: flex;
   flex-direction: column;
 }
 
-.panel {
+.infoAbout {
   padding-right: 2vh;
   padding-left: 2vh;
   display: none;
@@ -36,8 +37,8 @@
   grid-column: 1/2 span;
 }
 
-.programHeading {
-  font-size: 25px;
+.programmeHeading {
+  font-size: 20px;
   font-weight: bold;
   padding: 5px;
   padding-left: 0px;
@@ -76,7 +77,29 @@
 }
 
 .pDiv > div{
-  border: 1px solid black;
   margin-bottom: 1vh;
 }
 
+.programDiv > div:nth-child(1) {
+  font-weight: bold;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.programDiv > div:nth-child(2) {
+  font-weight: bold;
+  border: 1px solid black;
+  border-top: none;
+  padding: 10px;
+  display: none;
+  color: red;
+}
+
+.students {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.exchanges {
+  grid: 3;
+}
