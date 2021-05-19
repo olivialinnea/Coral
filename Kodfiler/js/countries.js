@@ -27,6 +27,7 @@ for(let i = 0; i < COUNTRIES.length; i++) {
       Språk: ${lang.name}
       `
       document.getElementById(`${COUNTRIES[i].id}langVisa`).append(languageInfo);
+      
           let city = CITIES.filter(city => COUNTRIES[i].id === city.countryID);
   
           let cityDiv = document.createElement("div");

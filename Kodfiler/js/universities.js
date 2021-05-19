@@ -14,7 +14,6 @@ uniNames.sort(function(a,b) {
   return 0;
 });
 
-//Efter man har sökt kan man ej trycka in på divarna
 
 //Sökfunktionen
 searchBar.addEventListener('keyup', (e) => {
@@ -27,10 +26,24 @@ searchBar.addEventListener('keyup', (e) => {
   console.log(filteredUnis);
 });
 
-
 //Appendar och skapar alla universitet osv.
 for(let i = 0; i < UNIVERSITIES.length; i++) {
   wrapper.append(universityDiv(UNIVERSITIES[i]));
+  
+  document.querySelector(".universityDiv").addEventListener("click", infoDivUnder(UNIVERSITIES[i]));
+
+  let program = PROGRAMMES.filter(p => UNIVERSITIES[i].id === p.universityID);
+
+    let pDiv = document.createElement("div");
+    pDiv.classList.add("pDiv");
+  
+    for (let j = 0; j < program.length; j++) {
+      let oneP = document.createElement("div");
+      oneP.append(program[j].name);
+      pDiv.append(oneP);
+    }
+    
+    document.getElementById(`${UNIVERSITIES[i].id}allProgrammes`).append(pDiv);
   
           /*let programdiv = PROGRAMMES.filter(program => UNIVERSITIES[i].id === program.universityID);
   
@@ -61,7 +74,14 @@ function universityDiv(data){
       </div>
     </div>
   </div>
-  `;
+  `; 
+
+    return universityDiven;
+}
+
+
+function infoDivUnder(data) {
+  // document.querySelector(".universityDiv").classList.toggle("active");
 
   let infoAbout = document.createElement("div");
   infoAbout.classList.add("panel");
@@ -70,43 +90,32 @@ function universityDiv(data){
   programmeHeading.innerHTML = `Program `;
 
   let allProgrammeList = document.createElement("div");
+  allProgrammeList.classList.add("allProgrammes");
 
   let idDiv = document.createElement("div");
-
-  allProgrammeList.append(idDiv);
-  idDiv.id = data.id + "allProgrammes";
-  console.log(data.id);
-  allProgrammeList.classList.add("allProgrammes");
   
-
+  idDiv.id = data.id + "allProgrammes";
+  
+  allProgrammeList.append(idDiv);
   infoAbout.append(programmeHeading);
   infoAbout.append(allProgrammeList);
 
-  universityDiven.append(infoAbout);  
-
-  universityDiven.addEventListener("click", function() {
-    this.classList.toggle("active");
-    
+  let all = document.querySelectorAll(".universityDiv");
+  for (let i = 0; i < all.length; i++) {
+     all[i].addEventListener("click", function() {
     let panel = infoAbout;
-    if (panel.style.display === "flex") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "flex";
-    }
-  });
-    return universityDiven;
+        if (panel.style.display === "flex") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "flex";
+        }
+   })
+  }
+
+  wrapper.append(infoAbout);  
+
+
+      return infoAbout;
 }
-
-// //Fixar sista diven
-// function lastdiv() {
-//   let infoAbout = document.createElement("div");
-//   infoAbout.classList.add("panel");
-
-//   infoAbout.innerHTML= `Information om Universitet`
-
-//   wrapper.append(infoAbout);  
-// }
-// lastdiv();
-
 
 

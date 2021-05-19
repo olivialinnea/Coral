@@ -72,13 +72,11 @@
 }
 
 .allProgrammes {
-  border: 1px solid red;
   margin-bottom: 1vh;
 }
 
-.hej {
-  height: 10px;
-  width: 10px;
-  background-color: red;
+.pDiv > div{
+  border: 1px solid black;
+  margin-bottom: 1vh;
 }
 
