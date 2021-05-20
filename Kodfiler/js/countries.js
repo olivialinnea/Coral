@@ -97,7 +97,9 @@ function infoInfo(data) {
 
       idDiv.id = city[j].id + "cityCity";
 
-      idDiv.innerHTML = `hej`;
+      idDiv.innerHTML = `
+      
+      `;
 
       oneCity.append(idDiv);
       infoAbout.append(cityDiv);
