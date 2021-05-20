@@ -16,7 +16,6 @@ uniNames.sort(function(a,b) {
   return 0;
 });
 
-
 //Sökfunktionen
 searchBar.addEventListener('keyup', (e) => {
   wrapper.innerHTML = "";
@@ -31,66 +30,6 @@ searchBar.addEventListener('keyup', (e) => {
 //Appendar och skapar alla universitet osv.
 for(let i = 0; i < UNIVERSITIES.length; i++) {
   wrapper.append(universityDiv(UNIVERSITIES[i]));
-  
-  document.querySelector(".universityDiv").addEventListener("click", infoDivUnder(UNIVERSITIES[i]));
-
-  let program = PROGRAMMES.filter(p => UNIVERSITIES[i].id === p.universityID);
-
-    let pDiv = document.createElement("div");
-    pDiv.classList.add("pDiv");
-  
-    for (let j = 0; j < program.length; j++) {
-      let oneP = document.createElement("div");
-      oneP.classList.add("programDiv");
-
-      let programN = document.createElement("div");
-      programN.classList.add("programN");
-      programN.innerHTML = ` ${program[j].name} `;
-      oneP.append(programN);
-      pDiv.append(oneP);
-
-      let idDiv = document.createElement("div");
-      idDiv.classList.add("idDiv");
-      idDiv.id = program[j].id + "programDiv";
-
-      idDiv.innerHTML = `
-      <div class="students">
-        <div class="localS"> Local Students: ${program[j].localStudents}</div>
-        <div class="exchanges"> Exchange Students: ${program[j].exchangeStudents}</div>
-      </div>
-      `;
-      
-
-      let all2 = document.querySelectorAll(".programN");
-          for (let ii = 0; ii < all2.length; ii++) {
-            all2[ii].addEventListener("click", function() {
-              if (idDiv.style.display === "none") {
-                idDiv.style.display = "flex";
-              } else {
-                idDiv.style.display = "none";
-              }
-             })
-          }
-
-          oneP.append(idDiv);
-    }
-
-
-    
-    
-    document.getElementById(`${UNIVERSITIES[i].id}allProgrammes`).append(pDiv);
-  
-          /*let programdiv = PROGRAMMES.filter(program => UNIVERSITIES[i].id === program.universityID);
-  
-          let programmet = document.createElement("div");
-          programmet.classList.add("program");
-  
-        for (let c = 0; c < programdiv.length; c++) {
-          let oneProgram = document.createElement("div");
-          oneProgram.append(programdiv[c].name);
-          programmet.append(oneProgram);
-        }
-        document.getElementById(`${UNIVERSITIES[i].id}allProgrammes`).append(programmet); */
 }
 
 function universityDiv(data){
@@ -111,9 +50,30 @@ function universityDiv(data){
   </div>
   `; 
 
+  universityDiven.addEventListener("click", function (event) {
+    event.stopPropagation();
+
+    if (universityDiven.classList.contains("active")) {
+      universityDiven.classList.toggle("active");
+
+      let info = document.querySelectorAll(".infoAbout");
+
+      for (let ii = 0; ii < info.length; ii++) {
+        // console.log(info[ii].parentNode);
+
+        if (info[ii].parentNode == universityDiven) {
+          universityDiven.removeChild(info[ii]);
+        }
+        
+        
+      }
+    } else {
+      universityDiven.append(infoDivUnder(data));
+      universityDiven.classList.toggle("active");
+    }
+  });
     return universityDiven;
 }
-
 
 function infoDivUnder(data) {
   let infoAbout = document.createElement("div");
@@ -134,32 +94,47 @@ function infoDivUnder(data) {
   infoAbout.append(programmeHeading);
   infoAbout.append(allProgrammeList);
 
-  let all = document.querySelectorAll(".universityDiv");
-  for (let i = 0; i < all.length; i++) {
-     all[i].addEventListener("click", function() {
+  let program = PROGRAMMES.filter(p => data.id === p.universityID);
 
-      if (!all[i].classList.contains(`active`)) {
-        all[i].classList.add(`active`);
-      } else if (this.classList.contains(`active`)) {
-        all[i].classList.remove(`active`);
+  let pDiv = document.createElement("div");
+  pDiv.classList.add("pDiv");
+
+  for (let j = 0; j < program.length; j++) {
+    let oneP = document.createElement("div");
+    oneP.classList.add("programDiv");
+
+    let programN = document.createElement("div");
+    programN.classList.add("programN");
+    programN.innerHTML = ` ${program[j].name} `;
+    oneP.append(programN);
+    pDiv.append(oneP);
+
+    let idDiv = document.createElement("div");
+    idDiv.classList.add("idDiv");
+    idDiv.id = program[j].id + "programDiv";
+
+    idDiv.innerHTML = `
+    <div class="students">
+      <div class="localS"> Local Students: ${program[j].localStudents}</div>
+      <div class="exchanges"> Exchange Students: ${program[j].exchangeStudents}</div>
+    </div>
+    `;
+
+    oneP.append(idDiv);
+    infoAbout.append(pDiv);
+
+    programN.addEventListener("click", function(event) {
+      event.stopPropagation();
+
+      if (idDiv.style.display === "none") {
+        idDiv.style.display = "flex";
+      } else {
+        idDiv.style.display = "none";
       }
+    });
 
-      //  all[i].classList.toggle("active");
-        if (infoAbout.style.display === "flex") {
-          infoAbout.style.display = "none";
-        } else {
-          infoAbout.style.display = "flex";
-        }
-   })
   }
 
-  wrapper.append(infoAbout);  
-
-
-      return infoAbout;
+  return infoAbout;
 }
 
-
-// function pDiv(params) {
-  
-// }

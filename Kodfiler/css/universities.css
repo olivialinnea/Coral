@@ -6,6 +6,7 @@
   font-size: 3vh;
   padding-right: 1vh;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .active {
@@ -19,7 +20,7 @@
 .infoAbout {
   padding-right: 2vh;
   padding-left: 2vh;
-  display: none;
+  /* display: none; */
   background-color: white;
   overflow: hidden;
   border: 1px solid black;
@@ -102,4 +103,9 @@
 
 .exchanges {
   grid: 3;
+}
+
+.programN {
+  cursor: pointer;
+
 }
