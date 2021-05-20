@@ -13,40 +13,11 @@ COUNTRIES.sort(function(a,b) {
  
     // Skapar länder
 for(let i = 0; i < COUNTRIES.length; i++) {
-    let country_div = CountryDiv(COUNTRIES[i]);
-    wrapper.append(country_div);
-  if("visa"==true) {
-    visa == "yes";
+    wrapper.append(countryDiv(COUNTRIES[i]));
   }
-    // Språken
-    
-      
-      let lang = LANGUAGES.find(Language => COUNTRIES[i].languageID === Language.id);
-      let languageInfo = document.createElement("div");
-      languageInfo.innerHTML =`
-      Språk: ${lang.name}
-      `
-      document.getElementById(`${COUNTRIES[i].id}langVisa`).append(languageInfo);
-          let city = CITIES.filter(city => COUNTRIES[i].id === city.countryID);
-  
-          let cityDiv = document.createElement("div");
-          cityDiv.classList.add("cityDiv");
-  
-        for (let j = 0; j < city.length; j++) {
-          let oneCity = document.createElement("div");
-          oneCity.append(city[j].name);
-          cityDiv.append(oneCity);
-        }
-  //data.id börjar på 1 medans ${COUNTRIES[i].id}allCities börjar på 0
-    //country_div.append(cityDiv);
-    
-    document.getElementById(`${COUNTRIES[i].id}allCities`).append(cityDiv);
-      
-      
-    
-}
-  
-function CountryDiv(data){
+   // document.querySelector(".country").addEventListener("click", infoinfoinfo(COUNTRIES[i]));
+
+   function countryDiv(data){
     let country = document.createElement("div");
     country.classList.add("country");
   
@@ -63,41 +34,184 @@ function CountryDiv(data){
       </div>
     </div>
     `;
+
+   country.addEventListener("click", function(event) {
+     event.stopPropagation();
+     if (country.classList.contains("active")){
+      country.classList.toggle("active");
+     
+     let info = document.querySelectorAll(".infoAbout");
+
+     for(let j = 0; j < info.length; j++){
+       if (info[j].parentNode === country) {
+         country.removeChild(info[j]);
+       }
+     }
+    } else {
+       country.append(infoInfo(data));
+       country.classList.toggle("active");
+     }
     
-    // Visa
-    let infoAbout = document.createElement("div");
-    infoAbout.classList.add("panel");    
+   });
+
+    return country;
+}
+
+function infoInfo(data) {
+  let infoAbout = document.createElement("div");
+    infoAbout.classList.add("infoAbout");    
 
     let cityHeading = document.createElement("div");
     cityHeading.innerHTML = 
     `<div class="cityHeading"> Städer </div>`;
 
     let allCitiesList = document.createElement("div");
+    
     let idDiv = document.createElement("div");
 
-    allCitiesList.append(idDiv);
+    
     idDiv.id = data.id + "allCities";
-    console.log(data.id);
     allCitiesList.classList.add("allCities");
 
     infoAbout.append(cityHeading);
     infoAbout.append(allCitiesList);
+    allCitiesList.append(idDiv);
+    
+    let city = CITIES.filter(city => data.id === city.countryID);
 
-    country.append(infoAbout);
+    let cityDiv = document.createElement("div");
+    cityDiv.classList.add("cityDiv");
 
-    country.addEventListener("click", function() {
+    for (let j = 0; j < city.length; j++) {
+      let oneCity = document.createElement("div");
+      oneCity.classList.add("oneCity");
+      
+      let cityName = document.createElement("div");
+      cityName.innerHTML = `${city[j].name}`
+      oneCity.append(cityName);
+      cityDiv.append(oneCity);
+      
+      let idDiv = document.createElement("div");
+      idDiv.classList.add("idDiv");
+
+
+      idDiv.id = city[j].id + "cityCity";
+
+      idDiv.innerHTML = `hej`;
+
+      oneCity.append(idDiv);
+      infoAbout.append(cityDiv);
+
+      cityName.addEventListener("click", function(event){
+        event.stopPropagation();
+        if (idDiv.style.display === "none") {
+          idDiv.style.display = "flex";
+        } else {
+          idDiv.style.display = "none";
+        }
+      });
+    }
+    return infoAbout;
+  }
+    
+/*
+    document.querySelector(".country").addEventListener("click", function() {
       this.classList.toggle("active");
       
-      let panel = infoAbout;
+      let panel = this.nextElementSibling;
       if (panel.style.display === "block") {
         panel.style.display = "none";
       } else {
         panel.style.display = "block";
       }
     });
-
-    return country;
+    wrapper.append(infoAbout);
 }
+  document.querySelector(".country").addEventListener("click", infoInfo(COUNTRIES[i]));
+    // Språken
+  //document.querySelector(".cityHeading").addEventListener("click", infoinfoinfo(COUNTRIES[i]));
+      
+      let lang = LANGUAGES.find(Language => COUNTRIES[i].languageID === Language.id);
+      let languageInfo = document.createElement("div");
+      languageInfo.innerHTML =`
+      Språk: ${lang.name}
+      `
+      document.getElementById(`${COUNTRIES[i].id}langVisa`).append(languageInfo);
+          
+      
+  
+          
+  
+        
+  //data.id börjar på 1 medans ${COUNTRIES[i].id}allCities börjar på 0
+    //country_div.append(cityDiv);
+    
+    document.getElementById(`${COUNTRIES[i].id}allCities`).append(cityDiv);
+      
+    let universitet = UNIVERSITIES.filter(program => CITIES[i].id === program.cityID);
+    
+    let universitetDiv = document.createElement("div");
+    universitetDiv.classList.add("universitetDiv");
+
+    for (let k = 0; k < universitet.length; k++) {
+      let oneUniversitet = document.createElement("div");
+      oneUniversitet.append(universitet[k].name);
+      universitetDiv.append(oneUniversitet);
+      oneUniversitet.id = universitet[k].id + "oneUniversitet";
+
+    }
+    
+    //cityDiv.append(universitetDiv);
+   // document.getElementById(`${COUNTRIES[i].id}allProgramList`).append(universitetDiv);
+
+  
 
 
 
+/*
+function infoinfoinfo(data) {
+  let infoAboutp = document.createElement("div");
+  infoAboutp.classList.add("panels");    
+  
+  let programHeading = document.createElement("div");
+  programHeading.innerHTML = 
+  `<div class="programHeading"> Universitet </div>`;
+  
+  let allProgramList = document.createElement("div");
+  let idDiven = document.createElement("div");
+  
+  allProgramList.append(idDiven);
+  idDiven.id = data.id + "allProgramList";
+  allProgramList.classList.add("allProgramList");
+  
+  infoAboutp.append(programHeading);
+  infoAboutp.append(allProgramList);
+  
+  
+     
+wrapper.append(infoAboutp);
+}*/
+/*document.querySelector(``).addEventListener("click", function() {
+let infoAboutp = document.createElement("div");
+infoAboutp.classList.add("panels");    
+
+let programHeading = document.createElement("div");
+programHeading.innerHTML = 
+`<div class="programHeading"> program </div>`;
+
+let allProgramList = document.createElement("div");
+let idDiven = document.createElement("div");
+
+infoAboutp.append(programHeading);
+infoAboutp.append(allProgramList);
+allCitiesList.append(idDiven);
+console.log(infoAboutp);
+idDiven.id = data.id + "allCities";
+console.log(data.id);
+allProgramList.classList.add("allCities");
+wrapper.append(infoAboutp);
+return infoAboutp;
+});
+
+
+*/
