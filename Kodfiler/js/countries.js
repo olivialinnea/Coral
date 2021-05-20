@@ -69,9 +69,6 @@ function infoInfo(data) {
     
     let idDiv = document.createElement("div");
 
-    
-    idDiv.id = data.id + "allCities";
-    allCitiesList.classList.add("allCities");
 
     infoAbout.append(cityHeading);
     infoAbout.append(allCitiesList);
@@ -81,24 +78,26 @@ function infoInfo(data) {
 
     let cityDiv = document.createElement("div");
     cityDiv.classList.add("cityDiv");
-
+    
     for (let j = 0; j < city.length; j++) {
       let oneCity = document.createElement("div");
       oneCity.classList.add("oneCity");
       
       let cityName = document.createElement("div");
-      cityName.innerHTML = `${city[j].name}`
+      cityName.innerHTML = `${city[j].name}`;
       oneCity.append(cityName);
       cityDiv.append(oneCity);
       
       let idDiv = document.createElement("div");
       idDiv.classList.add("idDiv");
-
+      
 
       idDiv.id = city[j].id + "cityCity";
 
       idDiv.innerHTML = `
-      
+      <div>${city[j].text}</div>
+      <img class="normalImageCity" src="Images/${city[j].imagesNormal[0]}">      
+      <div></div>
       `;
 
       oneCity.append(idDiv);
@@ -112,6 +111,32 @@ function infoInfo(data) {
           idDiv.style.display = "none";
         }
       });
+    }
+
+    let enterplace = ENTERTAINMENT_PLACES.filter(place => CITIES.id === place.cityID);
+    let placeDiv = document.createElement("div");
+    placeDiv.classList.add("placeDiv");
+
+    for (let k = 0; k < enterplace.length; k++){
+      let onePlace = document.createElement("div");
+      onePlace.classList.add("onePlace");
+
+      let placeName = document.createElement("div");
+      placeName.innerHTML = `${enterplace[j].name}`;
+      onePlace.append(placeName);
+      placeDiv.append(onePlace);
+
+      let idDivPlace = document.createElement("div");
+      idDivPlace.classList.add("idDivPlace");
+
+      idDivPlace.id = enterplace[k] + "enterplace";
+
+      idDivPlace.innerHTML = `
+      <div>${enterplace[k].name}</div>
+      `
+      onePlace.append(idDivPlace);
+      oneCity.append(placeDiv);
+      
     }
     return infoAbout;
   }
