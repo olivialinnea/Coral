@@ -59,18 +59,15 @@ function universityDiv(data){
       let info = document.querySelectorAll(".infoAbout");
 
       for (let ii = 0; ii < info.length; ii++) {
-        // console.log(info[ii].parentNode);
-
         if (info[ii].parentNode == universityDiven) {
           universityDiven.removeChild(info[ii]);
         }
-        
-        
       }
     } else {
       universityDiven.append(infoDivUnder(data));
       universityDiven.classList.toggle("active");
     }
+
   });
     return universityDiven;
 }
@@ -87,7 +84,6 @@ function infoDivUnder(data) {
   allProgrammeList.classList.add("allProgrammes");
 
   let idDiv = document.createElement("div");
-  
   idDiv.id = data.id + "allProgrammes";
   
   allProgrammeList.append(idDiv);
@@ -131,6 +127,7 @@ function infoDivUnder(data) {
       } else {
         idDiv.style.display = "none";
       }
+      
     });
 
   }
