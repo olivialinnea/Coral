@@ -100,3 +100,8 @@ body {
 .idDiv {
   display: none;
 }
+
+.normalImageCity {
+  width: 25vw;
+  height: 20vh;
+}
