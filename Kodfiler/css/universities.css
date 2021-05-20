@@ -10,8 +10,8 @@
 }
 
 .active {
-  margin-bottom: 0px;
-  border-bottom: 0px ;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black ;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -93,7 +93,6 @@
   border-top: none;
   padding: 10px;
   display: none;
-  color: red;
 }
 
 .students {
@@ -107,4 +106,58 @@
 
 .programN {
   cursor: pointer;
+}
+
+.idDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+/* olivia */
+
+.headerContainer {
+  display: flex;
+  padding-left: none;
+  padding-top: 10px;
+}
+
+.entryHead,
+.graduatesHead {
+  flex-grow: 1;
+}
+
+.grades {
+  display: flex;
+  font-weight: normal;
+}
+
+.grades > div {
+  margin-right: 10px;
+}
+
+.reviewHeader {
+  font-weight: bold;
+  margin-top: 1vh;
+}
+
+.graduates {
+  display: flex;
+}
+
+.graduates > div {
+  margin-right: 10px;
+}
+
+.gradesDiv {
+  display: flex;
+}
+
+.grades,
+.graduates {
+  flex-grow: 1;
+}
+
+.graduates > div:nth-child(2) {
+  font-weight: normal;
+
 }

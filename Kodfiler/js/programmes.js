@@ -182,15 +182,15 @@ function programdiv(data){
 
 
 // Fixar sista diven
-function lastdiv() {
-  let infoAbout = document.createElement("div");
-  infoAbout.classList.add("panel");
+// function lastdiv() {
+//   let infoAbout = document.createElement("div");
+//   infoAbout.classList.add("panel");
 
-  infoAbout.innerHTML= `Information om program`
+//   infoAbout.innerHTML= `Information om program`
 
-  wrapper.append(infoAbout);  
-}
-lastdiv();
+//   wrapper.append(infoAbout);  
+// }
+// lastdiv();
 
 function yearlyAmount(year){
   let div = document.createElement("div");
