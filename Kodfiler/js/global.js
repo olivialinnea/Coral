@@ -27,9 +27,3 @@ function goToTopButton() {
         })
     });
 }
-
-//Tömmer search bar när sidan laddas om.
-function init() {
-  searchBar.value = "";
-}
-window.onload = init;

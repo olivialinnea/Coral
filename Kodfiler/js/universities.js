@@ -38,6 +38,12 @@ searchBar.addEventListener('keyup', (e) => {
   console.log(filteredUnis);
 });
 
+//Tömmer search bar när sidan laddas om.
+function init() {
+  searchBar.value = "";
+}
+window.onload = init;
+
 //Appendar och skapar alla universitet osv.
 for(let i = 0; i < UNIVERSITIES.length; i++) {
   wrapper.append(universityDiv(UNIVERSITIES[i]));

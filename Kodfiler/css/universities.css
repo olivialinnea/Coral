@@ -1,12 +1,24 @@
+main {
+  margin-left: 18vw;
+  margin-right: 18vw;
+}
+
 .universityDiv {
-  border: black solid 1px;
-  height: 8vh;
-  margin-bottom: 1vh;
-  padding-left: 1vh;
-  font-size: 3vh;
-  padding-right: 1vh;
-  font-weight: bold;
+  box-shadow: 6px 4px 4px lightgrey;
+  height: auto;
+  margin-bottom: 2vh;
+  padding: 2vh;
   cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr;
+  transition: background-image, background-color 1s;
+}
+
+.universityDiv:hover {
+  background-image: linear-gradient(
+    rgba(80, 255, 246, 0.678),
+    rgb(255, 255, 255)
+  );
 }
 
 .active {

@@ -41,11 +41,6 @@ h1 {
   align-items: center;
 }
 
-main {
-  margin-left: 10vw;
-  margin-right: 10vw;
-}
-
 input {
   border: 1px solid black;
   margin-bottom: 1vh;

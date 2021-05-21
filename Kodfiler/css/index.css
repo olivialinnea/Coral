@@ -13,6 +13,8 @@ nav {
 }
 
 main {
+  margin-left: 10vw;
+  margin-right: 10vw;
   margin-top: 10vh;
   margin-bottom: 10vh;
   display: grid;
@@ -22,9 +24,6 @@ main {
 
 h2 {
   margin: 0;
-}
-
-#siteInfo {
 }
 
 #flag,
@@ -72,4 +71,3 @@ h2 {
   height: 90px;
   grid-column: 1 / span 2;
 }
-

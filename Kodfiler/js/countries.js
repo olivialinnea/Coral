@@ -20,12 +20,7 @@ function countryDiv(data){
   let country = document.createElement("div");
   country.classList.add("country");
 
-
-  let c = LANGUAGES.find(function (c) {
-    if (COUNTRIES.languageID === LANGUAGES.id) {
-      return c;
-        }
-      });
+  let lang = LANGUAGES.find(language => data.languageID === language.id);
 
   country.innerHTML = `
   <div class="imgTitle">
@@ -34,7 +29,7 @@ function countryDiv(data){
   </div>
   <div class="countrySideInfo"> 
     <img class="countryFlag" src="Images/${data.flag}">
-    <div> Land: ${c.name} </div>
+    <div> Språk: ${lang.name} </div>
       <div id="visa"> Visum krävs: ${data.visa}</div>
     </div>
   </div>
@@ -129,8 +124,23 @@ function universityDiven(data) {
 
   infoAboutCity.innerHTML = `
   <div class="cityText">${data.text}</div>
-  <img class="normalImageCity" src="Images/${data.imagesNormal[0]}">`
-  
+  <div><img class="normalImageCity" src="Images/${data.imagesNormal[0]}"></div>
+  `
+
+  let middleCityDiv = document.createElement("div");
+  middleCityDiv.classList.add("middleCityDiv");
+  infoAboutCity.append(middleCityDiv);
+
+  let entertainment = document.createElement("div");
+  entertainment.classList.add("entertainmentPlaces");
+  middleCityDiv.append(entertainment);
+
+  ENTERTAINMENT_PLACES.forEach(function(p) {
+    if (p.cityID === data.id){
+      entertainment.append(entertainmentPlace(p.name))
+    }
+  });
+
   let idDiven = document.createElement("div");
   idDiven.classList.add("idDiven");
 
@@ -166,7 +176,15 @@ function universityDiven(data) {
       }
     });
   }
-return infoAboutuni;
+  return infoAboutuni;
+}
+
+function entertainmentPlace(place){
+  let div = document.createElement("div");
+
+  div.textContent = `• ${place}`;
+  
+  return div;
 }
     
 // JONNAS KOD

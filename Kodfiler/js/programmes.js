@@ -14,6 +14,7 @@ for (let i = 0; i < 5; i++) {
 yearArray.sort();
 
 
+
 const searchBar = document.getElementById("programmeSearch");
 let programmeNames = PROGRAMMES;
 
@@ -36,6 +37,12 @@ searchBar.addEventListener('keyup', (e) => {
   filteredProgram.forEach( programme => wrapper.append(programdiv(programme)));
   console.log(filteredProgram);
 });
+
+//Tömmer search bar när sidan laddas om.
+function init() {
+  searchBar.value = "";
+}
+window.onload = init;
 
 for(let i = 0; i < PROGRAMMES.length; i++) {
   wrapper.append(programdiv(PROGRAMMES[i]));
