@@ -3,14 +3,17 @@ body {
   margin: 0;
 }
 
-header {
-  height: 15vh;
-  padding: 5vh;
+header > a {
+  font-size: 5vh;
+  margin: 5vh;
   box-sizing: border-box;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 
-header > h1 {
-  font-size: 35px;
+header > a:hover {
+  color: coral;
 }
 
 footer {
