@@ -110,3 +110,26 @@
 .graduates {
   flex-grow: 1;
 }
+
+.reviewCard {
+  border: 1px solid;
+  width: auto;
+  height: auto;
+}
+
+.commentDate {
+  display: flex;
+  justify-content: end;
+}
+
+.commentContent {
+  display: flex;
+}
+
+.stars {
+  flex-grow: 1;
+}
+
+.textC {
+  flex-grow: 2;
+}
