@@ -1,6 +1,6 @@
 .programmeDiv {
   border: black solid 1px;
-  height: 8vh;
+  height: auto;
   margin-bottom: 1vh;
   padding-left: 2vh;
   padding-right: 2vh;
@@ -11,10 +11,13 @@
   align-items: center;
 }
 
+.programmeDiv:hover {
+  cursor: pointer;
+}
+
 .panel {
   padding: 0 18px;
   padding-left: 2vh;
-  display: none;
   background-color: white;
   overflow: hidden;
   border: 1px solid black;

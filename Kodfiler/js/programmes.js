@@ -26,8 +26,6 @@ programmeNames.sort(function(a,b) {
   return 0;
 });
 
-console.log(UNIVERSITIES)
-
 //Sökfunktionen
 searchBar.addEventListener('keyup', (e) => {
   wrapper.innerHTML = "";
@@ -43,40 +41,6 @@ for(let i = 0; i < PROGRAMMES.length; i++) {
   wrapper.append(programdiv(PROGRAMMES[i]));
 }
 
-// for(let i = 0; i < COMMENTS_PROGRAMME.length; i++) {
-//   test(COMMENTS_PROGRAMME[i]);
-// }
-
-// function reviewCard(programid){
-
-//   let programmeCard = COMMENTS_PROGRAMME.forEach(comment => {
-//     if(comment.programmeID == programid) {
-//       let card = document.createElement("div");
-//       wrapper.append(card);
-//       card.innerHTML = `
-//     <div class="commentDate">
-//       <div></div>
-//     </div>
-//     <div class="commentName">
-//       <div>${programid.alias}</div>
-//     </div>
-//     <div class="commentContent">
-//       <div class="stars">
-//         <div>Teachers: </div>
-//         <div>Students: </div>
-//         <div>Course: </div>
-//       </div>
-//       <div>
-//         <div class="textC">
-//           <div>Omdöme:${programid.text}</div>
-//         </div>
-//       </div>
-//     </div>
-//   `
-//   }
-//   })
-//   return programmeCard;
-// }
 
 //Skapar divarna
 function programdiv(data){
@@ -86,8 +50,6 @@ function programdiv(data){
   const uni = UNIVERSITIES.find(university => data.universityID === university.id);
   const city = CITIES.find(cities => uni.cityID === cities.id);
   const country = COUNTRIES.find(countries => city.countryID === countries.id);
-  // const comments = COMMENTS_PROGRAMME.find(comments => data.id === comments.id);
-  const level = LEVELS.find(lvl => data.level === lvl.indexOf("Master"));
 
 
   programDiven.innerHTML = `
@@ -95,12 +57,35 @@ function programdiv(data){
   <div class="programSideInfo"> 
       <img class="countryFlag" src="Images/${country.flag}">
       <div class="position" >
-        <div> Level: ${level}</div>
+        <div> Level: ${0}</div>
         <div> Stad: ${city.name}</div>
         <div> Land: ${country.name}</div>
       </div>
     </div>
   `;
+
+  programDiven.addEventListener("click", function(event){
+    event.stopPropagation();
+    if (programDiven.classList.contains("active")){
+      programDiven.classList.toggle("active");
+    
+      let info = document.querySelectorAll(".panel");
+
+      for (let j = 0; j < info.length; j++){
+        if (info[j].parentNode === programDiven){
+          programDiven.removeChild(info[j]);
+        }
+      }
+    } else {
+      programDiven.append(programInfo(data));
+      programDiven.classList.toggle("active");
+    }
+  });
+  
+  return programDiven;
+}
+
+function programInfo(data){
   let infoAbout = document.createElement("div");
   infoAbout.classList.add("panel");
 
@@ -171,32 +156,10 @@ function programdiv(data){
   innerProgrammeDiv.append(headerContainer, gradesDiv, reviewDiv);
 
   infoAbout.append(innerProgrammeDiv);
-  programDiven.append(infoAbout); 
 
-  programDiven.addEventListener("click", function() {
-    this.classList.toggle("active");
-    let panel = infoAbout;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-
-  return programDiven;
+  return infoAbout;
 }
 
-
-// Fixar sista diven
-// function lastdiv() {
-//   let infoAbout = document.createElement("div");
-//   infoAbout.classList.add("panel");
-
-//   infoAbout.innerHTML= `Information om program`
-
-//   wrapper.append(infoAbout);  
-// }
-// lastdiv();
 
 function yearlyAmount(year){
   let div = document.createElement("div");
@@ -220,35 +183,4 @@ function gradesKey(key){
   div.textContent = `${key}`;
   
   return div;
-}
-
-for(let i = 0; i < COMMENTS_PROGRAMME.length; i++) {
-  reviewsCards(COMMENTS_PROGRAMME[i]);
-}
-
-
-function reviewsCards(e){
-  let card = document.createElement("div");
-  card.classList.add("reviewCard");
-  wrapper.append(card);
-      card.innerHTML = `
-      <div class="commentDate">
-        <div>${e.date.year}-${e.date.month}-${e.date.day}</div>
-      </div>
-      <div class="commentName">
-        <div>${e.alias}</div>
-      </div>
-      <div class="commentContent">
-        <div class="stars">
-          <div>Teachers: ${e.stars.teachers}</div>
-          <div>Students: ${e.stars.students}</div>
-          <div>Course: ${e.stars.courses}</div>
-        </div>
-        <div class="textC">
-            <p>Omdöme:${e.text}<p>
-        </div>
-        </div>
-      </div>
-      `
-  return card;
 }
