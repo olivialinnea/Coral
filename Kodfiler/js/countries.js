@@ -69,8 +69,9 @@ function infoInfo(data) {
     infoAbout.classList.add("infoAbout");    
 
     let cityHeading = document.createElement("div");
+    cityHeading.classList.add("cityHeading");
     cityHeading.innerHTML = 
-    `<div class="cityHeading"> Städer </div>`;
+    ` Städer`;
 
     let allCitiesList = document.createElement("div");
     
@@ -85,26 +86,19 @@ function infoInfo(data) {
 
     let cityDiv = document.createElement("div");
     cityDiv.classList.add("cityDiv");
-    
-    
-    
 
     for (let j = 0; j < city.length; j++) {
       let oneCity = document.createElement("div");
       oneCity.classList.add("oneCity");
+
+      oneCity.innerHTML = `${city[j].name}`;
       
-      let cityName = document.createElement("div");
-      cityName.innerHTML = `${city[j].name}`;
-      oneCity.append(cityName);
       cityDiv.append(oneCity);
       
       let idDiv = document.createElement("div");
       idDiv.classList.add("idDiv");
       
-
       idDiv.id = city[j].id + "cityCity";
-      
-
       
       idDiv.innerHTML = `
       <div class"firstColumn">
@@ -116,15 +110,49 @@ function infoInfo(data) {
       oneCity.append(idDiv);
       infoAbout.append(cityDiv);
 
-      cityName.addEventListener("click", function(event){
+      oneCity.addEventListener("click", function(event){
         event.stopPropagation();
         if (idDiv.style.display === "none") {
           idDiv.style.display = "flex";
         } else {
-          idDiv.append(universityDiven(data));
           idDiv.style.display = "none";
         }
+
+        if (oneCity.classList.contains("active")){
+              oneCity.classList.toggle("active");
+            
+            let info = document.querySelectorAll(".infoAbout");
+       
+            for(let j = 0; j < info.length; j++){
+              if (info[j].parentNode === oneCity) {
+                oneCity.removeChild(info[j]);
+              }
+            }
+           } else {
+            oneCity.append(universityDiven(data));
+            oneCity.classList.toggle("active");
+            }
+
       });
+
+      // oneCity.addEventListener("click", function(event) {
+      //   event.stopPropagation();
+      //   if (oneCity.classList.contains("active")){
+      //     oneCity.classList.toggle("active");
+        
+      //   let info = document.querySelectorAll(".infoAbout");
+   
+      //   for(let j = 0; j < info.length; j++){
+      //     if (info[j].parentNode === oneCity) {
+      //       oneCity.removeChild(info[j]);
+      //     }
+      //   }
+      //  } else {
+      //   oneCity.append(universityDiven(data));
+      //   oneCity.classList.toggle("active");
+      //   }
+       
+      // });
     }
 
     return infoAbout;
@@ -160,14 +188,12 @@ function infoInfo(data) {
         universityName.innerHTML = `${university[jj].name}`;
         oneUniversity.append(universityName);
         universityDiv.append(oneUniversity);
-    
-    
+  
 
     idDiven.id = university[jj].id + "University";
     infoAboutuni.append(oneUniversity);
     oneUniversity.append(idDiven);                                              
     
-
     universityName.addEventListener("click", function(event){
       event.stopPropagation();
       if (idDiven.style.display === "none") {
@@ -176,7 +202,6 @@ function infoInfo(data) {
         idDiven.style.display = "none";
       }
     });
-    
   }
   return infoAboutuni;
     }
