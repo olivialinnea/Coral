@@ -146,6 +146,43 @@ function programInfo(data){
   let reviewHead = document.createElement("div");
   let reviews = document.createElement("div");
   reviews.classList.add("reviews");
+
+  const r = COMMENTS_PROGRAMME.filter(review => review.programmeID === data.id);
+
+  for (let i = 0; i < r.length; i++) {
+  let card = document.createElement("div");
+  card.classList.add("card");
+
+  card.innerHTML= `
+    <div> 
+      <div class="commentName">
+        ${r[i].alias}
+      </div>
+
+      <div class="commentDate">
+        ${r[i].date.year}-${r[i].date.month}-${r[i].date.day}
+      </div>
+    </div>
+    
+    <div class="commentContent">
+
+      <div class="stars">
+        <div class="t">Teachers: ${r[i].stars.teachers}</div>
+        <div class="s">Students: ${r[i].stars.students}</div>
+        <div class="c">Course: ${r[i].stars.courses}</div>
+      </div>
+
+        <div class="textC">
+          <p>Omdöme:</p>
+          <p>${r[i].text}<p>
+        </div>
+    </div>
+  `
+
+
+  reviews.append(card);
+  }
+
   reviewHead.classList.add("reviewHeader");
   reviewDiv.classList.add("reviewContent");
 
@@ -156,6 +193,8 @@ function programInfo(data){
   innerProgrammeDiv.append(headerContainer, gradesDiv, reviewDiv);
 
   infoAbout.append(innerProgrammeDiv);
+
+  
 
   return infoAbout;
 }
