@@ -59,7 +59,6 @@ function universityDiv(data){
     }
   });
   
-  
   universityDiven.innerHTML = `
   <div class="top"> 
     <div>${data.name}</div>
@@ -145,15 +144,12 @@ function infoDivUnder(data) {
 
     programN.addEventListener("click", function(event) {
       event.stopPropagation();
-
       if (idDiv.style.display === "none") {
         idDiv.style.display = "flex";
       } else {
         idDiv.style.display = "none";
       }
-      
     });
-
 
     let gradesDiv = document.createElement("div");  
     let entryGradeDiv = document.createElement("div");
@@ -184,18 +180,52 @@ function infoDivUnder(data) {
     graduatesHead.textContent = "Antal examinerade"
     let successRate = program[j].successRate;
     let entryGrades = program[j].entryGrades;
-
     
   let reviewDiv = document.createElement("div");
   let reviewHead = document.createElement("div");
   let reviews = document.createElement("div");
   reviews.classList.add("reviews");
+
+const r = COMMENTS_PROGRAMME.filter(review => review.programmeID === program[j].id);
+
+for (let i = 0; i < r.length; i++) {
+  let card = document.createElement("div");
+  card.classList.add("card");
+
+  card.innerHTML= `
+    <div> 
+      <div class="commentName">
+        ${r[i].alias}
+      </div>
+
+      <div class="commentDate">
+        ${r[i].date.year}-${r[i].date.month}-${r[i].date.day}
+      </div>
+    </div>
+    
+    <div class="commentContent">
+
+      <div class="stars">
+        <div class="t">Teachers: ${r[i].stars.teachers}</div>
+        <div class="s">Students: ${r[i].stars.students}</div>
+        <div class="c">Course: ${r[i].stars.courses}</div>
+      </div>
+
+        <div class="textC">
+          <p>Omdöme:</p>
+          <p>${r[i].text}<p>
+        </div>
+    </div>
+`
+
+
+  reviews.append(card);
+}
+
   reviewHead.classList.add("reviewHeader");
   reviewDiv.classList.add("reviewContent");
 
   reviewHead.textContent = "Omdömen från före detta studenter";
-
-  reviewDiv.append(reviewHead, reviews);
   
     yearArray.forEach(function(year) {
       yearDiv.append(yearlyAmount(year))
@@ -210,10 +240,10 @@ function infoDivUnder(data) {
       entryDiv.append(gradesKey(grade))
     });
 
+    reviewDiv.append(reviewHead, reviews);
     idDiv.append(headerContainer, gradesDiv, reviewDiv);
-  }
 
-  
+  }
 
   return infoAbout;
 }
@@ -241,3 +271,4 @@ function gradesKey(key){
   
   return div;
 }
+

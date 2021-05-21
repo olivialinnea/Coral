@@ -161,3 +161,61 @@
   font-weight: normal;
 
 }
+
+.card {
+  border: 1px solid black;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 23.5vw;
+}
+
+.reviewContent {
+  font-size: 15px;
+}
+
+.reviews {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.reviewHeader {
+  padding: 10px;
+  padding-left: 0px;
+  font-size: 20px;
+}
+
+.card > div:nth-child(1) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 5px;
+}
+
+.commentName {
+  grid-column: 1/2 span;
+}
+
+.commentDate {
+  grid-column: 3;
+  font-weight: normal;
+}
+
+.commentContent {
+  padding-left: 5px;
+}
+
+.textC {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+}
+
+.textC > p:nth-child(1) {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.textC > p:nth-child(2){
+  font-weight: normal;
+  margin: 0px;
+  padding-right: 10px;
+}
