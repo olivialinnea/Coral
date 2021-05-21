@@ -26,6 +26,8 @@ programmeNames.sort(function(a,b) {
   return 0;
 });
 
+console.log(UNIVERSITIES)
+
 //Sökfunktionen
 searchBar.addEventListener('keyup', (e) => {
   wrapper.innerHTML = "";
@@ -40,6 +42,10 @@ searchBar.addEventListener('keyup', (e) => {
 for(let i = 0; i < PROGRAMMES.length; i++) {
   wrapper.append(programdiv(PROGRAMMES[i]));
 }
+
+// for(let i = 0; i < COMMENTS_PROGRAMME.length; i++) {
+//   test(COMMENTS_PROGRAMME[i]);
+// }
 
 // function reviewCard(programid){
 
@@ -214,4 +220,35 @@ function gradesKey(key){
   div.textContent = `${key}`;
   
   return div;
+}
+
+for(let i = 0; i < COMMENTS_PROGRAMME.length; i++) {
+  reviewsCards(COMMENTS_PROGRAMME[i]);
+}
+
+
+function reviewsCards(e){
+  let card = document.createElement("div");
+  card.classList.add("reviewCard");
+  wrapper.append(card);
+      card.innerHTML = `
+      <div class="commentDate">
+        <div>${e.date.year}-${e.date.month}-${e.date.day}</div>
+      </div>
+      <div class="commentName">
+        <div>${e.alias}</div>
+      </div>
+      <div class="commentContent">
+        <div class="stars">
+          <div>Teachers: ${e.stars.teachers}</div>
+          <div>Students: ${e.stars.students}</div>
+          <div>Course: ${e.stars.courses}</div>
+        </div>
+        <div class="textC">
+            <p>Omdöme:${e.text}<p>
+        </div>
+        </div>
+      </div>
+      `
+  return card;
 }
