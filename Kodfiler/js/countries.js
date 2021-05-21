@@ -16,12 +16,19 @@ for(let i = 0; i < COUNTRIES.length; i++) {
     wrapper.append(countryDiv(COUNTRIES[i]));
   }
    // document.querySelector(".country").addEventListener("click", infoinfoinfo(COUNTRIES[i]));
+   
 
    function countryDiv(data){
     let country = document.createElement("div");
     country.classList.add("country");
   
     
+    let c = LANGUAGES.find(function (c) {
+      if (COUNTRIES.languageID === LANGUAGES.id) {
+        return c;
+          }
+        });
+
     country.innerHTML = `
     <div class="imgTitle">
       <img class="normalImage" src="Images/${data.imagesNormal[0]}">
@@ -29,7 +36,7 @@ for(let i = 0; i < COUNTRIES.length; i++) {
     </div>
     <div class="countrySideInfo"> 
       <img class="countryFlag" src="Images/${data.flag}">
-      <div class="langVisa" id="${data.id}langVisa">
+      <div> Land: ${c.name} </div>
         <div id="visa"> Visum krävs: ${data.visa}</div>
       </div>
     </div>
@@ -79,6 +86,9 @@ function infoInfo(data) {
     let cityDiv = document.createElement("div");
     cityDiv.classList.add("cityDiv");
     
+    
+    
+
     for (let j = 0; j < city.length; j++) {
       let oneCity = document.createElement("div");
       oneCity.classList.add("oneCity");
@@ -93,11 +103,14 @@ function infoInfo(data) {
       
 
       idDiv.id = city[j].id + "cityCity";
+      
 
+      
       idDiv.innerHTML = `
+      <div class"firstColumn">
       <div>${city[j].text}</div>
-      <img class="normalImageCity" src="Images/${city[j].imagesNormal[0]}">      
-      <div></div>
+      <img class="normalImageCity" src="Images/${city[j].imagesNormal[0]}">
+      </div>
       `;
 
       oneCity.append(idDiv);
@@ -108,12 +121,102 @@ function infoInfo(data) {
         if (idDiv.style.display === "none") {
           idDiv.style.display = "flex";
         } else {
+          idDiv.append(universityDiven(data));
           idDiv.style.display = "none";
         }
       });
     }
 
-    let enterplace = ENTERTAINMENT_PLACES.filter(place => CITIES.id === place.cityID);
+    return infoAbout;
+  }
+
+    function universityDiven(data) {
+      let infoAboutuni = document.createElement("div");
+      infoAboutuni.classList.add("infoAboutuni");    
+  
+      let cityHeading = document.createElement("div");
+      cityHeading.innerHTML = 
+      `<div class="cityHeading"> Universitet </div>`;
+  
+      let allUniversityList = document.createElement("div");
+    
+      let idDiven = document.createElement("div");
+      idDiven.classList.add("idDiven");
+
+    infoAboutuni.append(cityHeading);
+    infoAboutuni.append(allUniversityList);
+    allUniversityList.append(idDiven);
+
+      let university = UNIVERSITIES.filter(university => data.id === university.cityID);
+
+      let universityDiv = document.createElement("div");
+      universityDiv.classList.add("universityDiv");
+    
+      for (let jj = 0; jj < university.length; jj++) {
+        let oneUniversity = document.createElement("div");
+        oneUniversity.classList.add("oneUniversity");
+    
+        let universityName = document.createElement("div");
+        universityName.innerHTML = `${university[jj].name}`;
+        oneUniversity.append(universityName);
+        universityDiv.append(oneUniversity);
+    
+    
+
+    idDiven.id = university[jj].id + "University";
+    infoAboutuni.append(oneUniversity);
+    oneUniversity.append(idDiven);                                              
+    
+
+    universityName.addEventListener("click", function(event){
+      event.stopPropagation();
+      if (idDiven.style.display === "none") {
+        idDiven.style.display = "flex";
+      } else {
+        idDiven.style.display = "none";
+      }
+    });
+    
+  }
+  return infoAboutuni;
+    }
+    
+  /*let university = UNIVERSITIES.filter(university => data.id === university.cityID);
+
+  let universityDiv = document.createElement("div");
+  universityDiv.classList.add("universityDiv");
+  
+  for (let jj = 0; jj < university.length; jj++) {
+    let oneUniversity = document.createElement("div");
+    oneUniversity.classList.add("oneCity");
+    
+    let UniversityName = document.createElement("div");
+    UniversityName.innerHTML = `${university[jj].name}`;
+    oneUniversity.append(UniversityName);
+    universityDiv.append(oneUniversity);
+    
+    let idDiven = document.createElement("div");
+    idDiven.classList.add("idDiv");
+    
+
+    idDiven.id = university[jj].id + "universityUniversity";
+
+    idDiven.innerHTML = `
+   hej`;
+
+    oneUniversity.append(idDiven);
+    infoAbout.append(universityDiv);
+
+    UniversityName.addEventListener("click", function(event){
+      event.stopPropagation();
+      if (idDiven.style.display === "none") {
+        idDiven.style.display = "flex";
+      } else {
+        idDiven.style.display = "none";
+      }
+    });
+  }
+  /*let enterplace = ENTERTAINMENT_PLACES.filter(place => CITIES.id === place.cityID);
     let placeDiv = document.createElement("div");
     placeDiv.classList.add("placeDiv");
 
@@ -138,9 +241,6 @@ function infoInfo(data) {
       oneCity.append(placeDiv);
       
     }
-    return infoAbout;
-  }
-    
 /*
     document.querySelector(".country").addEventListener("click", function() {
       this.classList.toggle("active");
