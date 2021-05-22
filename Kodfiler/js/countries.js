@@ -224,7 +224,7 @@ function infoAboutUni(data) {
       if (oneProgram.classList.contains("active")){
         oneProgram.classList.toggle("active");
       
-        let info = document.querySelectorAll(".infoUni");
+        let info = document.querySelectorAll(".programInfo");
     
         for(let j = 0; j < info.length; j++){
           if (info[j].parentNode === oneProgram) {
