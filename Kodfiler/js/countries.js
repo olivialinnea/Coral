@@ -29,10 +29,11 @@ for(let i = 0; i < COUNTRIES.length; i++) {
 function countryDiv(data){
   let country = document.createElement("div");
   country.classList.add("country");
+  wrapper.append(country);
 
   let lang = LANGUAGES.find(language => data.languageID === language.id);
-  
-  country.innerHTML = `
+    
+  /*country.innerHTML = `
   <div class="imgTitle">
     <img class="normalImage" src="Images/${data.imagesNormal[0]}">
     <div class="countryNameTitle">${data.name}</div>
@@ -40,11 +41,37 @@ function countryDiv(data){
   <div class="countrySideInfo"> 
     <img class="countryFlag" src="Images/${data.flag}">
     <div> Språk: ${lang.name} </div>
-      <div id="visa"> Visum krävs: ${data.visa}</div>
+      <div class="visa"> Visum krävs: ${data.visa}</div>
     </div>
   </div>
-  `;
+  `;*/
 
+  let imgTitle = document.createElement("div");
+  let normalImage = document.createElement("div");
+  let countryNameTitle = document.createElement("div");
+  let countrySideInfo = document.createElement("div");
+  let countryFlag = document.createElement("div");
+  let languageVisaDiv = document.createElement("div");
+  let visaDiv = document.createElement("div");
+
+  visaDiv.classList.add("visa");
+  normalImage.classList.add("normalImage");
+  countryNameTitle.classList.add("countryNameTitle");
+  countrySideInfo.classList.add("countrySideInfo");
+  countryFlag.classList.add("countryFlag");
+  visaDiv.classList.add("visaDiv");
+  imgTitle.classList.add("imgTitle");
+  languageVisaDiv.classList.add("languageVisaDiv")
+  
+
+  countryNameTitle.innerText = `${data.name}`;
+  normalImage.innerHTML = `<img class="normalImage" src="Images/${data.imagesNormal[0]}">`;
+  countryFlag.innerHTML = `<img class="countryFlag" src="Images/${data.flag}">`;
+  languageVisaDiv.innerHTML = `Språk: ${lang.name} Visa krävs: ${0}`;
+
+  country.append(imgTitle, countrySideInfo);
+  imgTitle.append(normalImage, countryNameTitle);
+  countrySideInfo.append(countryFlag, languageVisaDiv, visaDiv)
 
   country.addEventListener("click", function(event) {
     event.stopPropagation();
@@ -446,3 +473,17 @@ function gradesKey(key){
   
   return div;
 }
+
+function getVisa(countryVisa){
+  COUNTRIES.find(obj => obj.id == countryVisa).visa;
+  let visaContainer = document.createElement("div");
+  document.querySelector(".visa").append(visaContainer);
+  
+  if (countryVisa == true) {
+      visaContainer.innerHTML ="Visum: Ja";
+  } else {
+      visaContainer.innerHTML="Visum: Nej";
+  }
+  return countryVisa;
+}
+
