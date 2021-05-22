@@ -162,3 +162,46 @@ body {
   height: 100%;
   object-fit: contain;
 }
+
+.oneUniversity > div:nth-child(1) {
+  font-weight: bold;
+}
+
+.oneProgram {
+  border: 1px solid black;
+  margin-bottom: 1vh;
+}
+
+.students {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.exchanges {
+  grid: 3;
+}
+
+.programN {
+  cursor: pointer;
+}
+
+.programmeHeading {
+  font-weight: bold;
+  padding: 1vh;
+}
+
+.infoUni {
+  border: 1px solid black;
+}
+
+.programDiv {
+  padding: 1vh;
+}
+
+.programName {
+  font-weight: bold;
+}
+
+.programName:hover {
+  color: coral;
+}

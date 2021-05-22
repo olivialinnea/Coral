@@ -1,6 +1,17 @@
 "use strict";
 const wrapper = document.querySelector("wrapper");
 
+let yearArray = [];
+let D = new Date();
+let thisYear = D.getFullYear();
+
+for (let i = 0; i < 5; i++) {
+  thisYear -=1;
+  yearArray.push(thisYear);
+}
+
+yearArray.sort();
+
 //Sorterar alla länder alfabetiskt
 COUNTRIES.sort(function(a,b) {
   if (a.name.toLowerCase() < b.name.toLowerCase()
@@ -68,9 +79,7 @@ function infoInfo(data) {
 
   infoAbout.append(cityHeading);
 
-  let cityDiv = document.createElement("div");
-  cityDiv.classList.add("cityDiv");
-  cityDiv.innerHTML = `${city(data)}` 
+  city(data);
 
   function city(data) {
     let city = CITIES.filter(city => data.id === city.countryID);
@@ -234,18 +243,175 @@ function universityDiven(data) {
 
     idDiven.id = university[jj].id + "University";
     infoAboutuni.append(oneUniversity);
-    oneUniversity.append(idDiven);                                              
+    oneUniversity.append(idDiven);   
 
-    universityName.addEventListener("click", function(event){
+    oneUniversity.addEventListener("click", function(event){
       event.stopPropagation();
-      if (idDiven.style.display === "none") {
-        idDiven.style.display = "flex";
+      if (oneUniversity.classList.contains("active")){
+        oneUniversity.classList.toggle("active");
+        
+        let info = document.querySelectorAll(".infoUni");
+    
+        for(let j = 0; j < info.length; j++){
+          if (info[j].parentNode === oneUniversity) {
+            oneUniversity.removeChild(info[j]);
+          }
+        }
       } else {
-        idDiven.style.display = "none";
-      }
+        oneUniversity.append(infoAboutUni(university[jj]));
+        oneUniversity.classList.toggle("active");
+        }
     });
   }
   return infoAboutuni;
+}
+
+function infoAboutUni(data) {
+  let infoUni = document.createElement("div");
+  infoUni.classList.add("infoUni");
+
+  let programmeHeading = document.createElement("div");
+  programmeHeading.classList.add("programmeHeading");
+  programmeHeading.innerHTML = `Program `;
+
+  infoUni.append(programmeHeading);
+
+  let program = PROGRAMMES.filter(p => data.id === p.universityID);
+
+  let programDiv = document.createElement("div");
+  programDiv.classList.add("programDiv");
+
+  for (let j = 0; j < program.length; j++) {
+    let oneProgram = document.createElement("div");
+    oneProgram.classList.add("oneProgram");
+
+    oneProgram.innerHTML = `
+    <div class="programName">${program[j].name}</div>`;
+    
+    oneProgram.addEventListener("click", function(event) {
+      event.stopPropagation();
+
+      if (oneProgram.classList.contains("active")){
+        oneProgram.classList.toggle("active");
+      
+        let info = document.querySelectorAll(".infoUni");
+    
+        for(let j = 0; j < info.length; j++){
+          if (info[j].parentNode === oneProgram) {
+            oneProgram.removeChild(info[j]);
+          }
+        }
+      } else {
+        oneProgram.append(programInfo(program[j]));
+        oneProgram.classList.toggle("active");
+      }
+    });
+    programDiv.append(oneProgram);
+    infoUni.append(programDiv);
+  }
+  return infoUni;
+}
+
+function programInfo(data) {
+  let programInfo = document.createElement("div");
+  programInfo.classList.add("programInfo");
+
+  let students = document.createElement("div");
+  students.classList.add("students");
+  students.innerHTML =`
+    <div class="localS"> Local Students: ${data.localStudents}</div>
+    <div class="exchanges"> Exchange Students: ${data.exchangeStudents}</div>
+  `;
+  programInfo.append(students);
+
+  let gradesDiv = document.createElement("div");  
+  let entryGradeDiv = document.createElement("div");
+  let graduatesDiv = document.createElement("div");
+  let yearDiv = document.createElement("div");
+  let procentageDiv = document.createElement("div");
+  let graduatesHead = document.createElement("div");
+  let entryHead = document.createElement("div");
+  let headerContainer = document.createElement("div");
+  let entryDiv = document.createElement("div");
+  let entryYearDiv = document.createElement("div");
+  
+  graduatesHead.classList.add("graduatesHead");
+  graduatesDiv.classList.add("graduates");
+  entryGradeDiv.classList.add("grades");
+  gradesDiv.classList.add("gradesDiv");
+  entryHead.classList.add("entryHead");
+  entryDiv.classList.add("entryDiv");
+  entryYearDiv.classList.add("entryYearDiv");
+  headerContainer.classList.add("headerContainer");
+
+  headerContainer.append(entryHead, graduatesHead);
+  gradesDiv.append(entryGradeDiv, graduatesDiv);
+  graduatesDiv.append(yearDiv, procentageDiv);
+  entryGradeDiv.append(entryYearDiv, entryDiv);
+
+  entryHead.textContent = "Intagningsbetyg"
+  graduatesHead.textContent = "Antal examinerade"
+  let successRate = data.successRate;
+  let entryGrades = data.entryGrades;
+  
+  let reviewDiv = document.createElement("div");
+  let reviewHead = document.createElement("div");
+  let reviews = document.createElement("div");
+  reviews.classList.add("reviews");
+
+  const r = COMMENTS_PROGRAMME.filter(review => review.programmeID === data.id);
+
+  for (let i = 0; i < r.length; i++) {
+    let card = document.createElement("div");
+    card.classList.add("card");
+
+    card.innerHTML= `
+      <div> 
+        <div class="commentName">${r[i].alias}</div>
+
+        <div class="commentDate">
+          ${r[i].date.year}-${r[i].date.month}-${r[i].date.day}
+        </div>
+      </div>
+
+      <div class="commentContent">
+        <div class="stars">
+          <div class="t">Teachers: ${r[i].stars.teachers}/5</div>
+          <div class="s">Students: ${r[i].stars.students}/5</div>
+          <div class="c">Course: ${r[i].stars.courses}/5</div>
+        </div>
+
+        <div class="textC">
+            <p>Omdöme:</p>
+            <p>${r[i].text}<p>
+        </div>
+      </div>
+    `
+  reviews.append(card);
+  }
+
+  reviewHead.classList.add("reviewHeader");
+  reviewDiv.classList.add("reviewContent");
+
+  reviewHead.textContent = "Omdömen från före detta studenter";
+  
+  yearArray.forEach(function(year) {
+    yearDiv.append(yearlyAmount(year))
+    entryYearDiv.append(yearlyAmount(year))
+  });
+
+  successRate.forEach(function(rate) {
+    procentageDiv.append(procentageKey(rate))
+  });
+  
+  entryGrades.forEach(function(grade) {
+    entryDiv.append(gradesKey(grade))
+  });
+
+  reviewDiv.append(reviewHead, reviews);
+  programInfo.append(headerContainer, gradesDiv, reviewDiv);
+
+  return programInfo;
 }
 
 function entertainmentPlace(place){
@@ -256,166 +422,27 @@ function entertainmentPlace(place){
   
   return div;
 }
-    
-// JONNAS KOD
-                /*let university = UNIVERSITIES.filter(university => data.id === university.cityID);
+   
+function yearlyAmount(year){
+  let div = document.createElement("div");
 
-                let universityDiv = document.createElement("div");
-                universityDiv.classList.add("universityDiv");
-                
-                for (let jj = 0; jj < university.length; jj++) {
-                  let oneUniversity = document.createElement("div");
-                  oneUniversity.classList.add("oneCity");
-                  
-                  let UniversityName = document.createElement("div");
-                  UniversityName.innerHTML = `${university[jj].name}`;
-                  oneUniversity.append(UniversityName);
-                  universityDiv.append(oneUniversity);
-                  
-                  let idDiven = document.createElement("div");
-                  idDiven.classList.add("idDiv");
-                  
+  div.textContent = `${year}`;
+  
+  return div;
+}
 
-                  idDiven.id = university[jj].id + "universityUniversity";
+function procentageKey(key){
+  let div = document.createElement("div");
 
-                  idDiven.innerHTML = `
-                hej`;
+  div.textContent = `${key}%`;
+  
+  return div;
+}
 
-                  oneUniversity.append(idDiven);
-                  infoAbout.append(universityDiv);
+function gradesKey(key){
+  let div = document.createElement("div");
 
-                  UniversityName.addEventListener("click", function(event){
-                    event.stopPropagation();
-                    if (idDiven.style.display === "none") {
-                      idDiven.style.display = "flex";
-                    } else {
-                      idDiven.style.display = "none";
-                    }
-                  });
-                }
-                /*let enterplace = ENTERTAINMENT_PLACES.filter(place => CITIES.id === place.cityID);
-                  let placeDiv = document.createElement("div");
-                  placeDiv.classList.add("placeDiv");
-
-                  for (let k = 0; k < enterplace.length; k++){
-                    let onePlace = document.createElement("div");
-                    onePlace.classList.add("onePlace");
-
-                    let placeName = document.createElement("div");
-                    placeName.innerHTML = `${enterplace[j].name}`;
-                    onePlace.append(placeName);
-                    placeDiv.append(onePlace);
-
-                    let idDivPlace = document.createElement("div");
-                    idDivPlace.classList.add("idDivPlace");
-
-                    idDivPlace.id = enterplace[k] + "enterplace";
-
-                    idDivPlace.innerHTML = `
-                    <div>${enterplace[k].name}</div>
-                    `
-                    onePlace.append(idDivPlace);
-                    oneCity.append(placeDiv);
-                    
-                  }
-              /*
-                  document.querySelector(".country").addEventListener("click", function() {
-                    this.classList.toggle("active");
-                    
-                    let panel = this.nextElementSibling;
-                    if (panel.style.display === "block") {
-                      panel.style.display = "none";
-                    } else {
-                      panel.style.display = "block";
-                    }
-                  });
-                  wrapper.append(infoAbout);
-              }
-                document.querySelector(".country").addEventListener("click", infoInfo(COUNTRIES[i]));
-                  // Språken
-                //document.querySelector(".cityHeading").addEventListener("click", infoinfoinfo(COUNTRIES[i]));
-                    
-                    let lang = LANGUAGES.find(Language => COUNTRIES[i].languageID === Language.id);
-                    let languageInfo = document.createElement("div");
-                    languageInfo.innerHTML =`
-                    Språk: ${lang.name}
-                    `
-                    document.getElementById(`${COUNTRIES[i].id}langVisa`).append(languageInfo);
-                        
-                    
-                
-                        
-                
-                      
-                //data.id börjar på 1 medans ${COUNTRIES[i].id}allCities börjar på 0
-                  //country_div.append(cityDiv);
-                  
-                  document.getElementById(`${COUNTRIES[i].id}allCities`).append(cityDiv);
-                    
-                  let universitet = UNIVERSITIES.filter(program => CITIES[i].id === program.cityID);
-                  
-                  let universitetDiv = document.createElement("div");
-                  universitetDiv.classList.add("universitetDiv");
-
-                  for (let k = 0; k < universitet.length; k++) {
-                    let oneUniversitet = document.createElement("div");
-                    oneUniversitet.append(universitet[k].name);
-                    universitetDiv.append(oneUniversitet);
-                    oneUniversitet.id = universitet[k].id + "oneUniversitet";
-
-                  }
-                  
-                  //cityDiv.append(universitetDiv);
-                // document.getElementById(`${COUNTRIES[i].id}allProgramList`).append(universitetDiv);
-
-                
-
-
-
-              /*
-              function infoinfoinfo(data) {
-                let infoAboutp = document.createElement("div");
-                infoAboutp.classList.add("panels");    
-                
-                let programHeading = document.createElement("div");
-                programHeading.innerHTML = 
-                `<div class="programHeading"> Universitet </div>`;
-                
-                let allProgramList = document.createElement("div");
-                let idDiven = document.createElement("div");
-                
-                allProgramList.append(idDiven);
-                idDiven.id = data.id + "allProgramList";
-                allProgramList.classList.add("allProgramList");
-                
-                infoAboutp.append(programHeading);
-                infoAboutp.append(allProgramList);
-                
-                
-                  
-              wrapper.append(infoAboutp);
-              }*/
-              /*document.querySelector(``).addEventListener("click", function() {
-              let infoAboutp = document.createElement("div");
-              infoAboutp.classList.add("panels");    
-
-              let programHeading = document.createElement("div");
-              programHeading.innerHTML = 
-              `<div class="programHeading"> program </div>`;
-
-              let allProgramList = document.createElement("div");
-              let idDiven = document.createElement("div");
-
-              infoAboutp.append(programHeading);
-              infoAboutp.append(allProgramList);
-              allCitiesList.append(idDiven);
-              console.log(infoAboutp);
-              idDiven.id = data.id + "allCities";
-              console.log(data.id);
-              allProgramList.classList.add("allCities");
-              wrapper.append(infoAboutp);
-              return infoAboutp;
-              });
-
-
-              */
+  div.textContent = `${key}`;
+  
+  return div;
+}

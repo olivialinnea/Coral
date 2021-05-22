@@ -109,15 +109,7 @@ function infoDivUnder(data) {
   programmeHeading.classList.add("programmeHeading");
   programmeHeading.innerHTML = `Program `;
 
-  let allProgrammeList = document.createElement("div");
-  allProgrammeList.classList.add("allProgrammes");
-
-  let idDiv = document.createElement("div");
-  idDiv.id = data.id + "allProgrammes";
-  
-  allProgrammeList.append(idDiv);
   infoAbout.append(programmeHeading);
-  infoAbout.append(allProgrammeList);
 
   let program = PROGRAMMES.filter(p => data.id === p.universityID);
 
@@ -225,7 +217,7 @@ for (let i = 0; i < r.length; i++) {
 `
 
   reviews.append(card);
-}
+  }
 
   reviewHead.classList.add("reviewHeader");
   reviewDiv.classList.add("reviewContent");
