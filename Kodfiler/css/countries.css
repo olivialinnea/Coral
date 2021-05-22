@@ -31,6 +31,7 @@ body {
 .countryNameTitle {
   display: flex;
   align-items: center;
+  margin-left: 1vw;
 }
 
 .cityHeading {
@@ -53,7 +54,7 @@ body {
 .oneCity,
 .oneUniversity {
   border: black solid 1px;
-  padding: 1vh;
+  padding: 1.5vh;
   margin: 0.5vh;
 }
 .langVisa {
@@ -119,9 +120,14 @@ body {
   flex-direction: column;
 }
 
+.cityName {
+  font-size: 2.5vh;
+}
+
 .cityText {
   flex-grow: 1;
   flex-basis: 0;
+  margin-top: 1vh;
 }
 
 .middleCityDiv {
@@ -137,8 +143,11 @@ body {
 }
 
 .entertainmentHeading {
-  font-size: 25px;
-  padding: 2vh;
+  font-size: 2vh;
+  font-weight: bold;
+  padding-top: 2vh;
+  padding-bottom: 1vh;
+
 }
 .entertainmentPlaces {
   display: grid;

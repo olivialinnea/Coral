@@ -4,8 +4,8 @@ body {
 }
 
 header > a {
-  font-size: 5vh;
-  margin: 5vh;
+  font-size: 4vh;
+  margin-left: 6vw;
   box-sizing: border-box;
   text-decoration: none;
   color: black;
@@ -31,10 +31,14 @@ footer {
 }
 
 h1 {
-  margin: 0;
-  font-size: 60px;
+  margin: 2vh;
+  font-size: 7vh;
 }
-
+header {
+  height: 17vh;
+  display: flex;
+  padding-top: 5vh;
+}
 .pageTitle {
   display: flex;
   justify-content: center;
@@ -47,14 +51,14 @@ input {
 }
 
 /* Accordion */
-.active,
+/*.active,
 .accordion:hover {
   background-color: rgba(255, 127, 80, 0.226);
   background-image: linear-gradient(
     rgba(80, 255, 246, 0.678),
     rgb(255, 255, 255)
-  );
-}
+  ); 
+}*/
 
 /*
 .active {
@@ -160,8 +164,8 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
 /* scroll knapp */
 
 .normalImage {
-  height: 70px;
-  width: 100px;
+  height: 90px;
+  width: 110px;
   padding-right: 2vh;
   border-radius: 50%;
 }
@@ -215,10 +219,11 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
 }
 
 .card {
-  border: 1px solid black;
+ /* border: 1px solid black;*/
   margin-right: 10px;
   margin-bottom: 10px;
   width: 23.5vw;
+  background-color: bisque;
 }
 
 .reviewContent {
