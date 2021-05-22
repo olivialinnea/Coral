@@ -135,7 +135,6 @@ function programInfo(data){
   let entryDiv = document.createElement("div");
   let entryYearDiv = document.createElement("div");
   
-
   graduatesHead.classList.add("graduatesHead");
   graduatesDiv.classList.add("graduates");
   entryGradeDiv.classList.add("grades");
@@ -144,9 +143,6 @@ function programInfo(data){
   entryDiv.classList.add("entryDiv");
   entryYearDiv.classList.add("entryYearDiv");
   headerContainer.classList.add("headerContainer");
-  
-
-  
 
   headerContainer.append(entryHead, graduatesHead);
   gradesDiv.append(entryGradeDiv, graduatesDiv);
