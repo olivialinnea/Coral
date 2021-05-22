@@ -174,9 +174,9 @@ function programInfo(data){
     <div class="commentContent">
 
       <div class="stars">
-        <div class="t">Teachers: ${r[i].stars.teachers}</div>
-        <div class="s">Students: ${r[i].stars.students}</div>
-        <div class="c">Course: ${r[i].stars.courses}</div>
+        <div class="t">Teachers: ${r[i].stars.teachers}/5</div>
+        <div class="s">Students: ${r[i].stars.students}/5</div>
+        <div class="c">Course: ${r[i].stars.courses}/5</div>
       </div>
 
         <div class="textC">
@@ -185,8 +185,6 @@ function programInfo(data){
         </div>
     </div>
   `
-
-
   reviews.append(card);
   }
 

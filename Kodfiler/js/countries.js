@@ -1,7 +1,6 @@
 "use strict";
 const wrapper = document.querySelector("wrapper");
 
-
 //Sorterar alla länder alfabetiskt
 COUNTRIES.sort(function(a,b) {
   if (a.name.toLowerCase() < b.name.toLowerCase()
@@ -64,7 +63,7 @@ function infoInfo(data) {
   let cityHeading = document.createElement("div");
   cityHeading.classList.add("cityHeading");
   cityHeading.innerHTML = 
-  ` Städer`;
+  `Städer`;
 
   infoAbout.append(cityHeading);
 
@@ -83,7 +82,10 @@ function infoInfo(data) {
       oneCity.classList.add("oneCity");
 
       oneCity.innerHTML = `
-      <div class="cityName">${city[j].name}</div>`;
+      <div class="cityNameAndSun">
+        <div class="cityName">${city[j].name}</div>
+        <div class="sunnyDays">Number of sunny days: ${city[j].sun}</div>
+      </div>`;
       
       oneCity.addEventListener("click", function(event) {
         event.stopPropagation();
@@ -124,7 +126,6 @@ function universityDiven(data) {
 
   infoAboutCity.innerHTML = `
   <div class="cityText">${data.text}</div>
-  <div><img class="normalImageCity" src="Images/${data.imagesNormal[0]}"></div>
   `
 
   let middleCityDiv = document.createElement("div");
@@ -132,12 +133,30 @@ function universityDiven(data) {
   infoAboutCity.append(middleCityDiv);
 
   let entertainment = document.createElement("div");
-  entertainment.classList.add("entertainmentPlaces");
+  entertainment.classList.add("entertainment");
   middleCityDiv.append(entertainment);
+
+  let cityImageDiv = document.createElement("div");
+  cityImageDiv.classList.add("cityImageDiv");
+  middleCityDiv.append(cityImageDiv);
+
+  let cityImage = document.createElement("img");
+  cityImage.src = `Images/${data.imagesNormal[0]}`
+  cityImage.classList.add("cityImage");
+  cityImageDiv.append(cityImage);
+
+  let entertainmentHeading = document.createElement("div");
+  entertainmentHeading.classList.add("entertainmentHeading");
+  entertainmentHeading.textContent = "Uteliv"
+  entertainment.append(entertainmentHeading)
+
+  let entertainmentPlaces = document.createElement("div");
+  entertainmentPlaces.classList.add("entertainmentPlaces");
+  entertainment.append(entertainmentPlaces);
 
   ENTERTAINMENT_PLACES.forEach(function(p) {
     if (p.cityID === data.id){
-      entertainment.append(entertainmentPlace(p.name))
+      entertainmentPlaces.append(entertainmentPlace(p.name))
     }
   });
 
@@ -148,6 +167,55 @@ function universityDiven(data) {
   infoAboutuni.append(cityHeading);
 
   infoAboutCity.append(idDiven);
+
+  let reviewDiv = document.createElement("div");
+  let reviewHead = document.createElement("div");
+  let reviews = document.createElement("div");
+  reviews.classList.add("reviews");
+
+  const r = COMMENTS_CITY.filter(review => review.cityID === data.id);
+
+  for (let i = 0; i < r.length; i++) {
+  let card = document.createElement("div");
+  card.classList.add("card");
+
+  card.innerHTML= `
+    <div> 
+      <div class="commentName">
+        ${r[i].alias}
+      </div>
+
+      <div class="commentDate">
+        ${r[i].date.year}-${r[i].date.month}-${r[i].date.day}
+      </div>
+    </div>
+    
+    <div class="commentContent">
+
+      <div class="stars">
+        <div class="t">Uteliv: ${r[i].stars.out}/5</div>
+        <div class="s">Mat: ${r[i].stars.food}/5</div>
+        <div class="c">Boende: ${r[i].stars.accomodation}/5</div>
+      </div>
+
+        <div class="textC">
+          <p>Omdöme:</p>
+          <p>${r[i].text}<p>
+        </div>
+    </div>
+  `
+  reviews.append(card);
+  }
+
+  reviewHead.classList.add("reviewHeader");
+  reviewDiv.classList.add("reviewContent");
+
+  reviewHead.textContent = "Omdömen från före detta studenter";
+
+  reviewDiv.append(reviewHead, reviews);
+
+  infoAboutCity.append(reviewDiv);
+
 
   let university = UNIVERSITIES.filter(university => data.id === university.cityID);
 
@@ -181,6 +249,7 @@ function universityDiven(data) {
 
 function entertainmentPlace(place){
   let div = document.createElement("div");
+  div.classList.add("entPlace");
 
   div.textContent = `• ${place}`;
   

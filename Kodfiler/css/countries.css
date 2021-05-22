@@ -103,11 +103,6 @@ body {
   flex-direction: column;
 }
 
-.normalImageCity {
-  width: 25vw;
-  height: 20vh;
-}
-
 .cityName {
   font-weight: bold;
 }
@@ -116,13 +111,54 @@ body {
   color: coral;
 }
 
-.middleDiv {
-  display: flex;
-}
-
-.entertainmentPlaces {
-  height: 30vh;
+.infoAboutCity {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+}
+
+.cityText {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.middleCityDiv {
+  display: flex;
+  height: 40vh;
+}
+
+.entertainment {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.entertainmentHeading {
+  font-size: 25px;
+  padding: 2vh;
+}
+.entertainmentPlaces {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-grow: 1;
+}
+
+.entPlace {
+  flex-grow: 1;
+  /* flex-basis: 0; */
+}
+
+.cityNameAndSun {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cityImageDiv {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.cityImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
