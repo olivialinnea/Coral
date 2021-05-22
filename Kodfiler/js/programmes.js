@@ -81,7 +81,7 @@ function programdiv(data){
   programName.innerText = `${data.name}`;
   universityName.innerText = `(${uni.name})`;
   cityDiv.innerText = ` Stad: ${city.name}`;
-  countryDiv.innerText = `  Land: ${country.name}`;
+  countryDiv.innerText = `Land: ${country.name}`;
   
   //level.innerText = `${levelF()}`;
   
