@@ -61,14 +61,31 @@ function programdiv(data){
   const city = CITIES.find(cities => uni.cityID === cities.id);
   const country = COUNTRIES.find(countries => city.countryID === countries.id);
   
+  let programmeHead = document.createElement("div");
+  let programName = document.createElement("div");
+  let universityName = document.createElement("div");
+  let flag = document.createElement("div");
+  let level = document.createElement("div");
+  let countryDiv = document.createElement("div");
+  let cityDiv = document.createElement("div");
+  let programSideInfo = document.createElement("div");
+  let position = document.createElement("div");
 
-  LEVELS.forEach(function(p) {
-    if (data.id === LEVELS.id){
-      levelDiv.append(getLevels(p))
-    }
-  });
+  position.classList.add("position");
+  programSideInfo.classList.add("programSideInfo");
+  programDiven.append(programmeHead);
+  programmeHead.append(programName, universityName, programSideInfo);
+  programSideInfo.append(flag, position);
+  position.append(level, cityDiv, countryDiv);
 
-  programDiven.innerHTML = `
+  programName.innerText = `${data.name}`;
+  universityName.innerText = `(${uni.name})`;
+  cityDiv.innerText = ` Stad: ${city.name}`;
+  countryDiv.innerText = `  Land: ${country.name}`;
+  
+  //level.innerText = `${levelF()}`;
+  
+  /*programDiven.innerHTML = `
   <div>${data.name} (${uni.name})</div>
   <div class="programSideInfo"> 
       <img class="countryFlag" src="Images/${country.flag}">
@@ -78,7 +95,7 @@ function programdiv(data){
         <div> Land: ${country.name}</div>
       </div>
     </div>
-  `;
+  `;*/
 
   programDiven.addEventListener("click", function(event){
     event.stopPropagation();
@@ -124,7 +141,7 @@ function programInfo(data){
   let headerContainer = document.createElement("div");
   let entryDiv = document.createElement("div");
   let entryYearDiv = document.createElement("div");
-  let levelDiv = document.createElement("div");
+  
 
   graduatesHead.classList.add("graduatesHead");
   graduatesDiv.classList.add("graduates");
@@ -134,9 +151,11 @@ function programInfo(data){
   entryDiv.classList.add("entryDiv");
   entryYearDiv.classList.add("entryYearDiv");
   headerContainer.classList.add("headerContainer");
-  levelDiv.classList.add("levelDiv");
+  
 
-  headerContainer.append(entryHead, graduatesHead, levelDiv);
+  
+
+  headerContainer.append(entryHead, graduatesHead);
   gradesDiv.append(entryGradeDiv, graduatesDiv);
   graduatesDiv.append(yearDiv, procentageDiv);
   entryGradeDiv.append(entryYearDiv, entryDiv);
@@ -146,16 +165,7 @@ function programInfo(data){
   let successRate = data.successRate;
   let entryGrades = data.entryGrades;
 
-  PROGRAMMES.forEach( lvls => {
-    let levl = LEVELS.filter(function (levelArray, index) {
-      return index === lvls.level;
-   });
-   let lvl = document.createElement("div");
-   lvl.append(levl);
-   levelDiv.append(lvl);
-   console.log(levl);
-  });
-
+  
   yearArray.forEach(function(year) {
     yearDiv.append(yearlyAmount(year))
     entryYearDiv.append(yearlyAmount(year))
@@ -251,11 +261,18 @@ function gradesKey(key){
   return div;
 }
 
-function getLevels() {
-  
+/*function levelF(levl) {
+  PROGRAMMES.forEach( lvls => {
+    let levl = LEVELS.find(function (levelArray, index) {
+      return index === lvls.level;
+   });
+   let lvl = document.createElement("div");
+   lvl.textContent = `${levl}`;
+   console.log(levl);
+  });
+ // return lvl;
 }
-
-getLevels();
+*/
 
 
 
