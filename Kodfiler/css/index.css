@@ -9,6 +9,7 @@ header {
 footer {
   height: 25vh;
   background-color: burlywood;
+  font-family: "Montserrat", sans-serif;
 }
 
 .logo {
@@ -40,6 +41,9 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(auto, 1fr);
+  font-family: "Montserrat", sans-serif;
+
+  line-height: 1.4;
 }
 
 h2 {
