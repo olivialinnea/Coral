@@ -60,8 +60,12 @@ function programdiv(data){
   const uni = UNIVERSITIES.find(university => data.universityID === university.id);
   const city = CITIES.find(cities => uni.cityID === cities.id);
   const country = COUNTRIES.find(countries => city.countryID === countries.id);
+
+  let levelName = LEVELS.find(function (levelArray, index) {
+    return index === data.level;
+  });
   
-  let programmeHead = document.createElement("div");
+  let left = document.createElement("div");
   let programName = document.createElement("div");
   let universityName = document.createElement("div");
   let flag = document.createElement("div");
@@ -73,29 +77,18 @@ function programdiv(data){
 
   position.classList.add("position");
   programSideInfo.classList.add("programSideInfo");
-  programDiven.append(programmeHead);
-  programmeHead.append(programName, universityName, programSideInfo);
+  programDiven.append(left, programSideInfo);
   programSideInfo.append(flag, position);
   position.append(level, cityDiv, countryDiv);
+  left.append(programName, universityName);
 
   programName.innerText = `${data.name}`;
   universityName.innerText = `(${uni.name})`;
   cityDiv.innerText = ` Stad: ${city.name}`;
   countryDiv.innerText = `Land: ${country.name}`;
+  flag.innerHTML = `<img class="countryFlag" src="Images/${country.flag}">`
   
-  //level.innerText = `${levelF()}`;
-  
-  /*programDiven.innerHTML = `
-  <div>${data.name} (${uni.name})</div>
-  <div class="programSideInfo"> 
-      <img class="countryFlag" src="Images/${country.flag}">
-      <div class="position" >
-        <div id=""> Level: ${0}</div>
-        <div> Stad: ${city.name}</div>
-        <div> Land: ${country.name}</div>
-      </div>
-    </div>
-  `;*/
+  level.innerText = `Level: ${levelName}`;
 
   programDiven.addEventListener("click", function(event){
     event.stopPropagation();
@@ -260,19 +253,3 @@ function gradesKey(key){
   
   return div;
 }
-
-/*function levelF(levl) {
-  PROGRAMMES.forEach( lvls => {
-    let levl = LEVELS.find(function (levelArray, index) {
-      return index === lvls.level;
-   });
-   let lvl = document.createElement("div");
-   lvl.textContent = `${levl}`;
-   console.log(levl);
-  });
- // return lvl;
-}
-*/
-
-
-
