@@ -5,6 +5,7 @@ const wrapper = document.querySelector("wrapper");
 let yearArray = [];
 let D = new Date();
 let thisYear = D.getFullYear();
+let levelArray = [];
 
 for (let i = 0; i < 5; i++) {
   thisYear -=1;
@@ -12,6 +13,9 @@ for (let i = 0; i < 5; i++) {
 }
 
 yearArray.sort();
+
+
+
 
 
 
@@ -48,7 +52,6 @@ for(let i = 0; i < PROGRAMMES.length; i++) {
   wrapper.append(programdiv(PROGRAMMES[i]));
 }
 
-
 //Skapar divarna
 function programdiv(data){
   let programDiven = document.createElement("div");
@@ -57,14 +60,20 @@ function programdiv(data){
   const uni = UNIVERSITIES.find(university => data.universityID === university.id);
   const city = CITIES.find(cities => uni.cityID === cities.id);
   const country = COUNTRIES.find(countries => city.countryID === countries.id);
+  
 
+  LEVELS.forEach(function(p) {
+    if (data.id === LEVELS.id){
+      levelDiv.append(getLevels(p))
+    }
+  });
 
   programDiven.innerHTML = `
   <div>${data.name} (${uni.name})</div>
   <div class="programSideInfo"> 
       <img class="countryFlag" src="Images/${country.flag}">
       <div class="position" >
-        <div> Level: ${0}</div>
+        <div id=""> Level: ${0}</div>
         <div> Stad: ${city.name}</div>
         <div> Land: ${country.name}</div>
       </div>
@@ -115,7 +124,8 @@ function programInfo(data){
   let headerContainer = document.createElement("div");
   let entryDiv = document.createElement("div");
   let entryYearDiv = document.createElement("div");
-  
+  let levelDiv = document.createElement("div");
+
   graduatesHead.classList.add("graduatesHead");
   graduatesDiv.classList.add("graduates");
   entryGradeDiv.classList.add("grades");
@@ -124,8 +134,9 @@ function programInfo(data){
   entryDiv.classList.add("entryDiv");
   entryYearDiv.classList.add("entryYearDiv");
   headerContainer.classList.add("headerContainer");
+  levelDiv.classList.add("levelDiv");
 
-  headerContainer.append(entryHead, graduatesHead);
+  headerContainer.append(entryHead, graduatesHead, levelDiv);
   gradesDiv.append(entryGradeDiv, graduatesDiv);
   graduatesDiv.append(yearDiv, procentageDiv);
   entryGradeDiv.append(entryYearDiv, entryDiv);
@@ -134,6 +145,16 @@ function programInfo(data){
   graduatesHead.textContent = "Antal examinerade"
   let successRate = data.successRate;
   let entryGrades = data.entryGrades;
+
+  PROGRAMMES.forEach( lvls => {
+    let levl = LEVELS.filter(function (levelArray, index) {
+      return index === lvls.level;
+   });
+   let lvl = document.createElement("div");
+   lvl.append(levl);
+   levelDiv.append(lvl);
+   console.log(levl);
+  });
 
   yearArray.forEach(function(year) {
     yearDiv.append(yearlyAmount(year))
@@ -147,6 +168,7 @@ function programInfo(data){
   entryGrades.forEach(function(grade) {
     entryDiv.append(gradesKey(grade))
   });
+
 
 
   let reviewDiv = document.createElement("div");
@@ -230,3 +252,12 @@ function gradesKey(key){
   
   return div;
 }
+
+function getLevels() {
+  
+}
+
+getLevels();
+
+
+

@@ -21,7 +21,7 @@ function countryDiv(data){
   country.classList.add("country");
 
   let lang = LANGUAGES.find(language => data.languageID === language.id);
-
+  
   country.innerHTML = `
   <div class="imgTitle">
     <img class="normalImage" src="Images/${data.imagesNormal[0]}">
@@ -34,6 +34,7 @@ function countryDiv(data){
     </div>
   </div>
   `;
+
 
   country.addEventListener("click", function(event) {
     event.stopPropagation();
