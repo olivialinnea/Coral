@@ -25,6 +25,7 @@ header > a {
   text-decoration: none;
   color: black;
   font-weight: bold;
+  height: 50px;
 }
 
 header > a:hover {
@@ -306,4 +307,3 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   margin: 0px;
   padding-right: 10px;
 }
-
