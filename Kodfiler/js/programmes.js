@@ -77,18 +77,19 @@ function programdiv(data){
 
   position.classList.add("position");
   programSideInfo.classList.add("programSideInfo");
+  universityName.classList.add("universityName");
   programDiven.append(left, programSideInfo);
   programSideInfo.append(flag, position);
   position.append(level, cityDiv, countryDiv);
   left.append(programName, universityName);
 
   programName.innerText = `${data.name}`;
-  universityName.innerText = `(${uni.name})`;
-  cityDiv.innerText = ` Stad: ${city.name}`;
-  countryDiv.innerText = `Land: ${country.name}`;
+  universityName.innerHTML = `(${uni.name})`;
+  cityDiv.innerHTML = ` Stad: ${city.name}`;
+  countryDiv.innerHTML = `Land: ${country.name}</p>`;
   flag.innerHTML = `<img class="countryFlag" src="Images/${country.flag}">`
   
-  level.innerText = `Level: ${levelName}`;
+  level.innerHTML = `Level: ${levelName}`;
 
   programDiven.addEventListener("click", function(event){
     event.stopPropagation();
