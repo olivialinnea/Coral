@@ -243,6 +243,7 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   margin-bottom: 10px;
   width: 23.5vw;
   background-color: bisque;
+  font-size: 1.5vh;
 }
 
 .reviewContent {
@@ -258,6 +259,7 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   padding: 10px;
   padding-left: 0px;
   font-size: 20px;
+  margin-top: 1vh;
 }
 
 .card > div:nth-child(1) {
@@ -268,6 +270,7 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
 
 .commentName {
   grid-column: 1/2 span;
+  font-weight: bold;
 }
 
 .commentDate {
