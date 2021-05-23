@@ -3,6 +3,28 @@ main {
   margin-right: 18vw;
 }
 
+#titleHead {
+  font-size: 4vh;
+  position: absolute;
+  font-family: var(--bigHeaders);
+  color: black;
+  text-decoration: none;
+
+  top: 53px;
+  left: 200px;
+}
+
+#uniSymbolWrapper {
+  padding-bottom: 5vh;
+}
+
+#uniSymbol {
+  height: 120px;
+  width: 120px;
+
+  margin: 2vh;
+}
+
 .universityDiv {
   box-shadow: 6px 4px 4px lightgrey;
   height: auto;
@@ -14,11 +36,10 @@ main {
   background-color: var(--cBlue);
 }
 
-.position >div {
+.position > div {
   display: flex;
   flex-direction: row;
 }
-
 
 .active {
   margin-bottom: 10px;

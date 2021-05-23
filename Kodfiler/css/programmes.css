@@ -15,6 +15,29 @@ main {
   font-family: var(--smallHeaders);
 }
 
+#titleHead {
+  font-size: 4vh;
+  position: absolute;
+  font-family: var(--bigHeaders);
+  color: black;
+  text-decoration: none;
+
+  top: 53px;
+  left: 200px;
+}
+
+#programmeSymbolWrapper {
+  padding-bottom: 5vh;
+  height: 120px;
+  width: 120px;
+}
+
+#programmeSymbol {
+  height: 120px;
+  width: 120px;
+
+  margin-left: 10px;
+}
 
 .panel {
   padding: 0 18px;
@@ -63,7 +86,7 @@ main {
 .position > div:nth-child(1) {
   margin-right: 0.5vw;
 }
-.position > div:nth-child(2){
+.position > div:nth-child(2) {
   margin-right: 0.5vw;
 }
 .students {

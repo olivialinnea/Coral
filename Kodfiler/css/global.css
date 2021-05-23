@@ -13,25 +13,24 @@
   --smallHeaders: "Montserrat"; /* bold? */
 }
 
-header {
-  font-family: var(--bigHeaders);
-}
-
 body {
   height: 100vh;
   margin: 0;
+  background-color: var(--cWhite);
 }
 
 .logo {
   font-family: var(--bigHeaders);
 }
 
-#titleHead {
-  font-size: 4vh;
-  position: absolute;
+#logoHeader {
+  height: 180px;
+  width: 180px;
+  margin-bottom: 2vh;
+}
 
-  /* top: 50px; */
-  left: 200px;
+.headerName {
+  font-family: var(--bigHeaders);
 }
 
 header > a {
@@ -47,12 +46,18 @@ header > a:hover {
   cursor: pointer;
 }
 
-#titleHead {
-  font-size: 4vh;
-  position: absolute;
+input {
+  background-image: url("symbols/transparency.png") top left no-repeat;
+  height: 35px;
+  width: 30vw;
+  padding-left: 25px;
+  border: 1px solid lightgray;
+  margin-bottom: 2vh;
+  border-radius: 10vh;
+  font-family: var(--bodyText);
+  outline: 0;
 
-  top: 80px;
-  left: 200px;
+  box-shadow: 3px 2px 2px lightgrey;
 }
 
 .pageLinks > a {
@@ -76,11 +81,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-input {
-  border: 1px solid black;
-  margin-bottom: 1vh;
 }
 
 /* footer */
@@ -299,7 +299,6 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   margin-top: 5px;
   margin-bottom: 0px;
   font-weight: bold;
-
 }
 
 .textC > p:nth-child(2) {
@@ -307,4 +306,3 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   margin: 0px;
   padding-right: 10px;
 }
-
