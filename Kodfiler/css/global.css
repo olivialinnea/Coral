@@ -206,6 +206,7 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
 .entryHead,
 .graduatesHead {
   flex-grow: 1;
+  font-weight: bold;
 }
 
 .grades {
@@ -297,6 +298,8 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
 .textC > p:nth-child(1) {
   margin-top: 5px;
   margin-bottom: 0px;
+  font-weight: bold;
+
 }
 
 .textC > p:nth-child(2) {
@@ -304,3 +307,4 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   margin: 0px;
   padding-right: 10px;
 }
+

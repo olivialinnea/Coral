@@ -202,7 +202,6 @@ body {
 }
 
 .infoUni {
-  border: 1px solid black;
   margin-top: 1vh;
 }
 
@@ -216,4 +215,8 @@ body {
 
 .programName:hover {
   color: coral;
+}
+
+.omdomen {
+  font-weight: bold;
 }

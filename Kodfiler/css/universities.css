@@ -7,19 +7,18 @@ main {
   box-shadow: 6px 4px 4px lightgrey;
   height: auto;
   margin-bottom: 2vh;
-  padding: 2vh;
+  padding: 1.5vh;
   cursor: pointer;
   display: grid;
   grid-template-columns: 1fr;
-  transition: background-image, background-color 1s;
+  background-color: var(--cBlue);
 }
 
-.universityDiv:hover {
-  background-image: linear-gradient(
-    rgba(80, 255, 246, 0.678),
-    rgb(255, 255, 255)
-  );
+.position >div {
+  display: flex;
+  flex-direction: row;
 }
+
 
 .active {
   margin-bottom: 10px;
@@ -32,9 +31,9 @@ main {
 .infoAbout {
   padding-right: 2vh;
   padding-left: 2vh;
-  background-color: white;
+  background-color: var(--cBlue);
   overflow: hidden;
-  border: 1px solid black;
+
   margin-bottom: 1vh;
   flex-direction: column;
 }
@@ -47,13 +46,20 @@ main {
 
 .top > div:nth-child(1) {
   grid-column: 1/2 span;
+  font-size: larger;
+  font-family: var(--smallHeaders);
 }
-
+.sideHead {
+  margin-right: 0.5vw;
+  font-weight: bold;
+}
 .programmeHeading {
+  font-family: var(--smallHeaders);
   font-size: 20px;
   font-weight: bold;
   padding: 5px;
   padding-left: 0px;
+  margin-bottom: 1vh;
 }
 
 .programName {
@@ -63,6 +69,7 @@ main {
 
 .position {
   display: flex;
+  font-family: var(--smallHeaders);
 }
 
 .position > div:nth-child(1) {
@@ -74,14 +81,13 @@ main {
   flex-direction: column;
   align-items: flex-end;
   grid-column: 3;
-  padding: 10px;
-  font-size: 15px;
+  font-size: 1.5vh;
 }
 
 .countryFlag {
   height: 20px;
   width: 40px;
-  margin-bottom: 5px;
+  margin-bottom: 1vh;
 }
 
 .allProgrammes {
@@ -93,16 +99,15 @@ main {
 }
 
 .programDiv > div:nth-child(1) {
-  font-weight: bold;
-  border: 1px solid black;
-  padding: 10px;
+  /*border: 1px solid black;*/
+  /*padding: 10px;*/
 }
 
 .programDiv > div:nth-child(2) {
-  font-weight: bold;
+  /*font-weight: bold;*/
   border: 1px solid black;
   border-top: none;
-  padding: 10px;
+  padding: 1vh;
   display: none;
 }
 
