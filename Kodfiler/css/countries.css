@@ -1,9 +1,8 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
 }
-
 
 .country {
   /*border: 1px black solid;*/
@@ -85,7 +84,7 @@ body {
 .infoAbout {
   padding: 0 18px;
   padding-left: 2vh;
-  
+
   /* overflow: hidden; */
   margin-bottom: 1vh;
   margin-top: 1.5vh;
@@ -147,7 +146,6 @@ body {
   font-weight: bold;
   padding-top: 2vh;
   padding-bottom: 1vh;
-
 }
 .entertainmentPlaces {
   display: grid;
