@@ -19,9 +19,7 @@ body {
   background-color: #99cccc34;
   transition: background-image, background-color 1s;
 }
-.country:hover {
-  /*background-color: #99CCCC;*/
-}
+
 .country:active {
   background-color: #99cccc5d;
 }
