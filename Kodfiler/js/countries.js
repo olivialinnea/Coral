@@ -32,19 +32,6 @@ function countryDiv(data){
   wrapper.append(country);
 
   let lang = LANGUAGES.find(language => data.languageID === language.id);
-    
-  /*country.innerHTML = `
-  <div class="imgTitle">
-    <img class="normalImage" src="Images/${data.imagesNormal[0]}">
-    <div class="countryNameTitle">${data.name}</div>
-  </div>
-  <div class="countrySideInfo"> 
-    <img class="countryFlag" src="Images/${data.flag}">
-    <div> Språk: ${lang.name} </div>
-      <div class="visa"> Visum krävs: ${data.visa}</div>
-    </div>
-  </div>
-  `;*/
 
   let imgTitle = document.createElement("div");
   let normalImage = document.createElement("div");
@@ -61,13 +48,12 @@ function countryDiv(data){
   countryFlag.classList.add("countryFlag");
   visaDiv.classList.add("visaDiv");
   imgTitle.classList.add("imgTitle");
-  languageVisaDiv.classList.add("languageVisaDiv")
+  languageVisaDiv.classList.add("languageVisaDiv");
   
-
   countryNameTitle.innerText = `${data.name}`;
   normalImage.innerHTML = `<img class="normalImage" src="Images/${data.imagesNormal[0]}">`;
   countryFlag.innerHTML = `<img class="countryFlag" src="Images/${data.flag}">`;
-  languageVisaDiv.innerHTML = `Språk: ${lang.name} Visa krävs: ${0}`;
+  languageVisaDiv.innerHTML = `Språk: ${lang.name} Visa krävs: ${visa(data)}`;
 
   country.append(imgTitle, countrySideInfo);
   imgTitle.append(normalImage, countryNameTitle);
@@ -474,16 +460,11 @@ function gradesKey(key){
   return div;
 }
 
-function getVisa(countryVisa){
-  COUNTRIES.find(obj => obj.id == countryVisa).visa;
-  let visaContainer = document.createElement("div");
-  document.querySelector(".visa").append(visaContainer);
-  
-  if (countryVisa == true) {
-      visaContainer.innerHTML ="Visum: Ja";
-  } else {
-      visaContainer.innerHTML="Visum: Nej";
-  }
-  return countryVisa;
+function visa(data) {
+  if (data.visa == false) {
+   return "Nej"
+ } else {
+   return "Ja"
+ }
 }
 
