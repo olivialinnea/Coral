@@ -150,7 +150,6 @@ function infoDivUnder(data) {
 return infoAbout;
 }
 
-
 function programInfo(data) {
   let programInfo = document.createElement("div");
   programInfo.classList.add("programInfo");

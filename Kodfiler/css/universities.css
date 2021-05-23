@@ -98,19 +98,6 @@ main {
   margin-bottom: 1vh;
 }
 
-.programDiv > div:nth-child(1) {
-  border: 1px solid black;
-  padding: 10px;
-}
-
-.programDiv > div:nth-child(2) {
-  /*font-weight: bold;*/
-  border: 1px solid black;
-  border-top: none;
-  padding: 10px;
-  display: none;
-}
-
 .students {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
