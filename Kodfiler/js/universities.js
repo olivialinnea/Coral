@@ -113,109 +113,119 @@ function infoDivUnder(data) {
 
   let program = PROGRAMMES.filter(p => data.id === p.universityID);
 
-  let pDiv = document.createElement("div");
-  pDiv.classList.add("pDiv");
+  let programDiv = document.createElement("div");
+  programDiv.classList.add("programDiv");
+
+  infoAbout.append(programDiv);
 
   for (let j = 0; j < program.length; j++) {
-    let oneP = document.createElement("div");
-    oneP.classList.add("programDiv");
+    let oneProgram = document.createElement("div");
+    oneProgram.classList.add("oneProgram");
 
-    let programN = document.createElement("div");
-    programN.classList.add("programN");
-    programN.innerHTML = ` ${program[j].name} `;
-    oneP.append(programN);
-    pDiv.append(oneP);
-
-    let idDiv = document.createElement("div");
-    idDiv.classList.add("idDiv");
-    idDiv.id = program[j].id + "programDiv";
-
-    idDiv.innerHTML = `
-    <div class="students">
-      <div class="localS"> Local Students: ${program[j].localStudents}</div>
-      <div class="exchanges"> Exchange Students: ${program[j].exchangeStudents}</div>
-    </div>
-    `;
-
-    oneP.append(idDiv);
-    infoAbout.append(pDiv);
-
-    programN.addEventListener("click", function(event) {
+    oneProgram.innerHTML = `
+    <div class="programName">${program[j].name}</div>`;
+    
+    oneProgram.addEventListener("click", function(event) {
       event.stopPropagation();
-      if (idDiv.style.display === "none") {
-        idDiv.style.display = "flex";
+
+      if (oneProgram.classList.contains("active")){
+        oneProgram.classList.toggle("active");
+      
+        let info = document.querySelectorAll(".programInfo");
+    
+        for(let j = 0; j < info.length; j++){
+          if (info[j].parentNode === oneProgram) {
+            oneProgram.removeChild(info[j]);
+          }
+        }
       } else {
-        idDiv.style.display = "none";
+        oneProgram.append(programInfo(program[j]));
+        oneProgram.classList.toggle("active");
       }
     });
+    
+    programDiv.append(oneProgram);
+    infoAbout.append(programDiv);
+  }
+return infoAbout;
+}
 
-    let gradesDiv = document.createElement("div");  
-    let entryGradeDiv = document.createElement("div");
-    let graduatesDiv = document.createElement("div");
-    let yearDiv = document.createElement("div");
-    let procentageDiv = document.createElement("div");
-    let graduatesHead = document.createElement("div");
-    let entryHead = document.createElement("div");
-    let headerContainer = document.createElement("div");
-    let entryDiv = document.createElement("div");
-    let entryYearDiv = document.createElement("div");
-    
-    graduatesHead.classList.add("graduatesHead");
-    graduatesDiv.classList.add("graduates");
-    entryGradeDiv.classList.add("grades");
-    gradesDiv.classList.add("gradesDiv");
-    entryHead.classList.add("entryHead");
-    entryDiv.classList.add("entryDiv");
-    entryYearDiv.classList.add("entryYearDiv");
-    headerContainer.classList.add("headerContainer");
+
+function programInfo(data) {
+  let programInfo = document.createElement("div");
+  programInfo.classList.add("programInfo");
+
+  let students = document.createElement("div");
+  students.classList.add("students");
+  students.innerHTML =`
+    <div class="localS"> Local Students: ${data.localStudents}</div>
+    <div class="exchanges"> Exchange Students: ${data.exchangeStudents}</div>
+  `;
+  programInfo.append(students);
+
+  let gradesDiv = document.createElement("div");  
+  let entryGradeDiv = document.createElement("div");
+  let graduatesDiv = document.createElement("div");
+  let yearDiv = document.createElement("div");
+  let procentageDiv = document.createElement("div");
+  let graduatesHead = document.createElement("div");
+  let entryHead = document.createElement("div");
+  let headerContainer = document.createElement("div");
+  let entryDiv = document.createElement("div");
+  let entryYearDiv = document.createElement("div");
   
-    headerContainer.append(entryHead, graduatesHead);
-    gradesDiv.append(entryGradeDiv, graduatesDiv);
-    graduatesDiv.append(yearDiv, procentageDiv);
-    entryGradeDiv.append(entryYearDiv, entryDiv);
+  graduatesHead.classList.add("graduatesHead");
+  graduatesDiv.classList.add("graduates");
+  entryGradeDiv.classList.add("grades");
+  gradesDiv.classList.add("gradesDiv");
+  entryHead.classList.add("entryHead");
+  entryDiv.classList.add("entryDiv");
+  entryYearDiv.classList.add("entryYearDiv");
+  headerContainer.classList.add("headerContainer");
+
+  headerContainer.append(entryHead, graduatesHead);
+  gradesDiv.append(entryGradeDiv, graduatesDiv);
+  graduatesDiv.append(yearDiv, procentageDiv);
+  entryGradeDiv.append(entryYearDiv, entryDiv);
+
+  entryHead.textContent = "Intagningsbetyg"
+  graduatesHead.textContent = "Antal examinerade"
+  let successRate = data.successRate;
+  let entryGrades = data.entryGrades;
   
-    entryHead.textContent = "Intagningsbetyg"
-    graduatesHead.textContent = "Antal examinerade"
-    let successRate = program[j].successRate;
-    let entryGrades = program[j].entryGrades;
-    
   let reviewDiv = document.createElement("div");
   let reviewHead = document.createElement("div");
   let reviews = document.createElement("div");
   reviews.classList.add("reviews");
 
-const r = COMMENTS_PROGRAMME.filter(review => review.programmeID === program[j].id);
+  const r = COMMENTS_PROGRAMME.filter(review => review.programmeID === data.id);
 
-for (let i = 0; i < r.length; i++) {
-  let card = document.createElement("div");
-  card.classList.add("card");
+  for (let i = 0; i < r.length; i++) {
+    let card = document.createElement("div");
+    card.classList.add("card");
 
-  card.innerHTML= `
-    <div> 
-      <div class="commentName">
-        ${r[i].alias}
+    card.innerHTML= `
+      <div> 
+        <div class="commentName">${r[i].alias}</div>
+
+        <div class="commentDate">
+          ${r[i].date.year}-${r[i].date.month}-${r[i].date.day}
+        </div>
       </div>
 
-      <div class="commentDate">
-        ${r[i].date.year}-${r[i].date.month}-${r[i].date.day}
-      </div>
-    </div>
-    
-    <div class="commentContent">
-
-      <div class="stars">
-        <div class="t">Teachers: ${r[i].stars.teachers}/5</div>
-        <div class="s">Students: ${r[i].stars.students}/5</div>
-        <div class="c">Course: ${r[i].stars.courses}/5</div>
-      </div>
+      <div class="commentContent">
+        <div class="stars">
+          <div class="t">Teachers: ${r[i].stars.teachers}/5</div>
+          <div class="s">Students: ${r[i].stars.students}/5</div>
+          <div class="c">Course: ${r[i].stars.courses}/5</div>
+        </div>
 
         <div class="textC">
-          <p>Omdöme:</p>
-          <p>${r[i].text}<p>
+            <p>Omdöme:</p>
+            <p>${r[i].text}<p>
         </div>
-    </div>
-`
-
+      </div>
+    `
   reviews.append(card);
   }
 
@@ -224,25 +234,23 @@ for (let i = 0; i < r.length; i++) {
 
   reviewHead.textContent = "Omdömen från före detta studenter";
   
-    yearArray.forEach(function(year) {
-      yearDiv.append(yearlyAmount(year))
-      entryYearDiv.append(yearlyAmount(year))
-    });
+  yearArray.forEach(function(year) {
+    yearDiv.append(yearlyAmount(year))
+    entryYearDiv.append(yearlyAmount(year))
+  });
+
+  successRate.forEach(function(rate) {
+    procentageDiv.append(procentageKey(rate))
+  });
   
-    successRate.forEach(function(rate) {
-      procentageDiv.append(procentageKey(rate))
-    });
-    
-    entryGrades.forEach(function(grade) {
-      entryDiv.append(gradesKey(grade))
-    });
+  entryGrades.forEach(function(grade) {
+    entryDiv.append(gradesKey(grade))
+  });
 
-    reviewDiv.append(reviewHead, reviews);
-    idDiv.append(headerContainer, gradesDiv, reviewDiv);
+  reviewDiv.append(reviewHead, reviews);
+  programInfo.append(headerContainer, gradesDiv, reviewDiv);
 
-  }
-
-  return infoAbout;
+  return programInfo;
 }
 
 function yearlyAmount(year){
