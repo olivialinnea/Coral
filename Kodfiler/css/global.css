@@ -2,10 +2,15 @@
   /* Färger */
   --cBlue: #99cccc;
   --cOrange: #f0a476;
-  --cCoral: #f29473;
+  --cCoral: #f8b49b;
   --cPink: #f3c6c5;
   --cGreen: #bfd6bf;
   --cWhite: #f2f2f2;
+
+  /* Typsnitt */
+  --bigHeaders: "Comfortaa";
+  --bodyText: "Montserrat";
+  --smallHeaders: "Montserrat"; /* bold? */
 }
 
 body {
@@ -36,7 +41,7 @@ header > a:hover {
 
 footer {
   height: 25vh;
-  background-color: rgba(255, 127, 80, 0.226);
+  background-color: var(--cGreen);
 }
 
 .pageLinks > a {
