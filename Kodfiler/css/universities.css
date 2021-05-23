@@ -99,7 +99,7 @@ main {
 }
 
 .programDiv > div:nth-child(2) {
-  font-weight: bold;
+  /*font-weight: bold;*/
   border: 1px solid black;
   border-top: none;
   padding: 10px;

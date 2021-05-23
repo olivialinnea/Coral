@@ -236,7 +236,7 @@ function universityDiven(data) {
       </div>
 
         <div class="textC">
-          <p>Omdöme:</p>
+          <p class"omdomen">Omdöme:</p>
           <p>${r[i].text}<p>
         </div>
     </div>
