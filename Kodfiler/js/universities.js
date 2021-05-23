@@ -72,8 +72,8 @@ function universityDiv(data){
   <div class="universitySideInfo"> 
       <img class="countryFlag" src="Images/${c.flag}">
       <div class="position" >
-        <div> Land: ${c.name} </div>
-        <div> Stad: ${city.name} </div>
+        <div><p class="sideHead">Land:</p><p>${c.name} </div>
+        <div><p class="sideHead">Stad:</p><p>${city.name}</p></div>
       </div>
     </div>
   </div>

@@ -7,20 +7,14 @@ main {
   box-shadow: 6px 4px 4px lightgrey;
   height: auto;
   margin-bottom: 2vh;
-  padding: 2vh;
+  padding: 1.5vh;
   cursor: pointer;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  transition: background-image, background-color 1s;
+  grid-template-columns: 1fr;
+  background-color: var(--cBlue);
+  font-family: var(--smallHeaders);
 }
 
-.programmeDiv:hover {
-  background-image: linear-gradient(
-    rgba(80, 255, 246, 0.678),
-    rgb(255, 255, 255)
-  );
-  cursor: pointer;
-}
 
 .panel {
   padding: 0 18px;
@@ -47,8 +41,7 @@ main {
   flex-direction: column;
   align-items: flex-end;
   grid-column: 3;
-  padding: 10px;
-  font-size: 15px;
+  font-size: 1.5vh;
 }
 
 .countryFlag {
@@ -57,20 +50,30 @@ main {
   margin-bottom: 5px;
 }
 
+.universityName {
+  color: rgba(0, 0, 0, 0.596);
+  font-size: smaller;
+}
+
 .position {
   display: flex;
+  flex-direction: row;
 }
 
 .position > div:nth-child(1) {
-  margin-right: 10px;
+  margin-right: 0.5vw;
 }
-
+.position > div:nth-child(2){
+  margin-right: 0.5vw;
+}
 .students {
   display: flex;
   padding: 10px;
   padding-left: 0px;
 }
-
+.sideHead {
+  font-weight: bold;
+}
 .localS,
 .exchangeS {
   flex-grow: 1;
