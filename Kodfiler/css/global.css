@@ -1,3 +1,13 @@
+:root {
+  /* Färger */
+  --cBlue: #99cccc;
+  --cOrange: #f0a476;
+  --cCoral: #f29473;
+  --cPink: #f3c6c5;
+  --cGreen: #bfd6bf;
+  --cWhite: #f2f2f2;
+}
+
 body {
   height: 100vh;
   margin: 0;
