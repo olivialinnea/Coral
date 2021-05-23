@@ -2,7 +2,7 @@
   /* Färger */
   --cBlue: #99cccc;
   --cOrange: #f0a476;
-  --cCoral: #f8b49b;
+  --cCoral: #faab8e;
   --cPink: #f3c6c5;
   --cGreen: #bfd6bf;
   --cWhite: #f2f2f2;
@@ -13,9 +13,25 @@
   --smallHeaders: "Montserrat"; /* bold? */
 }
 
+header {
+  font-family: var(--bigHeaders);
+}
+
 body {
   height: 100vh;
   margin: 0;
+}
+
+.logo {
+  font-family: var(--bigHeaders);
+}
+
+#titleHead {
+  font-size: 4vh;
+  position: absolute;
+
+  /* top: 50px; */
+  left: 200px;
 }
 
 header > a {
@@ -39,18 +55,13 @@ header > a:hover {
   left: 200px;
 }
 
-footer {
-  height: 25vh;
-  background-color: var(--cGreen);
-}
-
 .pageLinks > a {
   text-decoration: none;
   color: black;
 }
 
 .pageLinks > a:hover {
-  color: coral;
+  color: var(--cCoral);
 }
 
 h1 {
@@ -60,7 +71,6 @@ h1 {
 header {
   height: 17vh;
   display: flex;
-  padding-top: 5vh;
 }
 .pageTitle {
   display: flex;
@@ -73,28 +83,14 @@ input {
   margin-bottom: 1vh;
 }
 
-/* Accordion */
-/*.active,
-.accordion:hover {
-  background-color: rgba(255, 127, 80, 0.226);
-  background-image: linear-gradient(
-    rgba(80, 255, 246, 0.678),
-    rgb(255, 255, 255)
-  ); 
-}*/
-
-/*
-.active {
-  margin-bottom: 10px;
-  border-bottom: 1px solid black;
-  height: auto;
-} */
-/* Accordion */
-
 /* footer */
 footer {
   display: flex;
   flex-direction: column;
+
+  height: 25vh;
+  background-color: var(--cGreen);
+  font-family: var(--bodyText);
 }
 
 footer > div:nth-child(1) {
@@ -145,19 +141,24 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
 .logoFooter {
   height: 100px;
   width: 400px;
-  font-size: 30px;
   display: flex;
   align-items: center;
-  justify-content: end;
+}
+
+.logoHeaderFoot {
+  padding-top: 8px;
+  font-size: 25px;
+  font-family: var(--bigHeaders);
+  margin-left: 5px;
 }
 
 /* Ersättas med logga */
-.logoFooter > div:nth-child(1) {
-  height: 70px;
-  width: 70px;
-  border-radius: 100%;
+#logoFooter {
+  height: 100px;
+  width: 100px;
   margin-right: 10px;
-  background-color: lightgoldenrodyellow;
+  padding-top: 40px;
+  margin-left: 10px;
 }
 
 .pageLinks {
