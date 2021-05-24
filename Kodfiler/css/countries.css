@@ -107,9 +107,9 @@ body {
 }*/
 .oneCity,
 .oneUniversity {
-  border: black solid 1px;
   padding: 1.5vh;
   margin: 0.5vh;
+  background-color: #ddeeee9a;
 }
 .langVisa {
   display: flex;
@@ -290,7 +290,7 @@ body {
 }
 
 .slimAdd {
-  width: 63.5%;
+  width: 64%;
   height: 90px;
   margin-left: 18vw;
   margin-bottom: 3vh;
@@ -316,5 +316,5 @@ body {
 
 .addSquare {
   width: 10vw;
-  height: 20vh;
+  height: 10vw;
 }
