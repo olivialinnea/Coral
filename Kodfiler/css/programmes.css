@@ -22,10 +22,13 @@ main {
   margin-right: 10px;
 }
 
-.iconLinks > a:hover {
-  fill: coral;
+.iconLinks > a:nth-child(1):hover {
+  fill: #f0a476;
 }
 
+.iconLinks > a:nth-child(2):hover {
+  fill: #bfd6bf;
+}
 .iconLinks > a > #countrySymbol {
   width: 50px;
   height: 50px;

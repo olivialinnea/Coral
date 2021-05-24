@@ -22,8 +22,13 @@ main {
   margin-right: 10px;
 }
 
-.iconLinks > a:hover {
-  fill: coral;
+.iconLinks > a:nth-child(1):hover {
+  fill: #f0a476;
+}
+
+.iconLinks > a:nth-child(2):hover {
+  fill: #99cccc;
+  ;
 }
 
 .iconLinks > a > #countrySymbol {
