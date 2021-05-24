@@ -28,7 +28,6 @@ main {
 
 .iconLinks > a:nth-child(2):hover {
   fill: #99cccc;
-  ;
 }
 
 .iconLinks > a > #countrySymbol {
@@ -82,7 +81,6 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   background-color: var(--cBlue);
-  
 }
 
 .position > div {
@@ -96,7 +94,6 @@ main {
   height: auto;
   display: flex;
   flex-direction: column;
-  
 }
 
 .infoAbout {
@@ -107,7 +104,7 @@ main {
 
   margin-bottom: 1vh;
   flex-direction: column;
-  
+
   padding-top: 1vh;
 }
 
@@ -165,6 +162,7 @@ main {
   height: 20px;
   width: 40px;
   margin-bottom: 1vh;
+  border-radius: 2px;
 }
 
 .allProgrammes {
@@ -241,5 +239,4 @@ main {
   background-color: #ddeeee9a;
   padding: 1vh;
   margin: 1vh;
-  
 }

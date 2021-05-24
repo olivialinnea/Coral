@@ -107,7 +107,12 @@ function infoInfo(data) {
       oneCity.innerHTML = `
       <div class="cityNameAndSun">
         <div class="cityName">${city[j].name}</div>
-        <div class="sunnyDays">Number of sunny days: ${city[j].sun}</div>
+        <div class="sunWrapper">
+          <div class="sunSymbol">
+            <img class="sun" src="symbols/sun.png">
+          </div>
+          <div class="sunnyDays">Number of sunny days: ${city[j].sun}</div>
+        </div>
       </div>`;
       
       oneCity.addEventListener("click", function(event) {
