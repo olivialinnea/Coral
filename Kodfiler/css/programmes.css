@@ -3,6 +3,39 @@ main {
   margin-right: 18vw;
 }
 
+.header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.iconLinks {
+  grid-column: 3;
+  margin: 10px;
+}
+
+.iconLinks > a {
+  margin: 0px;
+  padding: 0px;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.iconLinks > a:hover {
+  fill: coral;
+}
+
+.iconLinks > a > #countrySymbol {
+  width: 50px;
+  height: 50px;
+}
+
+.iconLinks > a > .programIcon {
+  width: 50px;
+  height: 50px;
+}
+
 .programmeDiv {
   box-shadow: 6px 4px 4px lightgrey;
   height: auto;
