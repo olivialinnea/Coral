@@ -120,7 +120,7 @@ footer > div:nth-child(2) > div:nth-child(2) {
 }
 
 footer > div:nth-child(2) > div {
-  padding: 15px;
+  margin: 10px;
 }
 
 footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
