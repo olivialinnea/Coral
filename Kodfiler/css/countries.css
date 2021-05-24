@@ -32,7 +32,7 @@ body {
   cursor: pointer;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  background-color: #99cccc34;
+  background-color: var(--cBlue);
   transition: background-image, background-color 1s;
 }
 
@@ -230,9 +230,9 @@ body {
   font-weight: bold;
 }
 
-.programName:hover {
+/*.programName:hover {
   color: coral;
-}
+}*/
 
 .omdomen {
   font-weight: bold;

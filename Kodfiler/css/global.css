@@ -151,6 +151,11 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   font-size: 25px;
   font-family: var(--bigHeaders);
   margin-left: 5px;
+  color: var(--cWhite);
+}
+
+.bold {
+  font-weight: bold;
 }
 
 /* Ersättas med logga */
@@ -250,7 +255,7 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   margin-right: 10px;
   margin-bottom: 10px;
   width: 23.5vw;
-  background-color: bisque;
+  background-color: var(--cGreen);
   font-size: 1.5vh;
 }
 

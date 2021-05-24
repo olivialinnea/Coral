@@ -42,9 +42,8 @@ main {
 .panel {
   padding: 0 18px;
   padding-left: 2vh;
-  background-color: white;
+  background-color: var(--cBlue);
   overflow: hidden;
-  border: 1px solid black;
   margin-bottom: 1vh;
 
   grid-column: 1 / span 3;
@@ -53,7 +52,8 @@ main {
 .programmeInfo {
   padding: 0 18px;
   padding-left: 2vh;
-  background-color: white;
+  background-color: var( --cBlue);
+  border-top: black solid thin;
   overflow: hidden;
   margin-bottom: 1vh;
   margin-top: 1vh;
@@ -82,12 +82,24 @@ main {
   display: flex;
   flex-direction: row;
 }
-
+.bold {
+  font-weight: bold;
+  margin-right: 0.5vw;
+}
 .position > div:nth-child(1) {
   margin-right: 0.5vw;
+  display: flex;
+  flex-direction: row;
 }
 .position > div:nth-child(2) {
   margin-right: 0.5vw;
+  display: flex;
+  flex-direction: row;
+}
+.position > div:nth-child(3) {
+  margin-right: 0.5vw;
+  display: flex;
+  flex-direction: row;
 }
 .students {
   display: flex;
@@ -160,6 +172,7 @@ main {
 
 .commentContent {
   display: flex;
+  flex-direction: column;
 }
 
 .stars {
