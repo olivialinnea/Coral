@@ -85,11 +85,11 @@ function programdiv(data){
 
   programName.innerText = `${data.name}`;
   universityName.innerHTML = `(${uni.name})`;
-  cityDiv.innerHTML = ` Stad: ${city.name}`;
-  countryDiv.innerHTML = `Land: ${country.name}</p>`;
+  cityDiv.innerHTML = `<p class="bold">Stad:</p> <p>${city.name}</p>`;
+  countryDiv.innerHTML = `<p class="bold">Land:</p> <p>${country.name}</p>`;
   flag.innerHTML = `<img class="countryFlag" src="Images/${country.flag}">`
   
-  level.innerHTML = `Level: ${levelName}`;
+  level.innerHTML = `<p class="bold">Level:</p><p>${levelName}</p>`;
 
   programDiven.addEventListener("click", function(event){
     event.stopPropagation();

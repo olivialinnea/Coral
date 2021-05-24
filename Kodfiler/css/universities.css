@@ -130,6 +130,7 @@ main {
 .programName {
   border: 1px solid black;
   margin-bottom: 1vh;
+  padding: 1vh;
 }
 
 .position {
@@ -163,10 +164,10 @@ main {
   margin-bottom: 1vh;
 }
 
-.programDiv > div:nth-child(1) {
-  /*border: 1px solid black;*/
-  /*padding: 10px;*/
-}
+/*.programDiv > div:nth-child(1) {
+  /*border: 1px solid black;
+  /*padding: 10px;
+}*/
 
 .programDiv > div:nth-child(2) {
   /*font-weight: bold;*/
