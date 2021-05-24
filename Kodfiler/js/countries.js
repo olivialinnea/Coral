@@ -244,7 +244,6 @@ function universityDiven(data) {
 
   infoAboutCity.append(reviewDiv);
 
-  console.log(reviewDiv);
   let university = UNIVERSITIES.filter(university => data.id === university.cityID);
 
   let universityDiv = document.createElement("div");
