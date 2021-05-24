@@ -33,9 +33,9 @@ nav {
   height: 30vh;
   margin: 8vw 10vw 0vw 10vw;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
 
   font-family: var(--bigHeaders);
 }
