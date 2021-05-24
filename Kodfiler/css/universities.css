@@ -77,6 +77,7 @@ main {
   height: auto;
   margin-bottom: 2vh;
   padding: 1.5vh;
+  padding-left: 5vh;
   cursor: pointer;
   display: grid;
   grid-template-columns: 1fr;
@@ -127,7 +128,7 @@ main {
   font-size: 20px;
   font-weight: bold;
   padding: 5px;
-  padding-left: 0px;
+  padding-left: 1vh;
   margin-bottom: 1vh;
   border-top: black solid 1px;
   padding-top: 2vh;
@@ -164,6 +165,10 @@ main {
   border-radius: 2px;
 }
 
+.programInfo {
+  padding-left: 1vh;
+}
+
 .allProgrammes {
   margin-bottom: 1vh;
 }
@@ -179,10 +184,10 @@ main {
   display: none;
 }
 
-.students {
+/* .students {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-}
+} */
 
 .exchanges {
   grid: 3;

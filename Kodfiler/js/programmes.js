@@ -15,10 +15,6 @@ for (let i = 0; i < 5; i++) {
 yearArray.sort();
 
 
-
-
-
-
 const searchBar = document.getElementById("programmeSearch");
 let programmeNames = PROGRAMMES;
 
@@ -196,9 +192,9 @@ function programInfo(data){
     <div class="commentContent">
 
       <div class="stars">
-        <div class="t">Teachers: ${r[i].stars.teachers}/5</div>
-        <div class="s">Students: ${r[i].stars.students}/5</div>
-        <div class="c">Course: ${r[i].stars.courses}/5</div>
+        <div class="t">Lärare: ${r[i].stars.teachers}/5</div>
+        <div class="s">Kursare: ${r[i].stars.students}/5</div>
+        <div class="c">Kursen: ${r[i].stars.courses}/5</div>
       </div>
 
         <div class="textC">

@@ -113,6 +113,10 @@ function infoDivUnder(data) {
 
   let program = PROGRAMMES.filter(p => data.id === p.universityID);
 
+  let levelName = LEVELS.find(function (levelArray, index) {
+    return index === data.level;
+  });
+
   let programDiv = document.createElement("div");
   programDiv.classList.add("programDiv");
 
@@ -158,7 +162,7 @@ function programInfo(data) {
   students.classList.add("students");
   students.innerHTML =`
     <div class="localS"> Local Students: ${data.localStudents}</div>
-    <div class="exchanges"> Exchange Students: ${data.exchangeStudents}</div>
+    <div class="exchangeS"> Exchange Students: ${data.exchangeStudents}</div>
   `;
   programInfo.append(students);
 
@@ -214,9 +218,9 @@ function programInfo(data) {
 
       <div class="commentContent">
         <div class="stars">
-          <div class="t">Teachers: ${r[i].stars.teachers}/5</div>
-          <div class="s">Students: ${r[i].stars.students}/5</div>
-          <div class="c">Course: ${r[i].stars.courses}/5</div>
+          <div class="t">Lärare: ${r[i].stars.teachers}/5</div>
+          <div class="s">Kursare: ${r[i].stars.students}/5</div>
+          <div class="c">Kursen: ${r[i].stars.courses}/5</div>
         </div>
 
         <div class="textC">

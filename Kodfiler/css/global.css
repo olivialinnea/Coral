@@ -162,7 +162,6 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   font-weight: bold;
 }
 
-/* Ersättas med logga */
 #logoFooter {
   height: 100px;
   width: 100px;
@@ -209,12 +208,37 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   display: flex;
   padding-left: none;
   padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+.students {
+  display: flex;
+  padding: 10px;
+  padding-left: 10px;
+  padding-left: 0px;
+  margin-top: 10px;
 }
 
 .entryHead,
 .graduatesHead {
   flex-grow: 1;
   font-weight: bold;
+}
+
+.exchangeS {
+  /* padding-left: 40px; */
+  font-weight: bold;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.localS {
+  font-weight: bold;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.graduatesHead {
+  padding-left: 20px;
 }
 
 .grades {
@@ -256,7 +280,7 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   margin-right: 10px;
   margin-bottom: 10px;
   width: 23.5vw;
-  background-color: #F6F3F0;
+  background-color: #f6f3f0;
   font-size: 1.5vh;
   box-shadow: 4px 4px 8px #5f5959;
 }
@@ -275,6 +299,7 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   padding-left: 0px;
   font-size: 20px;
   margin-top: 1vh;
+  margin-bottom: 10px;
 }
 
 .card > div:nth-child(1) {
@@ -305,7 +330,7 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
 
 .textC > p:nth-child(1) {
   margin-top: 5px;
-  margin-bottom: 0px;
+  margin-bottom: 3px;
   font-weight: bold;
 }
 
