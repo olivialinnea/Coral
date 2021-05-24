@@ -65,8 +65,11 @@ main {
 #uniSymbol {
   height: 120px;
   width: 120px;
-
   margin: 2vh;
+}
+
+#uniSearch {
+  background-image: url(symbols/);
 }
 
 .universityDiv {
@@ -168,13 +171,7 @@ main {
   margin-bottom: 1vh;
 }
 
-/*.programDiv > div:nth-child(1) {
-  /*border: 1px solid black;
-  /*padding: 10px;
-}*/
-
 .programDiv > div:nth-child(2) {
-  /*font-weight: bold;*/
   border: 1px solid black;
   border-top: none;
   padding: 1vh;
