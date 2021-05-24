@@ -2,7 +2,7 @@
   /* Färger */
   --cBlue: #99cccc;
   --cOrange: #f0a476;
-  --cCoral: #f8b49b;
+  --cCoral: #faab8e;
   --cPink: #f3c6c5;
   --cGreen: #bfd6bf;
   --cWhite: #f2f2f2;
@@ -16,6 +16,21 @@
 body {
   height: 100vh;
   margin: 0;
+  background-color: var(--cWhite);
+}
+
+.logo {
+  font-family: var(--bigHeaders);
+}
+
+#logoHeader {
+  height: 180px;
+  width: 180px;
+  margin-bottom: 2vh;
+}
+
+.headerName {
+  font-family: var(--bigHeaders);
 }
 
 header > a {
@@ -25,23 +40,25 @@ header > a {
   text-decoration: none;
   color: black;
   font-weight: bold;
+  height: 50px;
 }
 
 header > a:hover {
   cursor: pointer;
 }
 
-#titleHead {
-  font-size: 4vh;
-  position: absolute;
+input {
+  background-image: url("symbols/transparency.png") top left no-repeat;
+  height: 35px;
+  width: 30vw;
+  padding-left: 25px;
+  border: 1px solid lightgray;
+  margin-bottom: 2vh;
+  border-radius: 10vh;
+  font-family: var(--bodyText);
+  outline: 0;
 
-  top: 80px;
-  left: 200px;
-}
-
-footer {
-  height: 25vh;
-  background-color: var(--cGreen);
+  box-shadow: 3px 2px 2px lightgrey;
 }
 
 .pageLinks > a {
@@ -50,7 +67,7 @@ footer {
 }
 
 .pageLinks > a:hover {
-  color: coral;
+  color: var(--cCoral);
 }
 
 h1 {
@@ -60,7 +77,6 @@ h1 {
 header {
   height: 17vh;
   display: flex;
-  padding-top: 5vh;
 }
 .pageTitle {
   display: flex;
@@ -68,33 +84,14 @@ header {
   align-items: center;
 }
 
-input {
-  border: 1px solid black;
-  margin-bottom: 1vh;
-}
-
-/* Accordion */
-/*.active,
-.accordion:hover {
-  background-color: rgba(255, 127, 80, 0.226);
-  background-image: linear-gradient(
-    rgba(80, 255, 246, 0.678),
-    rgb(255, 255, 255)
-  ); 
-}*/
-
-/*
-.active {
-  margin-bottom: 10px;
-  border-bottom: 1px solid black;
-  height: auto;
-} */
-/* Accordion */
-
 /* footer */
 footer {
   display: flex;
   flex-direction: column;
+
+  height: 25vh;
+  background-color: var(--cGreen);
+  font-family: var(--bodyText);
 }
 
 footer > div:nth-child(1) {
@@ -145,19 +142,24 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
 .logoFooter {
   height: 100px;
   width: 400px;
-  font-size: 30px;
   display: flex;
   align-items: center;
-  justify-content: end;
+}
+
+.logoHeaderFoot {
+  padding-top: 8px;
+  font-size: 25px;
+  font-family: var(--bigHeaders);
+  margin-left: 5px;
 }
 
 /* Ersättas med logga */
-.logoFooter > div:nth-child(1) {
-  height: 70px;
-  width: 70px;
-  border-radius: 100%;
+#logoFooter {
+  height: 100px;
+  width: 100px;
   margin-right: 10px;
-  background-color: lightgoldenrodyellow;
+  padding-top: 40px;
+  margin-left: 10px;
 }
 
 .pageLinks {
@@ -298,7 +300,6 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   margin-top: 5px;
   margin-bottom: 0px;
   font-weight: bold;
-
 }
 
 .textC > p:nth-child(2) {
@@ -306,4 +307,3 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   margin: 0px;
   padding-right: 10px;
 }
-

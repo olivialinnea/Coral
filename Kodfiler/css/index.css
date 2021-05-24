@@ -2,18 +2,21 @@ body {
   background-color: var(--cWhite);
 }
 
-header {
-  font-family: "Comfortaa";
+#titleHead {
+  font-size: 4vh;
+  position: absolute;
+  font-family: var(--bigHeaders);
+  color: black;
+  text-decoration: none;
+
+  top: 80px;
+  left: 200px;
 }
 
 footer {
   height: 25vh;
-  background-color: burlywood;
-  font-family: "Montserrat", sans-serif;
-}
-
-.logo {
-  font-family: "Comfortaa";
+  background-color: var(--cGreen);
+  font-family: var(--bodyText);
 }
 
 svg {
@@ -30,7 +33,7 @@ nav {
   align-items: center;
   justify-content: space-around;
 
-  font-family: "Comfortaa";
+  font-family: var(--bigHeaders);
 }
 
 main {
@@ -41,14 +44,18 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(auto, 1fr);
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--bodyText);
 
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 h2 {
   margin: 0;
-  font-family: "Comfortaa";
+  font-family: var(--bigHeaders);
+}
+
+#mainTitle {
+  color: var(--cOrange);
 }
 
 #flag,
@@ -67,6 +74,11 @@ h2 {
 }
 
 .addSquare {
+  width: 200px;
+  height: 200px;
+}
+
+.annons2 {
   width: 200px;
   height: 200px;
   margin: 10px;

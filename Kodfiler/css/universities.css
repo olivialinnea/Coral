@@ -3,6 +3,28 @@ main {
   margin-right: 18vw;
 }
 
+#titleHead {
+  font-size: 4vh;
+  position: absolute;
+  font-family: var(--bigHeaders);
+  color: black;
+  text-decoration: none;
+
+  top: 53px;
+  left: 200px;
+}
+
+#uniSymbolWrapper {
+  padding-bottom: 5vh;
+}
+
+#uniSymbol {
+  height: 120px;
+  width: 120px;
+
+  margin: 2vh;
+}
+
 .universityDiv {
   box-shadow: 6px 4px 4px lightgrey;
   height: auto;
@@ -14,11 +36,10 @@ main {
   background-color: var(--cBlue);
 }
 
-.position >div {
+.position > div {
   display: flex;
   flex-direction: row;
 }
-
 
 .active {
   margin-bottom: 10px;
@@ -127,4 +148,41 @@ main {
 .idDiv {
   display: flex;
   flex-direction: column;
+}
+
+.omdomen {
+  font-weight: bold;
+}
+
+#slimAdd {
+  width: 100%;
+  height: 90px;
+}
+
+.slimAdd {
+  height: 90px;
+  margin-bottom: 3vh;
+  display: inline-block;
+  margin-top: 2vh;
+}
+
+.annons2 {
+  width: 10vw;
+  height: 20vh;
+  position: absolute;
+}
+
+.annons2:nth-child(1) {
+  left: 4vw;
+  top: 800vh;
+}
+
+.annons2:nth-child(2) {
+  left: 85vw;
+  top: 50vh;
+}
+
+.addSquare {
+  width: 10vw;
+  height: 20vh;
 }
