@@ -249,10 +249,9 @@ body {
 }
 
 .oneProgram {
-  border: 1px solid black;
   margin-bottom: 1vh;
   padding: 1vh;
-  background-color: white;
+  background-color: #f2f2f2;
 }
 
 .exchanges {
@@ -334,7 +333,6 @@ body {
 }
 
 .oneUniversity {
-  border: black solid 1px;
   padding: 1.5vh;
   margin: 0.5vh;
 }
