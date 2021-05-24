@@ -70,7 +70,7 @@ input {
 }
 
 .pageLinks > a:hover {
-  color: var(--cCoral);
+  color: var(--cWhite);
 }
 
 h1 {
