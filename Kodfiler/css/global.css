@@ -94,7 +94,7 @@ footer {
   flex-direction: column;
 
   height: 25vh;
-  background-color: var(--cGreen);
+  background-color: #bfd6bf;
   font-family: var(--bodyText);
 }
 
@@ -155,7 +155,7 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   font-size: 25px;
   font-family: var(--bigHeaders);
   margin-left: 5px;
-  color: var(--cWhite);
+  color: black;
 }
 
 .bold {
@@ -256,7 +256,7 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   margin-right: 10px;
   margin-bottom: 10px;
   width: 23.5vw;
-  background-color: #F5DCC3;
+  background-color: #F6F3F0;
   font-size: 1.5vh;
   box-shadow: 4px 4px 8px #5f5959;
 }
