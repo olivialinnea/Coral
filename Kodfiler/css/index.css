@@ -35,7 +35,6 @@ nav {
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  
 
   font-family: var(--bigHeaders);
 }
@@ -242,8 +241,6 @@ h2 {
   margin-left: -100%;
 }
 
-/*css for automatic navigation*/
-
 .navigation-auto {
   position: absolute;
   display: flex;
@@ -287,20 +284,18 @@ h2 {
 }
 
 body {
-	background: linear-gradient(-45deg, #faab8e, #bfd6bf, #f2f2f2);
-	background-size: 400% 400%;
-	
+  background: linear-gradient(-45deg, #faab8e, #bfd6bf, #f2f2f2);
+  background-size: 400% 400%;
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-
