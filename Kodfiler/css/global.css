@@ -48,11 +48,11 @@ header > a:hover {
 }
 
 input {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/0b/Search_Icon.svg" ) ;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/0b/Search_Icon.svg");
   background-repeat: no-repeat;
   background-position: left;
   background-size: 5.5%;
-  padding-left:25px;   
+  padding-left: 25px;
   height: 35px;
   width: 30vw;
   padding-left: 25px;

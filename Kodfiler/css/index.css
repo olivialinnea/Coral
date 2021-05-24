@@ -35,7 +35,6 @@ nav {
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  
 
   font-family: var(--bigHeaders);
 }
@@ -241,8 +240,6 @@ h2 {
 #radio6:checked ~ .first {
   margin-left: -100%;
 }
-
-/*css for automatic navigation*/
 
 .navigation-auto {
   position: absolute;
