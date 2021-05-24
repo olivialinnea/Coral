@@ -92,7 +92,6 @@ main {
 
 .active {
   margin-bottom: 10px;
-  border-bottom: 1px solid black;
   height: auto;
   display: flex;
   flex-direction: column;
