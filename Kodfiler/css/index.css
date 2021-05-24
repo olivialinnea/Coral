@@ -26,8 +26,8 @@ svg {
   transition: 0.5s;
 }
 svg:hover {
-  height: 200px;
-  width: 200px;
+  height: 185px;
+  width: 185px;
 }
 nav {
   height: 30vh;
