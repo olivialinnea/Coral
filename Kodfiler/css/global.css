@@ -80,6 +80,7 @@ h1 {
 header {
   height: 17vh;
   display: flex;
+  z-index: 100;
 }
 .pageTitle {
   display: flex;
@@ -120,7 +121,7 @@ footer > div:nth-child(2) > div:nth-child(2) {
 }
 
 footer > div:nth-child(2) > div {
-  padding: 15px;
+  margin: 10px;
 }
 
 footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
@@ -204,8 +205,6 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   border-radius: 50%;
 }
 
-/* olivia */
-
 .headerContainer {
   display: flex;
   padding-left: none;
@@ -254,12 +253,12 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
 }
 
 .card {
-  /* border: 1px solid black;*/
   margin-right: 10px;
   margin-bottom: 10px;
   width: 23.5vw;
-  background-color: var(--cGreen);
+  background-color: #F5DCC3;
   font-size: 1.5vh;
+  box-shadow: 4px 4px 8px #5f5959;
 }
 
 .reviewContent {
