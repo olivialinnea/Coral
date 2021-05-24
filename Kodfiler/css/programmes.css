@@ -220,7 +220,7 @@ main {
 }
 
 #slimAdd {
-  width: 100%;
+  width: 102%;
   height: 90px;
 }
 
@@ -249,5 +249,5 @@ main {
 
 .addSquare {
   width: 10vw;
-  height: 20vh;
+  height: 10vw;
 }
