@@ -53,7 +53,7 @@ function countryDiv(data){
   countryNameTitle.innerText = `${data.name}`;
   normalImage.innerHTML = `<img class="normalImage" src="Images/${data.imagesNormal[0]}">`;
   countryFlag.innerHTML = `<img class="countryFlag" src="Images/${data.flag}">`;
-  languageVisaDiv.innerHTML = `Språk: ${lang.name} Visa krävs: ${visa(data)}`;
+  languageVisaDiv.innerHTML = `<p class="bold">Språk:</p><p>${lang.name}</p> <p class="bold">Visa krävs:</p><p>${visa(data)}</p>`;
 
   country.append(imgTitle, countrySideInfo);
   imgTitle.append(normalImage, countryNameTitle);

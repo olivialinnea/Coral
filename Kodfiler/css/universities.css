@@ -101,6 +101,8 @@ main {
 
   margin-bottom: 1vh;
   flex-direction: column;
+  
+  padding-top: 1vh;
 }
 
 .top {
@@ -125,6 +127,8 @@ main {
   padding: 5px;
   padding-left: 0px;
   margin-bottom: 1vh;
+  border-top: black solid 1px;
+  padding-top: 2vh;
 }
 
 .programName {

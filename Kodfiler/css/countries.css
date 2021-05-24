@@ -84,6 +84,7 @@ body {
 }
 
 .cityHeading {
+  border-top: solid 1px black;
   font-size: 25px;
   padding: 2vh;
   margin-top: 1vh;
@@ -125,6 +126,14 @@ body {
 .languageVisaDiv {
   margin-top: 6vh;
   margin-bottom: 0;
+  display: flex;
+}
+.languageVisaDiv > p:nth-child(2){
+  margin-right: 0.5vw;
+}
+.bold {
+  font-weight: bold;
+  margin-right: 0.5vw;
 }
 .countryFlag {
   height: 30px;

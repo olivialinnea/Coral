@@ -23,8 +23,12 @@ svg {
   height: 180px;
   width: 180px;
   margin-bottom: 2vh;
+  transition: 0.5s;
 }
-
+svg:hover {
+  height: 200px;
+  width: 200px;
+}
 nav {
   height: 30vh;
   margin: 8vw 10vw 0vw 10vw;
