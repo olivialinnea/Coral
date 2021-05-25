@@ -304,6 +304,15 @@ function infoAboutUni(data) {
 
     oneProgram.innerHTML = `
     <div class="programName">${program[j].name}</div>`;
+
+    let levelName = LEVELS.find(function (levelArray, index) {
+      return index === program[j].level;
+    });
+
+    let sideInfo = document.createElement("div");
+    sideInfo.classList.add("sideInfo");
+    sideInfo.innerHTML = `<p class="bold">Level:</p><p>${levelName}</p>`;
+    oneProgram.append(sideInfo);
     
     oneProgram.addEventListener("click", function(event) {
       event.stopPropagation();

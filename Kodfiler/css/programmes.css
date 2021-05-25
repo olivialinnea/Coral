@@ -139,15 +139,6 @@ main {
   flex-direction: row;
 }
 
-.visa {
-  display: flex;
-}
-
-.visa > p:nth-child(1) {
-  margin-right: 0.5vw;
-  font-weight: bold;
-} 
-
 .students {
   display: flex;
   padding: 10px;

@@ -252,6 +252,8 @@ body {
   margin-bottom: 1vh;
   padding: 1vh;
   background-color: #f2f2f2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .exchanges {
@@ -335,4 +337,14 @@ body {
 .oneUniversity {
   padding: 1.5vh;
   margin: 0.5vh;
+}
+
+.sideInfo {
+  display: flex;
+  grid-column: 3;
+  font-size: 13px;
+}
+
+.sideInfo > p:nth-child(1) {
+  margin-right: 0.5vw;
 }

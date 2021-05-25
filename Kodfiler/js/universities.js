@@ -74,7 +74,6 @@ function universityDiv(data){
       <div class="position" >
         <div><p class="sideHead">Land:</p><p>${c.name}</p></div>
         <div><p class="sideHead">Stad:</p><p>${city.name}</p></div>
-        <div><p class="sideHead">Visa:</p><p>${visa(c)}</p></div>
       </div>
     </div>
   </div>
@@ -129,6 +128,15 @@ function infoDivUnder(data) {
 
     oneProgram.innerHTML = `
     <div class="programName">${program[j].name}</div>`;
+
+    let levelName = LEVELS.find(function (levelArray, index) {
+      return index === program[j].level;
+    });
+
+    let sideInfo = document.createElement("div");
+    sideInfo.classList.add("sideInfo");
+    sideInfo.innerHTML = `<p class="bold">Level:</p><p>${levelName}</p>`;
+    oneProgram.append(sideInfo);
     
     oneProgram.addEventListener("click", function(event) {
       event.stopPropagation();
@@ -279,12 +287,4 @@ function gradesKey(key){
   div.textContent = `${key}`;
   
   return div;
-}
-
-function visa(data) {
-  if (data.visa == false) {
-   return "Nej"
- } else {
-   return "Ja"
- }
 }

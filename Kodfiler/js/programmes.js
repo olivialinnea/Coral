@@ -88,10 +88,7 @@ function programdiv(data){
   countryDiv.innerHTML = `<p class="bold">Land:</p> <p>${country.name}</p>`;
   flag.innerHTML = `<img class="countryFlag" src="Images/${country.flag}">`
   
-  level.innerHTML = `<p class="bold">Level:</p><p>${levelName}</p>`
-
-  visum.innerHTML = `<p>Visa:</p><p>${visa(country)}</p>`
-  ;
+  level.innerHTML = `<p class="bold">Level:</p><p>${levelName}</p>`;
 
   programDiven.addEventListener("click", function(event){
     event.stopPropagation();
@@ -223,8 +220,6 @@ function programInfo(data){
 
   infoAbout.append(innerProgrammeDiv);
 
-  
-
   return infoAbout;
 }
 
@@ -251,12 +246,4 @@ function gradesKey(key){
   div.textContent = `${key}`;
   
   return div;
-}
-
-function visa(data) {
-  if (data.visa == false) {
-   return "Nej"
- } else {
-   return "Ja"
- }
 }

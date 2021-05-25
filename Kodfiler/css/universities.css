@@ -146,11 +146,19 @@ main {
   font-family: var(--smallHeaders);
 }
 
-.position > div:nth-child(1), .position > div:nth-child(2) {
+.position > div:nth-child(1) {
   margin-right: 10px;
 }
 
+.sideInfo {
+  display: flex;
+  grid-column: 3;
+  font-size: 13px;
+}
 
+.sideInfo > p:nth-child(1) {
+  margin-right: 0.5vw;
+}
 
 .universitySideInfo {
   display: flex;
@@ -245,4 +253,6 @@ main {
   background-color: #ddeeee9a;
   padding: 1vh;
   margin: 1vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
