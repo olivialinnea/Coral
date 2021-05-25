@@ -268,7 +268,7 @@ function programInfo(data) {
 function yearlyAmount(year){
   let div = document.createElement("div");
 
-  div.textContent = `${year}`;
+  div.textContent = `${year}:`;
   
   return div;
 }
