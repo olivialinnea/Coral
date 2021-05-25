@@ -163,7 +163,10 @@ main {
   background-color: #ddeeee9a;
   padding: 1vh;
   margin: 1vh;
-  display: grid;
+}
+
+.oneProgram:hover {
+  box-shadow: 3px 3px 4px var(--cHoverB);
 }
 
 .position > div {

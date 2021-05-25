@@ -132,6 +132,10 @@ body {
   flex-direction: column;
 }
 
+.oneCity:hover {
+  box-shadow: 3px 3px 4px var(--cHoverB);
+}
+
 .cityName {
   font-size: 2.5vh;
   display: flex;
@@ -259,6 +263,10 @@ body {
   margin: 0.5vh;
 }
 
+.oneUniversity:hover {
+  box-shadow: 3px 3px 4px var(--cBlue);
+}
+
 .oneUniversity > div:nth-child(1) {
   font-weight: bold;
   font-size: 2.2vh;
@@ -274,7 +282,7 @@ body {
 .programInfo {
   padding: 0 18px;
   padding-left: 2vh;
-  background-color: var(--cBlue);
+  background-color: var(--cwhite);
   overflow: hidden;
   margin-bottom: 1vh;
   grid-column: 1/span 3;

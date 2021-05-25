@@ -147,7 +147,7 @@ function universityDiven(data) {
 
   let uniHeading = document.createElement("div");
   uniHeading.classList.add("uniHeading")
-  uniHeading.innerHTML = `Universitet `;
+  uniHeading.innerHTML = `Universitet` ;
 
   let infoAboutCity = document.createElement("div");
   infoAboutCity.classList.add("infoAboutCity");
@@ -169,7 +169,7 @@ function universityDiven(data) {
   middleCityDiv.append(cityImageDiv);
 
   let cityImage = document.createElement("img");
-  cityImage.src = `Images/${data.imagesNormal[0]}`
+  cityImage.src =` Images/${data.imagesNormal[0]}`;
   cityImage.classList.add("cityImage");
   cityImageDiv.append(cityImage);
 
@@ -191,7 +191,9 @@ function universityDiven(data) {
   let idDiven = document.createElement("div");
   idDiven.classList.add("idDiven");
 
+  infoAboutuni.append(infoAboutCity);
   infoAboutuni.append(uniHeading);
+
   infoAboutCity.append(idDiven);
 
   let reviewDiv = document.createElement("div");
