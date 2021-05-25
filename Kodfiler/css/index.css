@@ -42,6 +42,10 @@ body {
   background-position: center;
 }
 
+#logoHeader {
+  margin: 1vh;
+}
+
 #titleHead {
   font-size: 4vh;
   position: absolute;

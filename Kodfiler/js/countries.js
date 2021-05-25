@@ -111,7 +111,7 @@ function infoInfo(data) {
           <div class="sunSymbol">
             <img class="sun" src="symbols/sun.png">
           </div>
-          <div class="sunnyDays">Number of sunny days: ${city[j].sun}</div>
+          <div class="sunnyDays">Antal soldagar: ${city[j].sun}</div>
         </div>
       </div>`;
       
@@ -145,9 +145,9 @@ function universityDiven(data) {
   let infoAboutuni = document.createElement("div");
   infoAboutuni.classList.add("infoAboutuni");    
 
-  let cityHeading = document.createElement("div");
-  cityHeading.classList.add("cityHeading")
-  cityHeading.innerHTML = `Universitet `;
+  let uniHeading = document.createElement("div");
+  uniHeading.classList.add("uniHeading")
+  uniHeading.innerHTML = `Universitet `;
 
   let infoAboutCity = document.createElement("div");
   infoAboutCity.classList.add("infoAboutCity");
@@ -192,7 +192,7 @@ function universityDiven(data) {
   idDiven.classList.add("idDiven");
 
   infoAboutuni.append(infoAboutCity);
-  infoAboutuni.append(cityHeading);
+  infoAboutuni.append(uniHeading);
 
   infoAboutCity.append(idDiven);
 
@@ -311,7 +311,7 @@ function infoAboutUni(data) {
 
     let sideInfo = document.createElement("div");
     sideInfo.classList.add("sideInfo");
-    sideInfo.innerHTML = `<p class="bold">Level:</p><p>${levelName}</p>`;
+    sideInfo.innerHTML = `<div class="bold">Level:</div><div class="lvl">${levelName}</div>`;
     oneProgram.append(sideInfo);
     
     oneProgram.addEventListener("click", function(event) {
