@@ -82,6 +82,7 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   background-color: var(--cBlue);
+  
 }
 
 .position > div {
