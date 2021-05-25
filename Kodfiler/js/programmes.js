@@ -95,7 +95,7 @@ function programdiv(data){
     if (programDiven.classList.contains("active")){
       programDiven.classList.toggle("active");
     
-      let info = document.querySelectorAll(".panel");
+      let info = document.querySelectorAll(".programInfo");
 
       for (let j = 0; j < info.length; j++){
         if (info[j].parentNode === programDiven){
@@ -113,10 +113,10 @@ function programdiv(data){
 
 function programInfo(data){
   let infoAbout = document.createElement("div");
-  infoAbout.classList.add("panel");
+  infoAbout.classList.add("programInfo");
 
   let innerProgrammeDiv = document.createElement("div");
-  innerProgrammeDiv.classList.add("programmeInfo");
+  innerProgrammeDiv.classList.add("infoAbout");
 
   innerProgrammeDiv.innerHTML = `
     <div class="students">
