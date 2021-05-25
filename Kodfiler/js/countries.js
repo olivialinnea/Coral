@@ -191,8 +191,7 @@ function universityDiven(data) {
   let idDiven = document.createElement("div");
   idDiven.classList.add("idDiven");
 
-  infoAboutuni.append(infoAboutCity);
-  infoAboutuni.append(cityHeading);
+  infoAboutCity.append(cityHeading);
 
   infoAboutCity.append(idDiven);
 
