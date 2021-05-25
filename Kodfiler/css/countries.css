@@ -348,3 +348,8 @@ body {
 .sideInfo > p:nth-child(1) {
   margin-right: 0.5vw;
 }
+
+.sideInfo > p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
