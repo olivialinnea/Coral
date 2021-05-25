@@ -50,6 +50,10 @@
   margin-right: 18vw;
 }
 
+.programmeDiv:hover {
+  box-shadow: 8px 8px 8px lightgrey;
+}
+
 #titleHead {
   font-size: 4vh;
   position: absolute;

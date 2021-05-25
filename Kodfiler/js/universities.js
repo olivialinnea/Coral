@@ -135,7 +135,7 @@ function infoDivUnder(data) {
 
     let sideInfo = document.createElement("div");
     sideInfo.classList.add("sideInfo");
-    sideInfo.innerHTML = `<p class="bold">Level:</p><p>${levelName}</p>`;
+    sideInfo.innerHTML = `<p class="bold">Level:</p><p class="lvl">${levelName}</p>`;
     oneProgram.append(sideInfo);
     
     oneProgram.addEventListener("click", function(event) {

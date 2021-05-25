@@ -33,6 +33,7 @@ body {
   height: 190px;
   width: 190px;
 }
+
 .headerName {
   font-family: var(--bigHeaders);
 }
@@ -161,10 +162,6 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   font-family: var(--bigHeaders);
   margin-left: 5px;
   color: white;
-}
-
-.bold {
-  font-weight: bold;
 }
 
 #logoFooter {
@@ -321,6 +318,8 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
 .commentDate {
   grid-column: 3;
   font-weight: normal;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .commentContent {
