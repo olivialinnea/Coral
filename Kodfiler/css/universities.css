@@ -254,5 +254,4 @@ main {
   padding: 1vh;
   margin: 1vh;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
 }
