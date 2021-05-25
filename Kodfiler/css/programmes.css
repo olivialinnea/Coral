@@ -96,6 +96,7 @@
   overflow: hidden;
   margin-bottom: 1vh;
   grid-column: 1/span 3;
+  border-top: black solid 1px;
 }
 
 .programSideInfo {
