@@ -70,6 +70,11 @@ body {
   grid-template-columns: repeat(2, 1fr);
   background-color: #99cccc;
 }
+
+.country:hover {
+  box-shadow: 10px 8px 8px lightgrey;
+}
+
 .imgTitle {
   display: flex;
   align-items: center;
@@ -174,10 +179,13 @@ body {
   flex-grow: 1;
   flex-basis: 0;
   margin-top: 1vh;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
 }
 
 .middleCityDiv {
   display: flex;
+  margin-bottom: 3vh;
 }
 
 .entertainment {
@@ -247,7 +255,7 @@ body {
   margin-bottom: 1vh;
   padding: 1vh;
   background-color: #f2f2f2;
-  display: grid;
+  /* display: grid; */
 }
 
 .exchanges {
@@ -260,8 +268,15 @@ body {
 
 .programmeHeading {
   font-weight: bolder;
+  padding-bottom: 2vh;
+  padding-top: 2vh;
+}
+
+.uniHeading {
+  font-size: 2.5vh;
+  font-weight: bold;
+  padding-top: 2vh;
   padding-bottom: 1vh;
-  padding-top: 1vh;
 }
 
 .infoUni {
@@ -270,6 +285,7 @@ body {
 
 .programName {
   font-weight: bold;
+  margin-bottom: 1vh;
 }
 
 .omdomen {
@@ -311,25 +327,12 @@ body {
   height: 10vw;
 }
 
-.countryNameTitle:hover {
-  color: coral;
-  font-weight: bolder;
-}
-
-.cityName:hover {
-  color: coral;
-}
-
 .oneUniversity > div:nth-child(1):hover {
   color: black;
 }
 
-.programName:hover {
-  color: coral;
-}
-
 .oneUniversity {
-  padding: 1.5vh;
+  padding: 2vh;
   margin: 0.5vh;
 }
 

@@ -88,7 +88,7 @@ function programdiv(data){
   countryDiv.innerHTML = `<p class="bold">Land:</p> <p>${country.name}</p>`;
   flag.innerHTML = `<img class="countryFlag" src="Images/${country.flag}">`
   
-  level.innerHTML = `<p class="bold">Level:</p><p>${levelName}</p>`;
+  level.innerHTML = `<p class="bold">Level:</p><p class="lvl">${levelName}</p>`;
 
   programDiven.addEventListener("click", function(event){
     event.stopPropagation();
