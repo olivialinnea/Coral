@@ -53,7 +53,7 @@ function countryDiv(data){
   countryNameTitle.innerText = `${data.name}`;
   normalImage.innerHTML = `<img class="normalImage" src="Images/${data.imagesNormal[0]}">`;
   countryFlag.innerHTML = `<img class="countryFlag" src="Images/${data.flag}">`;
-  languageVisaDiv.innerHTML = `<p class="bold">Språk:</p><p>${lang.name}</p> <p class="bold">Visa krävs:</p><p>${visa(data)}</p>`;
+  languageVisaDiv.innerHTML = `<p class="bold">Språk:</p><p>${lang.name}</p> <p class="bold">Visum krävs:</p><p>${visa(data)}</p>`;
 
   country.append(imgTitle, countrySideInfo);
   imgTitle.append(normalImage, countryNameTitle);
@@ -452,7 +452,7 @@ function entertainmentPlace(place){
 function yearlyAmount(year){
   let div = document.createElement("div");
 
-  div.textContent = `${year}`;
+  div.textContent = `${year}:`;
   
   return div;
 }

@@ -27,11 +27,11 @@ body {
   height: 180px;
   width: 180px;
   margin-bottom: 2vh;
-  transition: height, width 1s;
+  transition: 1s;
 }
 #logoHeader:hover {
-  height: 181px;
-  width: 181px;
+  height: 190px;
+  width: 190px;
 }
 .headerName {
   font-family: var(--bigHeaders);
@@ -97,7 +97,6 @@ footer {
   display: flex;
   flex-direction: column;
 
-  height: 25vh;
   background-color: #bfd6bf;
   font-family: var(--bodyText);
 }
