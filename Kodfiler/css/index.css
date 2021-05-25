@@ -23,6 +23,10 @@ main {
   left: 200px;
 }
 
+#logoHeader {
+  margin: 1vh;
+}
+
 svg {
   height: 180px;
   width: 180px;

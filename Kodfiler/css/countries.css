@@ -272,10 +272,14 @@ body {
   font-size: 2.2vh;
 }
 
+.oneProgram:hover {
+  box-shadow: 3px 3px 4px var(--cBlue);
+}
+
 .oneProgram {
   margin-bottom: 1vh;
   padding: 1vh;
-  background-color: #f2f2f2;
+  background-color: var(--cWhite);
   /* display: grid; */
 }
 
@@ -285,7 +289,7 @@ body {
   background-color: var(--cwhite);
   overflow: hidden;
   margin-bottom: 1vh;
-  grid-column: 1/span 3;
+  grid-column: 1 / span 3;
 }
 
 .exchanges {
