@@ -360,7 +360,6 @@ footer {
   display: flex;
   flex-direction: column;
 
-  height: 25vh;
   background-color: #bfd6bf;
   font-family: var(--bodyText);
 }
