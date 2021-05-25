@@ -27,8 +27,12 @@ body {
   height: 180px;
   width: 180px;
   margin-bottom: 2vh;
+  transition: height, width 1s;
 }
-
+#logoHeader:hover {
+  height: 181px;
+  width: 181px;
+}
 .headerName {
   font-family: var(--bigHeaders);
 }
