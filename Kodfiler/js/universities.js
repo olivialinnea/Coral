@@ -72,8 +72,9 @@ function universityDiv(data){
   <div class="universitySideInfo"> 
       <img class="countryFlag" src="Images/${c.flag}">
       <div class="position" >
-        <div><p class="sideHead">Land:</p><p>${c.name} </div>
+        <div><p class="sideHead">Land:</p><p>${c.name}</p></div>
         <div><p class="sideHead">Stad:</p><p>${city.name}</p></div>
+        <div><p class="sideHead">Visa:</p><p>${visa(c)}</p></div>
       </div>
     </div>
   </div>
@@ -280,3 +281,10 @@ function gradesKey(key){
   return div;
 }
 
+function visa(data) {
+  if (data.visa == false) {
+   return "Nej"
+ } else {
+   return "Ja"
+ }
+}

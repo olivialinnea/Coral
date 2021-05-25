@@ -70,13 +70,16 @@ function programdiv(data){
   let cityDiv = document.createElement("div");
   let programSideInfo = document.createElement("div");
   let position = document.createElement("div");
+  let visum = document.createElement("div");
 
+  visum.classList.add("visa");
   position.classList.add("position");
   programSideInfo.classList.add("programSideInfo");
   universityName.classList.add("universityName");
+
   programDiven.append(left, programSideInfo);
   programSideInfo.append(flag, position);
-  position.append(level, cityDiv, countryDiv);
+  position.append(level, cityDiv, countryDiv, visum);
   left.append(programName, universityName);
 
   programName.innerText = `${data.name}`;
@@ -85,7 +88,10 @@ function programdiv(data){
   countryDiv.innerHTML = `<p class="bold">Land:</p> <p>${country.name}</p>`;
   flag.innerHTML = `<img class="countryFlag" src="Images/${country.flag}">`
   
-  level.innerHTML = `<p class="bold">Level:</p><p>${levelName}</p>`;
+  level.innerHTML = `<p class="bold">Level:</p><p>${levelName}</p>`
+
+  visum.innerHTML = `<p>Visa:</p><p>${visa(country)}</p>`
+  ;
 
   programDiven.addEventListener("click", function(event){
     event.stopPropagation();
@@ -245,4 +251,12 @@ function gradesKey(key){
   div.textContent = `${key}`;
   
   return div;
+}
+
+function visa(data) {
+  if (data.visa == false) {
+   return "Nej"
+ } else {
+   return "Ja"
+ }
 }

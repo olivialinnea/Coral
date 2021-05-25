@@ -146,9 +146,11 @@ main {
   font-family: var(--smallHeaders);
 }
 
-.position > div:nth-child(1) {
+.position > div:nth-child(1), .position > div:nth-child(2) {
   margin-right: 10px;
 }
+
+
 
 .universitySideInfo {
   display: flex;
