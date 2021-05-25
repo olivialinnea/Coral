@@ -46,18 +46,6 @@ main {
   font-family: var(--bigHeaders);
   color: black;
   text-decoration: none;
-
-  top: 53px;
-  left: 200px;
-}
-
-#titleHead {
-  font-size: 4vh;
-  position: absolute;
-  font-family: var(--bigHeaders);
-  color: black;
-  text-decoration: none;
-
   top: 53px;
   left: 200px;
 }
@@ -82,11 +70,6 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   background-color: var(--cBlue);
-}
-
-.position > div {
-  display: flex;
-  flex-direction: row;
 }
 
 .active {
@@ -123,6 +106,7 @@ main {
   margin-right: 0.5vw;
   font-weight: bold;
 }
+
 .programmeHeading {
   font-family: var(--smallHeaders);
   font-size: 20px;
@@ -138,9 +122,46 @@ main {
   margin-bottom: 1vh;
   padding: 1vh;
 }
+
+.programInfo {
+  padding-left: 1vh;
+}
+
+.allProgrammes {
+  margin-bottom: 1vh;
+}
+
+.programN {
+  cursor: pointer;
+}
+
+.pDiv > div {
+  margin-bottom: 1vh;
+}
+
+.programDiv > div:nth-child(2) {
+  border: 1px solid black;
+  border-top: none;
+  padding: 1vh;
+  display: none;
+}
+
 .programDiv {
   font-family: var(--bodyText);
 }
+
+.oneProgram {
+  background-color: #ddeeee9a;
+  padding: 1vh;
+  margin: 1vh;
+  display: grid;
+}
+
+.position > div {
+  display: flex;
+  flex-direction: row;
+}
+
 .position {
   display: flex;
   font-family: var(--smallHeaders);
@@ -175,36 +196,8 @@ main {
   border-radius: 2px;
 }
 
-.programInfo {
-  padding-left: 1vh;
-}
-
-.allProgrammes {
-  margin-bottom: 1vh;
-}
-
-.pDiv > div {
-  margin-bottom: 1vh;
-}
-
-.programDiv > div:nth-child(2) {
-  border: 1px solid black;
-  border-top: none;
-  padding: 1vh;
-  display: none;
-}
-
-/* .students {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-} */
-
 .exchanges {
   grid: 3;
-}
-
-.programN {
-  cursor: pointer;
 }
 
 .idDiv {
@@ -216,6 +209,7 @@ main {
   font-weight: bold;
 }
 
+/* Annons */
 #slimAdd {
   width: 102%;
   height: 90px;
@@ -248,10 +242,4 @@ main {
   width: 10vw;
   height: 10vw;
 }
-
-.oneProgram {
-  background-color: #ddeeee9a;
-  padding: 1vh;
-  margin: 1vh;
-  display: grid;
-}
+/* Annons */

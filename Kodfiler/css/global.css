@@ -29,12 +29,19 @@ body {
   margin-bottom: 2vh;
   transition: height, width 1s;
 }
+
 #logoHeader:hover {
   height: 181px;
   width: 181px;
 }
+
 .headerName {
   font-family: var(--bigHeaders);
+}
+
+header {
+  height: 17vh;
+  display: flex;
 }
 
 header > a {
@@ -68,28 +75,281 @@ input {
   box-shadow: 3px 2px 2px lightgrey;
 }
 
-.pageLinks > a {
-  text-decoration: none;
-  color: black;
-}
-
-.pageLinks > a:hover {
-  color: var(--cWhite);
+.bold {
+  font-weight: bold;
 }
 
 h1 {
   margin: 2vh;
   font-size: 7vh;
 }
-header {
-  height: 17vh;
-  display: flex;
-  z-index: 100;
-}
+
 .pageTitle {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* scroll knapp */
+.topButton {
+  display: none;
+  position: fixed;
+  bottom: 90px;
+  right: 40px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #bfd6bf;
+  height: 60px;
+  width: 60px;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 100px;
+  font-size: 50px;
+  opacity: 70%;
+}
+
+.topButton:hover {
+  color: #99cccc;
+}
+/* scroll knapp */
+
+.normalImage {
+  height: 90px;
+  width: 110px;
+  padding-right: 2vh;
+  border-radius: 50%;
+}
+
+.headerContainer {
+  display: flex;
+  padding-left: none;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+.students {
+  display: flex;
+  padding: 10px;
+  padding-left: 10px;
+  padding-left: 0px;
+  margin-top: 10px;
+}
+
+.entryHead,
+.graduatesHead {
+  flex-grow: 1;
+  font-weight: bold;
+}
+
+.exchangeS {
+  font-weight: bold;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.localS {
+  font-weight: bold;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.graduatesHead {
+  padding-left: 20px;
+}
+
+.grades {
+  display: flex;
+  font-weight: normal;
+}
+
+.grades > div {
+  margin-right: 10px;
+}
+
+.graduates {
+  display: flex;
+}
+
+.graduates > div {
+  margin-right: 10px;
+}
+
+.gradesDiv {
+  display: flex;
+}
+
+.grades,
+.graduates {
+  flex-grow: 1;
+}
+
+.graduates > div:nth-child(2) {
+  font-weight: normal;
+}
+
+.card {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 23.5vw;
+  background-color: #f6f3f0;
+  font-size: 1.5vh;
+  box-shadow: 4px 4px 8px #5f5959;
+}
+
+.reviewHeader {
+  font-weight: bold;
+  margin-top: 1vh;
+}
+
+.reviewContent {
+  font-size: 15px;
+}
+
+.reviews {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.reviewHeader {
+  padding: 10px;
+  padding-left: 0px;
+  font-size: 20px;
+  margin-top: 1vh;
+  margin-bottom: 10px;
+}
+
+.card > div:nth-child(1) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 5px;
+}
+
+.commentName {
+  grid-column: 1/2 span;
+  font-weight: bold;
+}
+
+.commentDate {
+  grid-column: 3;
+  font-weight: normal;
+}
+
+.commentContent {
+  padding-left: 5px;
+}
+
+.textC {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+}
+
+.textC > p:nth-child(1) {
+  margin-top: 5px;
+  margin-bottom: 3px;
+  font-weight: bold;
+}
+
+.textC > p:nth-child(2) {
+  font-weight: normal;
+  margin: 0px;
+  padding-right: 10px;
+}
+
+.navigation-manual {
+  position: absolute;
+  width: 800px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn {
+  border: 2px solid #bfd6bf;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:hover {
+  background: #bfd6bf;
+}
+
+.manual-btn:not(:last-child) {
+  margin-right: 40px;
+}
+
+.manual-btn:hover {
+  background: #bfd6bf;
+}
+
+#radio1:checked ~ .first {
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first {
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .first {
+  margin-left: -60%;
+}
+
+#radio5:checked ~ .first {
+  margin-left: -80%;
+}
+
+#radio6:checked ~ .first {
+  margin-left: -100%;
+}
+
+.navigation-auto {
+  position: absolute;
+  display: flex;
+  width: 800px;
+  justify-content: center;
+  margin-top: 460px;
+}
+
+.navigation-auto div {
+  border: 2px solid #bfd6bf;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.navigation-auto div:not(:last-child) {
+  margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+  background: #bfd6bf;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+  background: #bfd6bf;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+  background: #bfd6bf;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4 {
+  background: #bfd6bf;
+}
+
+#radio5:checked ~ .navigation-auto .auto-btn5 {
+  background: #bfd6bf;
+}
+#radio6:checked ~ .navigation-auto .auto-btn6 {
+  background: #bfd6bf;
 }
 
 /* footer */
@@ -147,6 +407,15 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   padding-bottom: 25px;
 }
 
+.pageLinks > a {
+  text-decoration: none;
+  color: black;
+}
+
+.pageLinks > a:hover {
+  color: var(--cWhite);
+}
+
 .logoFooter {
   height: 100px;
   width: 400px;
@@ -162,10 +431,6 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   color: white;
 }
 
-.bold {
-  font-weight: bold;
-}
-
 #logoFooter {
   height: 100px;
   width: 100px;
@@ -179,167 +444,3 @@ footer > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   flex-direction: column;
 }
 /* footer */
-
-/* scroll knapp */
-.topButton {
-  display: none;
-  position: fixed;
-  bottom: 90px;
-  right: 40px;
-  z-index: 99;
-  border: none;
-  outline: none;
-  background-color: #bfd6bf;
-  height: 60px;
-  width: 60px;
-  color: white;
-  cursor: pointer;
-  padding: 8px;
-  border-radius: 100px;
-  font-size: 50px;
-  opacity: 70%;
-}
-/* scroll knapp */
-
-.normalImage {
-  height: 90px;
-  width: 110px;
-  padding-right: 2vh;
-  border-radius: 50%;
-}
-
-.headerContainer {
-  display: flex;
-  padding-left: none;
-  padding-top: 10px;
-  margin-bottom: 10px;
-}
-
-.students {
-  display: flex;
-  padding: 10px;
-  padding-left: 10px;
-  padding-left: 0px;
-  margin-top: 10px;
-}
-
-.entryHead,
-.graduatesHead {
-  flex-grow: 1;
-  font-weight: bold;
-}
-
-.exchangeS {
-  /* padding-left: 40px; */
-  font-weight: bold;
-  flex-grow: 1;
-  flex-basis: 0;
-}
-
-.localS {
-  font-weight: bold;
-  flex-grow: 1;
-  flex-basis: 0;
-}
-.graduatesHead {
-  padding-left: 20px;
-}
-
-.grades {
-  display: flex;
-  font-weight: normal;
-}
-
-.grades > div {
-  margin-right: 10px;
-}
-
-.reviewHeader {
-  font-weight: bold;
-  margin-top: 1vh;
-}
-
-.graduates {
-  display: flex;
-}
-
-.graduates > div {
-  margin-right: 10px;
-}
-
-.gradesDiv {
-  display: flex;
-}
-
-.grades,
-.graduates {
-  flex-grow: 1;
-}
-
-.graduates > div:nth-child(2) {
-  font-weight: normal;
-}
-
-.card {
-  margin-right: 10px;
-  margin-bottom: 10px;
-  width: 23.5vw;
-  background-color: #f6f3f0;
-  font-size: 1.5vh;
-  box-shadow: 4px 4px 8px #5f5959;
-}
-
-.reviewContent {
-  font-size: 15px;
-}
-
-.reviews {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.reviewHeader {
-  padding: 10px;
-  padding-left: 0px;
-  font-size: 20px;
-  margin-top: 1vh;
-  margin-bottom: 10px;
-}
-
-.card > div:nth-child(1) {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 5px;
-}
-
-.commentName {
-  grid-column: 1/2 span;
-  font-weight: bold;
-}
-
-.commentDate {
-  grid-column: 3;
-  font-weight: normal;
-}
-
-.commentContent {
-  padding-left: 5px;
-}
-
-.textC {
-  display: flex;
-  flex-direction: column;
-  margin: 0px;
-}
-
-.textC > p:nth-child(1) {
-  margin-top: 5px;
-  margin-bottom: 3px;
-  font-weight: bold;
-}
-
-.textC > p:nth-child(2) {
-  font-weight: normal;
-  margin: 0px;
-  padding-right: 10px;
-}
